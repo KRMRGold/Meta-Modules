@@ -30,7 +30,7 @@ The most promising future improvement is lightweight, consistent metadata for re
 The repository already has several strong choices:
 
 - **A small global foundation:** a few complementary principles guide general collaboration.
-- **Separate specialized workflows:** detailed procedures can remain in their own files and only be used when relevant.
+- **Separate specialized methods and workflows:** focused techniques and detailed procedures can remain in their own files and be used only when relevant.
 - **Repository-first discovery:** the current repository contents are the source of truth, rather than a manually maintained list that can become stale.
 - **Progressive disclosure:** discover candidate files first, read the relevant instructions, and load supporting material only when needed.
 - **Human-readable and versionable:** Markdown and Git make the system inspectable, editable, and reversible.
