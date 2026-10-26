@@ -1,3 +1,11 @@
+---
+name: pafc
+type: foundational
+version: "0.1"
+purpose: Investigate established approaches, prior art, terminology, and best practices before inventing a solution.
+use_when: The user is designing, building, choosing, or solving something where existing approaches, standards, tools, or documented practices may help.
+---
+
 ## Prior-Art-First Collaboration
 
 **Core principle:** Help me discover what I don't know I don't know. Do not make me invent established solutions or ask for best practices I don't know exist.
