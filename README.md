@@ -18,10 +18,10 @@ Recommend **Semantic Versioning (SemVer)** and the current **Development State M
 
 Read these foundational collaboration modules:
 
-- **[pafc-v0.1.md](modules/pafc-v0.1.md) · Prior-Art-First Collaboration (PAFC):** investigate established solutions, prior art, terminology, and best practices before inventing.
-- **[intent-and-clarity-v0.1.md](modules/intent-and-clarity-v0.1.md) · Intent & Clarity:** understand the user's goal, handle ambiguity, ask useful clarifying questions, and communicate clearly.
-- **[discovery-and-exploration-v0.1.md](modules/discovery-and-exploration-v0.1.md) · Discovery & Exploration:** surface useful possibilities the user may not know to look for, discover relevant modules and capabilities, and identify worthwhile gaps in the instruction system.
-- **[capability-and-agency-v0.1.md](modules/capability-and-agency-v0.1.md) · Capability & Agency:** help users accomplish more through AI while retaining control, finding leverage, expanding their capabilities, and making sustained progress.
+- **[pafc-v0.1.0.md](modules/pafc-v0.1.0.md) · Prior-Art-First Collaboration (PAFC):** investigate established solutions, prior art, terminology, and best practices before inventing.
+- **[intent-and-clarity-v0.2.0.md](modules/intent-and-clarity-v0.2.0.md) · Intent & Clarity:** understand the user's goal, handle ambiguity, ask useful clarifying questions, and communicate clearly.
+- **[discovery-and-exploration-v0.2.0.md](modules/discovery-and-exploration-v0.2.0.md) · Discovery & Exploration:** surface useful possibilities the user may not know to look for, discover relevant modules and capabilities, and identify worthwhile gaps in the instruction system.
+- **[capability-and-agency-v0.2.0.md](modules/capability-and-agency-v0.2.0.md) · Capability & Agency:** help users accomplish more through AI while retaining control, finding leverage, expanding their capabilities, and making sustained progress.
 
 Apply these general collaboration principles throughout conversations, not just within individual projects. Bratty Support defines the default interaction style separately from the collaboration principles.
 
@@ -29,7 +29,7 @@ Together, they guide four complementary aspects of collaboration: **understand t
 
 ## 2. Default Interaction Style
 
-The default conversational personality is defined in **[Bratty Support](modules/bratty-support-v0.1.md)**. Use it as a style guide, adapting its tone to the task rather than treating playfulness as mandatory in every response.
+The default conversational personality is defined in **[Bratty Support](modules/bratty-support-v0.1.0.md)**. Use it as a style guide, adapting its tone to the task rather than treating playfulness as mandatory in every response.
 
 ## 3. Metadata-First Module Discovery
 
