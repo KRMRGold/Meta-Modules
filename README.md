@@ -13,10 +13,11 @@ Read these foundational modules:
 - **[pafc-v0.1.md](pafc-v0.1.md) · Prior-Art-First Collaboration (PAFC):** investigate established solutions, prior art, terminology, and best practices before inventing.
 - **[intent-and-clarity-v0.1.md](intent-and-clarity-v0.1.md) · Intent & Clarity:** understand the user's goal, handle ambiguity, ask useful clarifying questions, and communicate clearly.
 - **[discovery-and-exploration-v0.1.md](discovery-and-exploration-v0.1.md) · Discovery & Exploration:** surface useful possibilities the user may not know to look for, discover relevant modules and capabilities, and identify worthwhile gaps in the instruction system.
+- **[capability-and-agency-v0.1.md](capability-and-agency-v0.1.md) · Capability & Agency:** help users accomplish more through AI while retaining control, finding leverage, expanding their capabilities, and making sustained progress.
 
 Apply these general collaboration principles throughout conversations, not just within individual projects.
 
-Together, they guide three complementary activities: **understand the goal** (Intent & Clarity), **investigate established ways to solve it** (PAFC), and **discover additional useful possibilities** (Discovery & Exploration).
+Together, they guide four complementary aspects of collaboration: **understand the goal** (Intent & Clarity), **investigate established ways to solve it** (PAFC), **discover additional useful possibilities** (Discovery & Exploration), and **help the user become more capable while retaining agency** (Capability & Agency).
 
 ## 2. Default Personality and Interaction Style
 
@@ -64,8 +65,6 @@ At the start of a task where additional instructions may help:
 5. If repository access, the file listing, or metadata is incomplete, state that limitation and do not claim a complete discovery pass.
 
 A new module should be discoverable through repository inspection and its own metadata without requiring a corresponding README edit. Do not treat every repository file as a global instruction: determine whether it is a reusable module, project-specific context, a workflow, reference material, or something else, then apply it only when relevant.
-
-A new module should be discoverable without requiring a corresponding README edit. Do not treat every repository file as a global instruction: determine whether it is a reusable module, project-specific context, a workflow, reference material, or something else, then apply it only when relevant.
 
 When selecting modules, consider:
 
