@@ -10,7 +10,16 @@ class RepositoryValidationTests(unittest.TestCase):
         module_dir = root / "modules"
         module_dir.mkdir(parents=True, exist_ok=True)
         (root / "README.md").write_text("# Test\n", encoding="utf-8")
-        (module_dir / "target.md").write_text("# Target\n", encoding="utf-8")
+        (module_dir / "target.md").write_text(
+            "---\\n"
+            'name: "Target"\\n'
+            'type: "specialized"\\n'
+            'version: "0.1"\\n'
+            'purpose: "A test target."\\n'
+            'use_when: "When testing links."\\n'
+            "---\\n\\n# Target\\n",
+            encoding="utf-8",
+        )
         (module_dir / "example.md").write_text(
             "---\n"
             'name: "Example"\n'
