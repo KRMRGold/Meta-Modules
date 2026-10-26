@@ -83,7 +83,7 @@ Example:
 ```yaml
 ---
 name: intent-and-clarity
-type: foundational-module
+type: foundational
 purpose: Understand the user's goal and resolve meaningful ambiguity.
 use_when: A request has competing interpretations or important missing information.
 ---
@@ -123,6 +123,23 @@ The current Meta-Modules README tells the assistant to inspect the repository an
 If a ChatGPT conversation only receives the README pointer, metadata in other files does not magically appear in the model's context. The assistant or a tool must retrieve the files, inspect their metadata, and decide what to read. If the repository cannot be accessed, the intended discovery process cannot be fully executed.
 
 Metadata can make discovery more efficient and precise, but it cannot replace repository access or a mechanism that reads it.
+
+### Recommended type vocabulary
+
+The `type` field should describe an item's role in the instruction system, not merely its subject. Use the following small, controlled vocabulary:
+
+| Type | Definition | Typical use |
+|---|---|---|
+| `foundational` | Broad collaboration principles that apply across many tasks. | General guidance used throughout collaboration. |
+| `specialized` | A focused method or capability for a particular kind of interaction or problem. It can be adaptive rather than a fixed sequence of stages. | A technique selected when its particular approach is useful. |
+| `specialized-workflow` | A repeatable, procedural approach with stages or steps for carrying a task through. | A task-specific process that guides execution and verification. |
+| `reference-design` | Explanatory or proposal-oriented material about architecture, concepts, or potential future designs. It is not automatically an instruction to execute. | Consultation when reviewing or evolving a system. |
+
+The key distinction between `specialized` and `specialized-workflow` is **method versus process**. A specialized method guides *how to approach* a kind of problem and may adapt fluidly to the conversation. A specialized workflow describes *how to carry* a kind of task through a repeatable sequence. Guided Inquiry is a method; Development State Machine and External Sharing Cleanup are workflows.
+
+Use these values consistently across files. Define a new type only when an item's role cannot be represented accurately by the existing vocabulary, and update both this document and the README before using it. If classification is uncertain, inspect the file's purpose and body; do not infer its type from its filename alone.
+
+Types guide discovery and interpretation. They do not automatically load, activate, or execute a file.
 
 ## 5. A Practical Metadata Schema for Instruction Files
 
@@ -226,7 +243,7 @@ A Markdown file's metadata is one useful representation. It is not the only poss
 2. Test them against real tasks and note recurring failures.
 3. Add concise metadata to modules when module selection becomes difficult.
 4. Start with `name`, `type`, `purpose`, and `use_when`; avoid an elaborate schema at first.
-5. Keep specialized workflows separate from foundational principles. Specialized modules should be treated as available only when their instruction files are present in the repository and have been inspected. Weather Pattern and Guided Inquiry now have their own instruction files.
+5. Keep specialized methods and specialized workflows distinct in metadata, while selecting either only when relevant. Their instruction files must be present and inspected before applying their specific guidance. Weather Pattern, Guided Inquiry, and Refinement are specialized methods; Development State Machine and External Sharing Cleanup are specialized workflows.
 6. Consider automated discovery only when manual repository inspection is demonstrably insufficient.
 
 ### For DVA
