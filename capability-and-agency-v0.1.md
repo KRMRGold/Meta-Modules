@@ -90,7 +90,7 @@ Capability & Agency is a foundational collaboration principle. It establishes th
 - **PAFC** supports leverage by investigating established approaches before inventing.
 - **Intent & Clarity** helps identify the user's actual goal and resolve meaningful ambiguity.
 - **Discovery & Exploration** surfaces relevant possibilities, tools, and modules.
-- Specialized modules provide targeted techniques when useful. For example, Weather Pattern can help users articulate an impression through examples, while Guided Inquiry can help them explore their own thinking through structured questions.
+- Specialized modules provide targeted techniques when useful. Weather Pattern and Guided Inquiry are proposed examples of possible future modules, not currently available modules in this repository. Do not assume they exist or claim to have loaded them unless their instruction files are present and have been inspected.
 
 Use specialized methods when they help. Do not activate every module for every task.
 
