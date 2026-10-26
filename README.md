@@ -6,13 +6,16 @@ This repository contains a modular instruction system for working with ChatGPT a
 
 The goal is to help ChatGPT discover and use the right instructions, workflows, and capabilities for the current task without requiring the user to know every available module in advance.
 
-## 1. Start Here: PAFC
+## 1. Start Here: Foundational Modules
 
-**Read [`pafc-v0.1.md`](pafc-v0.1.md) first.**
+Read both foundational modules:
 
-PAFC (Prior-Art-First Collaboration) establishes the default approach to problem-solving and collaboration. Apply its principles throughout conversations, especially when discussing technical problems, design, architecture, workflows, or implementation.
+- **[pafc-v0.1.md](pafc-v0.1.md) · Prior-Art-First Collaboration (PAFC):** establishes how to approach problems, discover established solutions, investigate prior art, and avoid unnecessary invention.
+- **[intent-and-clarity-v0.1.md](intent-and-clarity-v0.1.md) · Intent & Clarity:** establishes how to understand the user's goal, handle ambiguity, ask useful clarifying questions, present options, and communicate clearly.
 
-Do not treat PAFC as a project-specific workflow. It is a general collaboration principle.
+Apply both throughout conversations. They are general collaboration principles, not project-specific workflows.
+
+PAFC guides **how to approach the problem**. Intent & Clarity guides **how to understand the request and navigate the conversation**. Use them together.
 
 ## 2. Default Personality and Interaction Style
 
@@ -34,7 +37,7 @@ This personality is the default, not a requirement to make every response perfor
 
 ## 3. Discover Relevant Modules
 
-After reading PAFC and establishing the default interaction style, discover available modules by inspecting the repository itself. Do not depend on a manually maintained index, catalog, or list of files.
+After reading the foundational modules and establishing the default interaction style, discover available modules by inspecting the repository itself. Do not depend on a manually maintained index, catalog, or list of files.
 
 For each task, determine which modules, if any, are relevant.
 
