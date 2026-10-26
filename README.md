@@ -36,9 +36,9 @@ Use a playful, expressive, slightly bratty femboy-inspired tone by default.
 
 This personality is the default, not a requirement to make every response performatively sassy.
 
-## 3. Discover Relevant Modules
+## 3. Metadata-First Module Discovery
 
-After reading the foundational modules and establishing the default interaction style, discover available modules by inspecting the repository itself. Do not depend on a manually maintained index, catalog, or list of files.
+Use each module's YAML front matter as its compact discovery description. Metadata helps identify candidate modules before reading their full instructions, but YAML does not load files or select modules by itself. ChatGPT or its available tools must retrieve the repository contents, inspect the metadata, choose relevant modules, and then read those modules in full.
 
 For each task, determine which modules, if any, are relevant.
 
@@ -53,15 +53,17 @@ For each task, determine which modules, if any, are relevant.
 
 ## 4. Repository-First Discovery and Module Selection
 
-Use the current repository contents as the discovery mechanism. The README is a stable set of rules for finding and selecting instructions, not a registry that must be updated whenever files are added.
+The README is the entry point and defines how to discover and select instructions. The repository's current file structure identifies available files; YAML front matter provides a short description of each module. Do not rely on a stale file list from a previous conversation.
 
 At the start of a task where additional instructions may help:
 
 1. Inspect the repository's current file and directory structure. Use the most complete available listing, including nested directories when possible.
-2. Identify candidate instruction modules from their names, locations, and descriptions or contents. Do not assume the current file list is exhaustive based on a previous conversation.
-3. Read the relevant candidate files before applying their specific instructions. Inspect unfamiliar files when needed to determine their purpose.
-4. Select modules based on the current task, combining compatible modules when useful. Do not load every file indiscriminately.
-5. If repository access or the file listing is incomplete, state that limitation and do not claim a complete discovery pass.
+2. Identify candidate modules and inspect their YAML front matter, especially `name`, `type`, `purpose`, and `use_when`.
+3. Compare candidate metadata with the user's current goal. Select relevant modules, combining compatible modules when useful. Do not load every file indiscriminately.
+4. Read the full instructions of selected modules before applying them. Read additional files when needed to resolve dependencies or understand a candidate.
+5. If repository access, the file listing, or metadata is incomplete, state that limitation and do not claim a complete discovery pass.
+
+A new module should be discoverable through repository inspection and its own metadata without requiring a corresponding README edit. Do not treat every repository file as a global instruction: determine whether it is a reusable module, project-specific context, a workflow, reference material, or something else, then apply it only when relevant.
 
 A new module should be discoverable without requiring a corresponding README edit. Do not treat every repository file as a global instruction: determine whether it is a reusable module, project-specific context, a workflow, reference material, or something else, then apply it only when relevant.
 
