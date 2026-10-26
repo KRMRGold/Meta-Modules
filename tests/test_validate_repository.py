@@ -6,10 +6,12 @@ from scripts.validate_repository import validate_repository
 
 
 class RepositoryValidationTests(unittest.TestCase):
-    def write_fixture(self, root: Path, *, module_type="foundational", link="README.md"):
-        (root / "modules").mkdir(parents=True, exist_ok=True)
+    def write_fixture(self, root: Path, *, module_type="foundational", link="target.md"):
+        module_dir = root / "modules"
+        module_dir.mkdir(parents=True, exist_ok=True)
         (root / "README.md").write_text("# Test\n", encoding="utf-8")
-        (root / "modules" / "example.md").write_text(
+        (module_dir / "target.md").write_text("# Target\n", encoding="utf-8")
+        (module_dir / "example.md").write_text(
             "---\n"
             'name: "Example"\n'
             f'type: "{module_type}"\n'
