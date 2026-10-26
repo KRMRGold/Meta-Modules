@@ -1,3 +1,11 @@
+---
+name: "Future Workflow System: Architecture & Metadata Notes"
+type: "reference-design"
+version: "0.1"
+purpose: "Record the current assessment of the Meta-Modules architecture, propose future improvements, and explain metadata concepts relevant to Meta-Modules and DVA."
+use_when: "Consult when reviewing or evolving the instruction-system architecture, module metadata, discovery behavior, or the relationship between Meta-Modules and DVA."
+---
+
 # Future Workflow System: Architecture & Metadata Notes
 
 **Status:** Reference and design direction, not an implementation specification  
@@ -6,13 +14,14 @@
 
 ## Executive Summary
 
-The current modular instruction system is a sound starting point. Keep the three foundational modules:
+The current modular instruction system is a sound starting point. Its current foundation consists of four foundational modules:
 
 - **Intent & Clarity:** understand the user's goal and resolve meaningful ambiguity.
 - **Prior-Art-First Collaboration (PAFC):** investigate established solutions before inventing.
 - **Discovery & Exploration:** reveal useful possibilities the user may not know to ask about.
+- **Capability & Agency:** help users accomplish more through AI while retaining control, finding leverage, and making sustained progress.
 
-Do not add more foundational modules yet. The next step should be to test the system against real tasks and improve it based on observed failures.
+The next step is to test the current system against real tasks and improve it based on observed failures. Consider additional foundational modules only when testing or recurring needs demonstrate a genuine gap.
 
 The most promising future improvement is lightweight, consistent metadata for reusable modules. Metadata can help the assistant or a retrieval mechanism identify what a file is for without reading every file in full. However, metadata only works when something actually reads and uses it. Adding YAML to a Markdown file does not, by itself, make ChatGPT or DVA automatically discover or activate that file.
 
@@ -29,7 +38,7 @@ The repository already has several strong choices:
 
 ### Current recommendation
 
-Keep the architecture. Do not build an automated module index, custom retrieval engine, or larger instruction framework until actual use demonstrates that manual discovery is failing often enough to justify the extra complexity.
+Keep the current four-module foundation and the broader modular architecture. Do not build an automated module index, custom retrieval engine, or larger instruction framework until actual use demonstrates that manual discovery is failing often enough to justify the extra complexity.
 
 The architecture is a good starting point, not yet a proven system. Test behavior in real conversations before adding more rules.
 
@@ -213,11 +222,11 @@ A Markdown file's metadata is one useful representation. It is not the only poss
 
 ### For Meta-Modules
 
-1. Continue using the three foundations.
+1. Continue using the current four foundational modules.
 2. Test them against real tasks and note recurring failures.
 3. Add concise metadata to modules when module selection becomes difficult.
 4. Start with `name`, `type`, `purpose`, and `use_when`; avoid an elaborate schema at first.
-5. Keep specialized workflows separate from foundational principles.
+5. Keep specialized workflows separate from foundational principles. Specialized modules that have only been discussed or proposed, such as Weather Pattern and Guided Inquiry, are not available modules until files are actually added to the repository.
 6. Consider automated discovery only when manual repository inspection is demonstrably insufficient.
 
 ### For DVA
