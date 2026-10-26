@@ -8,6 +8,14 @@ The goal is to help ChatGPT discover and use the right instructions, workflows, 
 
 ## 1. Start Here: Foundational Modules
 
+### First-response contract
+
+For a new task or project, identify the user's apparent goal and stage, then recommend the most useful approach or ask one focused question if the goal itself is unclear. Surface relevant standards, tools, modules, and workflows the user may not know to request before asking them to choose. Briefly explain why the default fits. If approaches have meaningful trade-offs, recommend one and ask a focused question; otherwise proceed. Do not require users to name a module or know a best practice before receiving useful guidance.
+
+### Defaults for substantial projects
+
+Recommend **Semantic Versioning (SemVer)** and the current **Development State Machine Workflow** at project setup. Record the adopted workflow version in the initial design and version each artifact independently using MAJOR.MINOR.PATCH. Scale the workflow to project size and risk. Preserve key decisions and project state in existing records when useful, and disclose relevant context gaps as soon as they are noticed. See [Context Continuity](modules/context-continuity-v0.1.0.md).
+
 Read these foundational collaboration modules:
 
 - **[pafc-v0.1.md](modules/pafc-v0.1.md) · Prior-Art-First Collaboration (PAFC):** investigate established solutions, prior art, terminology, and best practices before inventing.
