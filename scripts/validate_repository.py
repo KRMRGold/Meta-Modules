@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate Meta-Modules metadata and local Markdown links."""
+"""Validate metadata, SemVer identifiers, versioned filenames, and local Markdown links."""
 from __future__ import annotations
 
 import re
@@ -13,6 +13,8 @@ ROOT = Path(__file__).resolve().parents[1]
 ALLOWED_TYPES = {"foundational", "specialized", "specialized-workflow", "reference-design"}
 REQUIRED_FIELDS = {"name", "type", "version", "purpose", "use_when"}
 LINK_RE = re.compile(r"!??\[[^\]]*\]\(([^)]+)\)")
+SEMVER_RE = re.compile(r"(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)\Z")
+VERSIONED_FILENAME_RE = re.compile(r"-v(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)\.md\Z")
 
 
 def markdown_files(root: Path) -> list[Path]:
@@ -59,6 +61,16 @@ def validate_repository(root: Path = ROOT) -> list[str]:
         for key in REQUIRED_FIELDS:
             if key in data and (data[key] is None or not str(data[key]).strip()):
                 errors.append(f"{rel}: field {key!r} must not be empty")
+        version = data.get("version")
+        if version is not None and not SEMVER_RE.fullmatch(str(version)):
+            errors.append(f"{rel}: version {version!r} must use MAJOR.MINOR.PATCH SemVer")
+        filename_version = VERSIONED_FILENAME_RE.search(path.name)
+        if filename_version and version is not None:
+            filename_semver = ".".join(filename_version.groups())
+            if filename_semver != str(version):
+                errors.append(f"{rel}: filename version {filename_semver!r} does not match front matter version {version!r}")
+        elif version is not None:
+            errors.append(f"{rel}: versioned module/workflow/architecture filename must end in -vMAJOR.MINOR.PATCH.md")
 
     for path in md_files:
         text = path.read_text(encoding="utf-8")
