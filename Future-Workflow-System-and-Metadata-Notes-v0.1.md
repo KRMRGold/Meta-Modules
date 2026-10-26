@@ -226,7 +226,7 @@ A Markdown file's metadata is one useful representation. It is not the only poss
 2. Test them against real tasks and note recurring failures.
 3. Add concise metadata to modules when module selection becomes difficult.
 4. Start with `name`, `type`, `purpose`, and `use_when`; avoid an elaborate schema at first.
-5. Keep specialized workflows separate from foundational principles. Specialized modules that have only been discussed or proposed, such as Weather Pattern and Guided Inquiry, are not available modules until files are actually added to the repository.
+5. Keep specialized workflows separate from foundational principles. Specialized modules should be treated as available only when their instruction files are present in the repository and have been inspected. Weather Pattern and Guided Inquiry now have their own instruction files.
 6. Consider automated discovery only when manual repository inspection is demonstrably insufficient.
 
 ### For DVA
