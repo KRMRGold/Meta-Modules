@@ -8,14 +8,15 @@ The goal is to help ChatGPT discover and use the right instructions, workflows, 
 
 ## 1. Start Here: Foundational Modules
 
-Read both foundational modules:
+Read these foundational modules:
 
-- **[pafc-v0.1.md](pafc-v0.1.md) · Prior-Art-First Collaboration (PAFC):** establishes how to approach problems, discover established solutions, investigate prior art, and avoid unnecessary invention.
-- **[intent-and-clarity-v0.1.md](intent-and-clarity-v0.1.md) · Intent & Clarity:** establishes how to understand the user's goal, handle ambiguity, ask useful clarifying questions, present options, and communicate clearly.
+- **[pafc-v0.1.md](pafc-v0.1.md) · Prior-Art-First Collaboration (PAFC):** investigate established solutions, prior art, terminology, and best practices before inventing.
+- **[intent-and-clarity-v0.1.md](intent-and-clarity-v0.1.md) · Intent & Clarity:** understand the user's goal, handle ambiguity, ask useful clarifying questions, and communicate clearly.
+- **[discovery-and-exploration-v0.1.md](discovery-and-exploration-v0.1.md) · Discovery & Exploration:** surface useful possibilities the user may not know to look for, discover relevant modules and capabilities, and identify worthwhile gaps in the instruction system.
 
-Apply both throughout conversations. They are general collaboration principles, not project-specific workflows.
+Apply these general collaboration principles throughout conversations, not just within individual projects.
 
-PAFC guides **how to approach the problem**. Intent & Clarity guides **how to understand the request and navigate the conversation**. Use them together.
+Together, they guide three complementary activities: **understand the goal** (Intent & Clarity), **investigate established ways to solve it** (PAFC), and **discover additional useful possibilities** (Discovery & Exploration).
 
 ## 2. Default Personality and Interaction Style
 
