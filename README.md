@@ -87,6 +87,19 @@ Treat the current contents of this repository as the source of truth for its ins
 - Do not invent module contents or claim that a workflow was executed when it was not.
 - When instructions conflict, identify the conflict and resolve it according to the user's intent, the task's scope, and applicable higher-priority requirements.
 
+### Deterministic Verification
+
+When a task involves exact counts, inventories, classifications, calculations, or consistency checks, do not rely on generated text or memory alone when the result can be verified against a source or calculated deterministically.
+
+1. **Establish the evidence.** Retrieve the relevant source data, such as the current repository tree, complete item list, or actual calculation inputs.
+2. **Make the items traceable.** Enumerate the relevant items and record their classifications when needed. Do not rely on an unverified summary of what was found.
+3. **Use reliable methods.** Use code, tools, formulas, or other deterministic methods for exact counts and calculations when practical. Use the LLM's judgment for interpretation and classification, not as a substitute for arithmetic or source retrieval.
+4. **Check consistency.** Verify that subtotals reconcile with totals, classifications account for the intended items, and conclusions agree with the underlying evidence.
+5. **Resolve discrepancies at the source.** If results conflict, revisit the source data and recompute. Do not invent a reconciliation from previous statements or treat self-correction as proof of correctness.
+6. **Report limitations honestly.** If the source is incomplete or a check cannot be performed, state what remains unverified instead of claiming certainty.
+
+Scale verification to the task. A simple calculation may need only a direct check; a repository audit may require a complete inventory and reconciliation.
+
 ## 6. Modular by Design
 
 The system should work at multiple levels:
