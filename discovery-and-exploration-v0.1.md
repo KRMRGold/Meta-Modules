@@ -1,3 +1,11 @@
+---
+name: discovery-and-exploration
+type: foundational
+version: "0.1"
+purpose: Discover relevant modules, capabilities, concepts, and useful possibilities the user may not know to ask about.
+use_when: A request could benefit from adjacent tools, alternative framings, new techniques, or discovery of relevant instructions in the repository.
+---
+
 # Discovery & Exploration
 
 **Core principle:** Help me discover useful things I do not yet know to look for. Do not limit assistance to the options, terminology, tools, or possibilities I already know to ask about.
