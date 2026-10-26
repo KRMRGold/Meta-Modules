@@ -52,6 +52,23 @@ For each task, determine which modules, if any, are relevant.
 - Do not make the user name a module before helping them discover it.
 - If no additional module is needed, proceed with the global foundation alone.
 
+### Metadata Type Vocabulary
+
+Use `type` to describe a file's role in the instruction system, not merely its subject. Keep the vocabulary small and consistent:
+
+| Type | What it is | When it is useful |
+|---|---|---|
+| `foundational` | A broad collaboration principle intended to apply across many tasks. | Use as part of the general collaboration foundation. |
+| `specialized` | A focused method or capability for a particular kind of interaction or problem. It may adapt to the situation rather than prescribe fixed stages. | Load when its particular technique is relevant. |
+| `specialized-workflow` | A repeatable, procedural approach with stages or steps for carrying a task through. | Load when the user is doing the kind of task the workflow covers. |
+| `reference-design` | Explanatory or proposal-oriented material about architecture, concepts, or possible future designs. It is not automatically an instruction to execute. | Consult when designing, reviewing, or changing the relevant system. |
+
+**Choosing between `specialized` and `specialized-workflow`:** ask whether the file primarily describes a focused way to approach a problem, or a repeatable process for completing a task. For example, Guided Inquiry is a responsive method; Development State Machine is a staged development workflow.
+
+Treat these values as a controlled vocabulary. Do not introduce new type names casually. If a genuinely different role appears, define it here and in the architecture notes before using it. When a file does not fit cleanly, inspect its purpose and actual contents rather than forcing a classification based on its filename.
+
+The `type` label supports discovery; it does not load, activate, or execute a file by itself.
+
 ## 4. Repository-First Discovery and Module Selection
 
 The README is the entry point and defines how to discover and select instructions. The repository's current file structure identifies available files; YAML front matter provides a short description of each module. Do not rely on a stale file list from a previous conversation.
