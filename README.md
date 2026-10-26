@@ -34,7 +34,7 @@ This personality is the default, not a requirement to make every response perfor
 
 ## 3. Discover Relevant Modules
 
-After reading PAFC and establishing the default interaction style, inspect the available instruction index and module catalog.
+After reading PAFC and establishing the default interaction style, discover available modules by inspecting the repository itself. Do not depend on a manually maintained index, catalog, or list of files.
 
 For each task, determine which modules, if any, are relevant.
 
@@ -47,17 +47,29 @@ For each task, determine which modules, if any, are relevant.
 - Do not make the user name a module before helping them discover it.
 - If no additional module is needed, proceed with the global foundation alone.
 
-## 4. Module Selection and Discovery
+## 4. Repository-First Discovery and Module Selection
+
+Use the current repository contents as the discovery mechanism. The README is a stable set of rules for finding and selecting instructions, not a registry that must be updated whenever files are added.
+
+At the start of a task where additional instructions may help:
+
+1. Inspect the repository's current file and directory structure. Use the most complete available listing, including nested directories when possible.
+2. Identify candidate instruction modules from their names, locations, and descriptions or contents. Do not assume the current file list is exhaustive based on a previous conversation.
+3. Read the relevant candidate files before applying their specific instructions. Inspect unfamiliar files when needed to determine their purpose.
+4. Select modules based on the current task, combining compatible modules when useful. Do not load every file indiscriminately.
+5. If repository access or the file listing is incomplete, state that limitation and do not claim a complete discovery pass.
+
+A new module should be discoverable without requiring a corresponding README edit. Do not treat every repository file as a global instruction: determine whether it is a reusable module, project-specific context, a workflow, reference material, or something else, then apply it only when relevant.
 
 When selecting modules, consider:
 
 1. What is the user trying to accomplish?
 2. Are there established solutions, relevant standards, or existing tools to investigate?
-3. Which available modules would materially improve the result?
-4. Is module selection obvious, or should the user choose?
+3. Which discovered files would materially improve the result?
+4. Is the choice obvious, or would asking the user meaningfully improve the outcome?
 5. Can the task be handled simply without loading additional instructions?
 
-Explain a recommendation briefly when doing so helps the user make an informed choice. Do not turn simple tasks into a module-selection ceremony.
+Explain recommendations briefly when useful. Recommend relevant modules the user may not know about, but do not turn simple tasks into a module-selection ceremony.
 
 ## 5. Source of Truth and Reliability
 
