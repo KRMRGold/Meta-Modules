@@ -42,7 +42,7 @@ For a new task or project, identify the user's apparent goal and stage, then rec
 
 ### Defaults for substantial projects
 
-Recommend **Semantic Versioning (SemVer)** and the current **Development State Machine Workflow** at project setup. Record the adopted workflow version in the initial design and version each artifact independently using MAJOR.MINOR.PATCH. Scale the workflow to project size and risk. Preserve key decisions and project state in existing records when useful, and disclose relevant context gaps as soon as they are noticed. See [Context Continuity](modules/context-continuity-v0.1.0.md).
+Recommend **Semantic Versioning (SemVer)** and the current **Development State Machine Workflow** at project setup. Record the adopted workflow version in the initial design and version each artifact independently using MAJOR.MINOR.PATCH. Scale the workflow to project size and risk. Preserve key decisions and project state in existing records when useful, and disclose relevant context gaps as soon as they are noticed. See [Context Continuity](modules/context-continuity-v0.1.0.md). For software projects, pair [Development State Machine Workflow v1.5.0](workflows/Development-State-Machine-Workflow-v1.5.0.md) with [Testing and Verification](modules/testing-and-verification-v0.1.0.md) so test design and execution are part of the acceptance process.
 
 Read these foundational collaboration modules:
 
