@@ -152,43 +152,42 @@ A project is one consumer of this system, not the organizing principle for the e
 
 Prefer small, composable modules over one enormous instruction file. Keep the entry point concise, make modules discoverable, and avoid duplicating rules unnecessarily.
 
-## 7. Chat-Specific Working Agreement Bootstrap
+## 7. New-Chat Working Agreement Bootstrap
 
-For a substantial, ongoing task in a specific project, use this bootstrap to establish a durable working agreement for the current chat. The goal is to reduce repeated cross-repository instruction lookup and prevent important decisions from being lost as the conversation grows.
+**Trigger this bootstrap from the first user message in every new chat.** The first message starts the process; it does not mean the assistant should create a document before understanding the user's intent. The assistant uses Meta-Modules as the reusable reference for deciding how to collaborate, then works with the user to establish and record an agreement for that specific chat.
 
 ### Bootstrap sequence
 
-1. **Read the global instructions once.** Start here, apply the hard tool-use boundaries, inspect the repository structure, and read only the relevant modules and workflows. Give the user a concise, truthful instruction receipt and a short disclosure of the tools or capability categories intended for the task.
-2. **Understand the current task.** State the apparent goal and stage, recommend a sensible approach, and ask only the focused question(s) needed to establish the working method. Surface meaningful alternatives or constraints without turning setup into a long questionnaire.
-3. **Propose a working agreement.** Summarize the agreed goal, scope, priorities, relevant tools and actual access, workflow, approval boundaries, verification expectations, and documentation location. Clearly distinguish known facts from assumptions and unverified capabilities.
-4. **Get agreement before recording it.** Show the proposed agreement to the user and allow corrections. Do not write or change project documentation until the user agrees to the proposed working agreement.
-5. **Record it in the project repository.** Create or update one clearly named, versioned chat-specific working-agreement document in the project repository. Prefer the project's established documentation location and naming conventions. Link relevant design, maintenance, workflow, test, and source files rather than duplicating large documents. The agreement should be compact enough to reread easily.
-6. **Use that document as the active chat reference.** After the agreement is recorded, consult the project-specific agreement as the primary working reference instead of repeatedly rediscovering the full Meta-Modules repository. Reopen the global instructions or specialized modules only when a new task materially requires them, the agreement is insufficient, a rule needs verification, or the user asks to revisit the setup.
-7. **Maintain the agreement as the chat evolves.** When scope, decisions, tool access, or verification requirements change, propose and record a focused update to the same document. Keep important decisions, current state, accepted results, unresolved questions, and next steps current. Do not silently rewrite an agreed constraint.
-8. **Close the loop.** Before ending a substantial work session, update the agreement with the state another assistant turn can resume from. Record what was actually changed and verified, what remains untested or blocked, and the next useful step.
+1. **Start with a truthful receipt.** Briefly state which instruction sources or modules were actually read, distinguish read from merely available, and disclose the tools or capability categories available and planned for the current task. Do not claim access or capabilities without evidence.
+2. **Understand the purpose of this chat.** Interpret the user's first message, state the apparent goal, and ask focused questions needed to understand the task, relevant project/repository, and desired way of working. Recommend a sensible approach informed by relevant Meta-Modules practices. Do not force a lengthy setup questionnaire onto a simple request.
+3. **Agree on the collaboration approach.** Discuss the useful parts of the workflow: scope, relevant tools and actual access, approval boundaries, decision-making, documentation, and verification. Use only modules relevant to the user's goal. Let the user correct the recommendation and confirm the agreement before writing it.
+4. **Create a chat-specific working-agreement document.** After agreement, create or update one clearly named document in the relevant project repository. Ask which repository to use if it is not clear. If no project repository is available, explain the limitation and ask where the user wants the durable record rather than pretending it was saved. Keep the agreement compact and specific to this chat.
+5. **Make the agreement the working reference.** Once saved, use that document as the primary reference for the rest of this chat. It should preserve the goal, decisions, relevant tools/access, selected workflows, constraints, current state, and next steps. Link to existing project docs instead of duplicating them.
+6. **Maintain it as the chat evolves.** Update the same agreement when decisions, scope, access, or next steps materially change. Before pausing substantial work, record what changed, what was verified, what remains unresolved, and where to resume.
+7. **Use Meta-Modules selectively after bootstrap.** Do not repeatedly traverse the whole instruction repository. Reopen global instructions or specialized modules when a new task needs them, the agreement is insufficient, a rule needs verification, or the user asks to revisit the approach.
+8. **Be honest about outcomes.** A plan is not proof of implementation. Distinguish available, used, unavailable, and unverified tools. Never claim a write, test, or verification succeeded without evidence.
 
 ### Boundaries and source of truth
 
-- The working agreement is scoped to the identified chat and project unless the user explicitly adopts it more broadly.
-- It is a durable project record, not a guarantee that a future chat will automatically load it. At the start of a later chat, retrieve and verify the document before claiming to know its contents.
-- The project repository is the source of truth for project-specific decisions and state. Meta-Modules remains the reusable source for global collaboration rules and specialized methods.
-- Do not copy the entire Meta-Modules system into the agreement. Record the selected practices and decisions needed for this project.
-- A tool being mentioned in a document does not mean it is available. Record the actual access and distinguish available, used, unavailable, and unverified capabilities.
-- A plan or design is not proof of implementation. Report changes and checks based on observed evidence; never claim a test or action succeeded unless it actually did.
-- If the project repository cannot be read or written, say so. Do not pretend that the agreement was saved.
-- Scale the agreement to the task. A simple question or short-lived task does not need a new document.
+- This bootstrap is triggered in **every new chat**, regardless of the first message's topic. The size and complexity of the resulting agreement should fit the chat; do not make setup needlessly heavy.
+- The working agreement is scoped to the chat that established it unless the user explicitly adopts it more broadly.
+- A saved document does not automatically load into future chats. A future chat must retrieve and verify the relevant agreement before relying on it.
+- Meta-Modules remains the reusable source for collaboration rules and methods. The project repository and its chat-specific agreement preserve the decisions for that chat.
+- Do not copy the entire Meta-Modules system into the agreement. Record only the practices and decisions relevant to the chat.
+- If the user is still exploring what they want, help them clarify and agree on a provisional approach before writing. Do not invent a project or repository.
+- If a repository cannot be read or written, state that clearly and offer a practical alternative.
 
-### Suggested document contents
+### Suggested agreement contents
 
-- Purpose and scope of this chat
-- Agreed collaboration and tool-use approach
-- Project files and source-of-truth locations
-- Adopted workflow and relevant modules, with versions when applicable
-- Approval boundaries and decision-making preferences relevant to this task
-- Acceptance and verification requirements
+- Chat purpose and scope
+- Agreed collaboration approach and relevant module/workflow references
+- Tools and capabilities available, used, unavailable, or unverified
+- Project repository and source-of-truth files
+- Approval boundaries and decision-making agreements
+- Acceptance and verification expectations, when applicable
 - Current decisions and state
 - Open questions, known limitations, and next steps
-- Update history
+- Brief update history
 
 ## 8. Continue Collaboratively
 
