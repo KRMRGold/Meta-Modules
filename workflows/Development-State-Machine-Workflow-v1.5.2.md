@@ -156,7 +156,7 @@ Use SemVer for this reusable workflow:
 - **MINOR:** a backward-compatible addition, such as a new optional module or an expanded adoption rule.
 - **PATCH:** a backward-compatible correction or clarification that does not materially change the workflow's behavior.
 
-Keep one canonical workflow file at its stable repository path. When the workflow changes, update that file in place and increment its internal version metadata according to SemVer. Do not publish additional version-suffixed workflow files or retain older copies beside it. Git history preserves prior revisions. When a project adopts a newer workflow, record the version and any relevant changes to its development plan.
+Keep one canonical workflow file at its stable repository path. When the workflow changes, update that file in place and increment its internal version metadata according to SemVer. Do not publish additional version-suffixed workflow files or retain older copies beside it. Git history preserves prior revisions. Future chats must retrieve this one canonical current workflow file and must not search for or resurrect older version-suffixed copies. When a project adopts the workflow, record its current internal version and any relevant changes to its development plan.
 
 ### 4.5 Maintenance documents and milestone documents
 
@@ -181,9 +181,9 @@ Use the complete path for substantial features and new subsystems. For small fix
 - **S6 — Runtime and acceptance testing:** Run the candidate and perform acceptance and relevant regression tests in the actual runtime where possible. Record exact candidate version and results.
 - **S7 — Acceptance gate:** Compare recorded results with the acceptance criteria. If a required check fails, move to S8. If required checks pass, proceed to S9.
 - **S8 — Repair and iteration:** Compare the requirements, last accepted code, failed candidate, and observed failure. Decide whether the issue is in the design, implementation, or test assumptions. Preserve the failed candidate and evidence. Create a new version for the repair. If the design is inadequate, return to S2. Otherwise repair the candidate and return to S5.
-- **S9 — Maintenance update:** Record the accepted code version, source reference, test evidence, differences from the design, and unresolved limitations. Update and independently version the maintenance document.
+- **S9 — Maintenance update:** Record the accepted code version, source reference, test evidence, differences from the design, and unresolved limitations. Update the single canonical maintenance document in place; Git history preserves earlier revisions.
 - **S10 — Accepted feature and next decision:** The feature is accepted for the agreed scope. Decide what to work on next or whether the app has reached its desired completion scope.
-- **S11 — Milestone document:** When the user declares the app complete to the desired scope, establish the accepted code and documentation versions, create or update the independently versioned milestone document, and test whether it communicates the app well enough for reconstruction in a fresh session.
+- **S11 — Milestone document:** When the user declares the app complete to the desired scope, establish the accepted code and documentation state, create or update the single canonical milestone document in place, and test whether it communicates the app well enough for reconstruction in a fresh session.
 
 ### Transition map
 
@@ -328,7 +328,7 @@ After a candidate passes the acceptance gate, update and version the app's maint
 - concise history of meaningful maintenance-document changes;
 - the adopted workflow version and a link to the reusable workflow.
 
-The maintenance document describes the accepted implementation state, not an untested aspiration. Preserve useful history, but correct stale claims instead of copying them forward unchanged. Do not mark a candidate accepted until required checks pass. A maintenance update gets its own version when its contents change; it does not inherit the code version number.
+The maintenance document describes the accepted implementation state, not an untested aspiration. Preserve useful history, but correct stale claims instead of copying them forward unchanged. Do not mark a candidate accepted until required checks pass. If a maintenance document carries internal revision metadata, update it in the same canonical file; do not create a separate file for each revision. Git history preserves the prior contents.
 
 ### Milestone document
 
@@ -342,7 +342,7 @@ When the user declares the app complete to the desired scope:
 4. Preserve links to the source documents and code so the origin of decisions remains traceable.
 5. Distinguish implemented behavior from planned or deferred behavior. Resolve discrepancies rather than blindly copying conflicting statements.
 6. Include goals, user experience, architecture, data model, important algorithms, dependencies, constraints, and acceptance tests as relevant.
-7. Keep the milestone document at its one canonical path and update it in place. Identify the exact accepted code version it describes. Use Git history for prior document revisions, not separate versioned milestone files. Identify the exact accepted versions it describes.
+7. Keep the milestone document at its one canonical path and update it in place. Identify the exact accepted code version it describes. Use Git history for prior document revisions, not separate versioned milestone files.
 8. Test the milestone in a fresh LLM session without relying on hidden conversation context. Compare the resulting recreation against the accepted app using the same acceptance criteria.
 9. Record important gaps and refine the milestone if necessary, by updating the one canonical document in place; Git history retains the previous revision.
 
