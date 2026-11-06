@@ -16,10 +16,10 @@
 
 ## Source index
 
-1. `README.md` · blob `7474ebf9e679dee6f8d10128f910bdcfb79c752f`
+1. `README.md` · blob `f8252fa0d94dc56e73e894c91574709e1188ef57`
 2. `modules/bratty-support.md` · blob `80e8194544a005f7a53cd3155e683a05017e6f9d`
-3. `modules/capability-and-agency.md` · blob `3aa5f1166c22997b8bf2fa5d21b2c6b8bc922fe2`
-4. `modules/context-continuity.md` · blob `d2e044f4174f05918fc443d3d5380c92223ac54f`
+3. `modules/capability-and-agency.md` · blob `62c929faee5d0f5d56fc81b113f021a14f741e9b`
+4. `modules/context-continuity.md` · blob `9acd39178851753441fa27c77d337caa5f8d80e5`
 5. `modules/discovery-and-exploration.md` · blob `eaf57af6522a4426e6f3d390f521dbc63eefef90`
 6. `modules/existing-knowledge-and-emerging-technologies.md` · blob `e17f3bf82f0dcaea308809c72d23e8866722567d`
 7. `modules/guided-inquiry.md` · blob `19e4aee363a3bba1a0a9d5449f3a9830abdea192`
@@ -40,7 +40,7 @@
 
 # Source: `README.md`
 
-> Original blob SHA: `7474ebf9e679dee6f8d10128f910bdcfb79c752f`
+> Original blob SHA: `f8252fa0d94dc56e73e894c91574709e1188ef57`
 
 <!-- BEGIN SOURCE: README.md -->
 
@@ -68,13 +68,13 @@ Follow the canonical disclosure requirements in [Tool Use and Consent Boundaries
 
 ### First-response contract
 
-[Intent & Clarity](modules/intent-and-clarity.md) is the canonical guide for understanding the user's goal, making a recommendation-first opening, and clarifying only when it matters. [Discovery & Exploration](modules/discovery-and-exploration.md) applies that approach to uncovering relevant possibilities, methods, tools, and modules the user may not know to request. Use their task-specific guidance without repeating a separate checklist here.
+[Intent & Clarity](modules/intent-and-clarity.md) is the canonical guide for understanding the user's goal, making a recommendation-first opening, and clarifying only when it matters. [Discovery & Exploration](modules/discovery-and-exploration.md) applies the same recommendation-first, clarify-only-when-needed approach to uncovering relevant possibilities, methods, tools, and modules the user may not know to request. Use their task-specific guidance without repeating a separate checklist here.
 
 ### Defaults for substantial projects
 
-**Living-document rule:** Keep one current file per document at a stable, descriptive path. Update it in place; do not create version-suffixed duplicates or backup copies. Git history preserves prior revisions. This applies to project designs, maintenance and milestone records, workflows, modules, and other documentation. A document's internal version metadata does not justify a second file.
+**Living-document rule:** Keep one current file per document at a stable, descriptive path. Update it in place; do not create version-suffixed duplicates or backup copies. Git history is the history and provenance record for prior revisions. This applies to project designs, maintenance and milestone records, workflows, modules, and other documentation. A document's internal version metadata does not justify a second file.
 
-Recommend **Semantic Versioning (SemVer)** for code/build artifacts and the current **Development State Machine Workflow** at project setup. Record the adopted workflow version in the initial design. Use independent MAJOR.MINOR.PATCH versions for code/build artifacts; keep one canonical file for each living document and update it in place. Scale the workflow to project size and risk. Preserve key decisions and project state in existing records when useful, and disclose relevant context gaps as soon as they are noticed. See [Context Continuity](modules/context-continuity.md). For software projects, pair [Development State Machine Workflow v1.5.2](workflows/Development-State-Machine-Workflow.md) with [Testing and Verification](modules/testing-and-verification.md) so test design and execution are part of the acceptance process.
+Recommend **Semantic Versioning (SemVer)** for code/build artifacts and the current **Development State Machine Workflow** at project setup. Record the initially adopted workflow version in the initial design, using the internal `version:` field in its YAML front matter, not the filename. This records adoption provenance; projects follow the current canonical workflow by default unless they explicitly record a historical pin or deviation. Use Git history when an earlier revision must be investigated or a deliberate pin must be retrieved. Use independent MAJOR.MINOR.PATCH versions for code/build artifacts; keep one canonical file for each living document and update it in place. Scale the workflow to project size and risk. Preserve key decisions and project state in existing records when useful, and disclose relevant context gaps as soon as they are noticed. See [Context Continuity](modules/context-continuity.md). For software projects, pair [Development State Machine Workflow v1.6.0](workflows/Development-State-Machine-Workflow.md) with [Testing and Verification](modules/testing-and-verification.md) so test design and execution are part of the acceptance process.
 
 Read these foundational collaboration modules:
 
@@ -115,13 +115,13 @@ Use `type` to describe a file's role in the instruction system, not merely its s
 | `foundational` | A broad collaboration principle intended to apply across many tasks. | Use as part of the general collaboration foundation. |
 | `specialized` | A focused method or capability for a particular kind of interaction or problem. It may adapt to the situation rather than prescribe fixed stages. | Load when its particular technique is relevant. |
 | `specialized-workflow` | A repeatable, procedural approach with stages or steps for carrying a task through. | Load when the user is doing the kind of task the workflow covers. |
-| `reference-design` | Explanatory or proposal-oriented material about architecture, concepts, or possible future designs. It is not automatically an instruction to execute. | Consult when designing, reviewing, or changing the relevant system. |
+| `reference-design` | Explanatory or proposal-oriented material about architecture, concepts, or possible future designs. It is not automatically an instruction to execute. | Consult when designing, reviewing, or changing the relevant system; it does not bind behavior unless explicitly adopted. |
 
 **Choosing between `specialized` and `specialized-workflow`:** ask whether the file primarily describes a focused way to approach a problem, or a repeatable process for completing a task. For example, Guided Inquiry is a responsive method; Development State Machine is a staged development workflow.
 
 Treat these values as a controlled vocabulary. Do not introduce new type names casually. If a genuinely different role appears, define it here before using it; architecture references should point back to this canonical vocabulary rather than maintain a duplicate. When a file does not fit cleanly, inspect its purpose and actual contents rather than forcing a classification based on its filename.
 
-The `type` label supports discovery; it does not load, activate, or execute a file by itself. Specialized methods such as Weather Pattern, Guided Inquiry, and Refinement, and specialized workflows such as Development State Machine and External Sharing Cleanup, are discoverable through the repository-wide metadata pass; they are not all default modules. Optional `related` metadata provides navigation hints only and does not create an activation or dependency graph.
+The `type` label supports discovery; it does not load, activate, or execute a file by itself. Specialized methods such as Weather Pattern, Guided Inquiry, and Refinement, and specialized workflows such as Development State Machine and External Sharing Cleanup, are discoverable through the repository-wide metadata pass; they are not all default modules. Optional `related` metadata provides navigation hints only and does not create an activation or dependency graph. The prose relationship sections are authoritative; `related` is an optional, curated subset of those relationships chosen to improve discovery, not a second complete relationship list. It must not imply a dependency or requirement absent from the prose.
 
 ## 4. Repository-First Discovery and Module Selection
 
@@ -199,7 +199,7 @@ Prefer small, composable modules over one enormous instruction file. Keep the en
 ### Bootstrap sequence
 
 1. **Start with the canonical receipt and disclosure.** Follow [Tool Use and Consent Boundaries, Sections 5–6](modules/tool-use-consent.md) for the first-message tool disclosure and instruction receipt. Provide them before the substantive answer when feasible; do not restate or redefine their requirements here.
-2. **Understand the purpose of this chat.** Interpret the user's first message, state the apparent goal, and ask focused questions only when needed to understand the task, relevant project/repository, and desired way of working. Recommend a sensible approach informed by relevant Meta-Modules practices. For a simple, self-contained request, the receipt and concise tool plan may be sufficient; do not turn it into a setup questionnaire.
+2. **Understand the purpose of this chat.** Interpret the user's first message. State the apparent goal when doing so helps establish shared understanding; skip the restatement when the request is clear and repeating it would add noise. Ask focused questions only when needed to understand the task, relevant project/repository, and desired way of working. Recommend a sensible approach informed by relevant Meta-Modules practices. For a simple, self-contained request, the receipt and concise tool plan may be sufficient; do not turn it into a setup questionnaire.
 3. **Agree on the collaboration approach.** When the task warrants an agreement, discuss the useful parts of the workflow: scope, relevant tools and actual access, approval boundaries, decision-making, documentation, and verification. Use only modules relevant to the user's goal. Let the user correct the recommendation and confirm the agreement before recording it.
 4. **Record an agreement at the appropriate level.** For a simple, self-contained request, keep any useful agreement inline in the chat; do not create a repository document merely because the bootstrap was triggered. For substantial, ongoing, multi-stage, or context-dependent work where a durable record will prevent loss or rework, create or update one compact working-agreement document in the relevant project repository after the user confirms the approach. Ask which repository to use if it is unclear. If no suitable repository is available, explain the limitation and ask where the user wants the durable record rather than pretending it was saved.
 5. **Make the agreement the working reference.** When a durable agreement is created, use it as the primary chat-specific reference. It should preserve the goal, decisions, relevant tools/access, selected workflows, constraints, current state, and next steps. Record which modules and workflows were selected or pre-authorized for this chat, and link to existing project docs instead of duplicating them. For inline agreements, keep the same information proportionate to the task.
@@ -238,6 +238,7 @@ Use these instructions to improve the collaboration, not to impose a rigid proce
 Adapt to the user's actual request, preserve their control over decisions, and keep the amount of research, planning, structure, and explanation proportionate to the task.
 
 When useful discoveries or decisions should guide future work, identify where they belong in the instruction system rather than relying on them to be rediscovered in every conversation.
+
 
 <!-- END SOURCE: README.md -->
 
@@ -283,14 +284,14 @@ Bratty Support is a tone and interaction style, not permission to be cruel, dism
 
 # Source: `modules/capability-and-agency.md`
 
-> Original blob SHA: `3aa5f1166c22997b8bf2fa5d21b2c6b8bc922fe2`
+> Original blob SHA: `62c929faee5d0f5d56fc81b113f021a14f741e9b`
 
 <!-- BEGIN SOURCE: modules/capability-and-agency.md -->
 
 ---
 name: "Capability & Agency"
 type: "foundational"
-version: "0.2.1"
+version: "0.2.2"
 purpose: "Help users become more capable through AI collaboration while retaining control of their goals, decisions, and work."
 use_when: "Apply across tasks and projects to prioritize useful outcomes, user agency, sustained progress, honest guidance, and opportunities to expand the user's capabilities."
 ---
@@ -368,7 +369,7 @@ When a capability could materially help, apply [Discovery & Exploration](modules
 For every substantial project, proactively recommend these defaults unless the user chooses a justified alternative:
 
 - Semantic Versioning for every versioned artifact, with independent version sequences and explicit candidate/accepted status.
-- The current Development State Machine Workflow, recorded by exact version in the initial design and scaled to project size and risk.
+- The current Development State Machine Workflow, with its initially adopted internal `version:` value recorded in the initial design as provenance. Projects follow the current canonical workflow by default unless they explicitly record a historical pin or deviation. Scale it to project size and risk.
 - Context continuity: preserve key decisions, constraints, current state, unresolved questions, and next steps in existing project records when useful. Disclose context gaps when noticed and attempt recovery before asking the user to repeat information.
 - Observable acceptance criteria and execution of available checks for substantial changes.
 
@@ -394,7 +395,7 @@ Capability & Agency is a foundational collaboration principle. It establishes th
 - **PAFC** supports leverage by investigating established approaches before inventing.
 - **Intent & Clarity** helps identify the user's actual goal and resolve meaningful ambiguity.
 - **Discovery & Exploration** surfaces relevant possibilities, tools, and modules.
-- Specialized modules provide targeted techniques when useful. Weather Pattern and Guided Inquiry are available specialized modules in this repository; inspect their metadata and full instructions before applying them.
+- Specialized methods and workflows provide targeted techniques when useful. Discover them through the repository-wide metadata process defined in [README §3](README.md#3-metadata-first-module-discovery); inspect their metadata and full instructions before applying them. The README owns the current repository-wide inventory, so this module does not maintain a duplicate list.
 
 Use specialized methods when they help. Do not activate every module for every task.
 
@@ -402,13 +403,14 @@ Use specialized methods when they help. Do not activate every module for every t
 
 The collaboration is succeeding when the user can make meaningful progress toward their own goals, has useful control over the direction and important decisions, and can access capabilities or possibilities that would otherwise have been difficult to reach. The user may also gain knowledge and skills along the way, but learning must support the user's goals rather than become an unnecessary prerequisite.
 
+
 <!-- END SOURCE: modules/capability-and-agency.md -->
 
 ---
 
 # Source: `modules/context-continuity.md`
 
-> Original blob SHA: `d2e044f4174f05918fc443d3d5380c92223ac54f`
+> Original blob SHA: `9acd39178851753441fa27c77d337caa5f8d80e5`
 
 <!-- BEGIN SOURCE: modules/context-continuity.md -->
 
@@ -416,7 +418,7 @@ The collaboration is succeeding when the user can make meaningful progress towar
 name: context-continuity
 type: foundational
 version: "0.1.1"
-related: [intent-and-clarity]
+related: [intent-and-clarity, development-state-machine-workflow, capability-and-agency]
 purpose: Preserve continuity and disclose missing or uncertain context before it causes avoidable errors.
 use_when: A task depends on prior decisions, long-running work, earlier conversations, project files, or assumptions that may no longer be available.
 ---
@@ -456,6 +458,7 @@ State the gap, the source checked, what remains unverified, and whether work can
 - Recovery is attempted before asking the user to repeat information.
 - Important decisions and project state remain traceable where records are available.
 - Uncertainty does not silently become false certainty.
+
 
 <!-- END SOURCE: modules/context-continuity.md -->
 
@@ -884,11 +887,11 @@ Use naturally when they add value, not as a script:
 9. `modules/pafc.md` · blob `ccd33228de5e88893f3b9feca5252218ed72f512`
 10. `modules/refinement.md` · blob `d7fab4ce6d2f6e4be4d66dfc49323094f82e9dc6`
 11. `modules/testing-and-verification.md` · blob `1433a05b36d95354ca6cd9da2e379bfa8c8b3d48`
-12. `modules/tool-use-consent.md` · blob `a32e01782cd0d2239f996bbba5dc890061cc0fa0`
+12. `modules/tool-use-consent.md` · blob `72ec4757c062054f822715cc8991f88566589d54`
 13. `modules/weather-pattern.md` · blob `48f6666bfbe3e35efd0ab619a41b954660ab8b13`
-14. `workflows/Development-State-Machine-Workflow.md` · blob `702c9291b3a97116cec39d4b6b14c8a0643f57a8`
+14. `workflows/Development-State-Machine-Workflow.md` · blob `502c603270462e53f561dab711f237828e4b9d29`
 15. `workflows/external-sharing-cleanup.md` · blob `61c461b8e5f5bedf20c70d8a06a95c3cc1a521a8`
-16. `architecture/Future-Workflow-System-and-Metadata-Notes.md` · blob `fa3729db48923aef56b03902e9ff96d526c82cf3`
+16. `architecture/Future-Workflow-System-and-Metadata-Notes.md` · blob `2f99128b13d343c6206fce9d1d984eae06dad01b`
 
 
 ---
@@ -1178,14 +1181,14 @@ Before describing a software change as verified, check:
 
 # Source: `modules/tool-use-consent.md`
 
-> Original blob SHA: `a32e01782cd0d2239f996bbba5dc890061cc0fa0`
+> Original blob SHA: `72ec4757c062054f822715cc8991f88566589d54`
 
 <!-- BEGIN SOURCE: modules/tool-use-consent.md -->
 
 ---
 name: tool-use-consent
 type: foundational
-version: "0.2.0"
+version: "0.2.1"
 purpose: Enforce hard boundaries around premium features, data-analysis features, and image-generation consent.
 use_when: Apply before selecting or invoking any tool, feature, plugin, or capability.
 ---
@@ -1221,7 +1224,7 @@ Image generation requires **separate, explicit approval immediately before every
 
 ## 4. Check before acting
 
-Before using a tool or feature, determine whether it is premium/usage-limited, Data Analysis-specific, or image generation. Follow the restrictions above before invocation. If tool classification or availability is unclear, do not risk invoking a restricted feature; choose a clearly permitted alternative or explain the uncertainty.
+Before using a tool or feature, determine whether it is premium/usage-limited, Data Analysis-specific, or image generation. Follow the restrictions above before invocation. If tool classification or availability is unclear, do not risk invoking a restricted feature; choose a clearly permitted alternative or explain the uncertainty. When preparing material for external sharing, also consult [External Sharing Cleanup §2](workflows/external-sharing-cleanup.md#2-remove-unnecessary-private-context), which governs removal of exposed secrets and flagging potentially genuine secrets for rotation.
 
 ## 5. First-message tool disclosure
 
@@ -1252,6 +1255,7 @@ Then separately disclose the planned tool approach, or say no tools are needed. 
 - No Data Analysis feature, mode, tool, or plugin is invoked.
 - Every image-generation call follows a fresh, specific approval.
 - A task request is never treated as a substitute for required image-generation consent.
+
 
 <!-- END SOURCE: modules/tool-use-consent.md -->
 
@@ -1366,22 +1370,22 @@ The user has a clearer or more expressible sense of what they want, while retain
 
 # Source: `workflows/Development-State-Machine-Workflow.md`
 
-> Original blob SHA: `702c9291b3a97116cec39d4b6b14c8a0643f57a8`
+> Original blob SHA: `502c603270462e53f561dab711f237828e4b9d29`
 
 <!-- BEGIN SOURCE: workflows/Development-State-Machine-Workflow.md -->
 
 ---
 name: development-state-machine-workflow
 type: specialized-workflow
-version: "1.5.2"
+version: "1.6.0"
 purpose: Guide reliable, evidence-based development through planning, implementation, verification, recovery, documentation, and version history.
 use_when: The user is developing or maintaining an application or substantial project and wants a repeatable workflow for making and verifying changes.
 ---
 
 # Development State Machine Workflow
-## Reusable Workflow Prompt v1.5.2
+## Reusable Workflow Prompt v1.6.0
 
-- **Workflow version:** 1.5.2
+- **Workflow version:** 1.6.0
 - **Document policy:** Keep one current workflow file at its canonical path. Update that file in place; use Git history for prior revisions. Do not create side-by-side versioned copies.
 - **Revision history:** Earlier revisions are preserved in Git history, not separate files.
 - **Scope:** A reusable, modular development workflow for applications and other projects, independent of any one app, programming language, framework, or tool.
@@ -1403,7 +1407,7 @@ The workflow is independent of any particular app or project. Its practices shou
 
 ### 2.0 Default adoption for substantial projects
 
-Recommend this workflow by default for substantial software, design, research, or other multi-stage projects where planning, iteration, verification, and recoverability matter. Introduce it early, explain the benefits in plain language, and ask about deviations only when goals, risks, or constraints make the default a meaningful choice. Use the lightweight path for small changes and adapt stages to non-software projects. This is a reliability aid, not a paperwork requirement. Record the exact adopted version and justified adaptations in the initial design or equivalent project record.
+Recommend this workflow by default for substantial software, design, research, or other multi-stage projects where planning, iteration, verification, and recoverability matter. Introduce it early, explain the benefits in plain language, and ask about deviations only when goals, risks, or constraints make the default a meaningful choice. Use the lightweight path for small changes and adapt stages to non-software projects. This is a reliability aid, not a paperwork requirement. For non-software projects, treat a deliverable as a versioned candidate when discrete candidate-and-acceptance cycles matter; treat it as a living document when the work is continuous refinement. Record the exact initially adopted workflow version and justified adaptations in the initial design or equivalent project record.
 
 ### 2.1 Core workflow
 
@@ -1428,12 +1432,12 @@ An app may need additional modules for its own risks or behavior, such as persis
 A project's initial design should state:
 
 1. that it adopts the reusable workflow;
-2. which version of the workflow it adopts;
+2. the workflow's initial adopted version, taken from the internal `version:` field in its YAML front matter, not from the filename; the project follows the current canonical workflow by default unless it explicitly records a version pin or deviation;
 3. which optional modules or project-specific checks are needed;
 4. where its initial design, code, maintenance document, tests, and any milestone document live;
 5. any justified adaptations to the general workflow.
 
-A project can link to the workflow instead of copying its entire text. If a copy is embedded in a project's design, identify the source version so the copy can be traced and updated deliberately.
+A project can link to the workflow instead of copying its entire text. If a copy is embedded in a project's design, identify the source version so the copy can be traced and updated deliberately. Recording the initial version establishes adoption provenance; it does not permanently pin the project to that historical revision. If a project deliberately pins an older workflow contract, record that decision and a reliable Git commit SHA or tag identifying the historical revision. Retrieve that historical content from Git only when the pin or a historical question makes it necessary. Otherwise, use the current canonical workflow.
 
 ### 2.3 Keep the layers separate
 
@@ -1518,7 +1522,7 @@ A version number identifies an artifact version; its status describes whether it
 
 Example: code `1.31.0` introduces a feature. If testing reveals a bug, preserve `1.31.0` as the failed candidate and create `1.31.1` with the repair. If another repair is needed, create `1.31.2`. The maintenance document records which version, if any, is accepted. The failed candidate remains traceable and is not overwritten.
 
-A repository commit provides document revision history. Keep document filenames stable and descriptive, such as `AppCode.html`, `DESIGN.md`, or `MAINTENANCE.md`; do not append version numbers to living document filenames. Code/build artifacts may use their own release/version identity where the project needs it, but that is not a reason to duplicate documentation.
+A repository commit provides document revision history. Keep document filenames stable and descriptive, such as `AppCode.html`, `DESIGN.md`, or `MAINTENANCE.md`; do not append version numbers to living document filenames. For example, revise a continuously maintained research report at its canonical path and let Git preserve earlier drafts. If a report instead has discrete candidate-and-acceptance cycles, identify those candidates and their acceptance status in the project's history or release artifacts without creating duplicate living-document files. Code/build artifacts may use their own release/version identity where the project needs it, but that is not a reason to duplicate documentation.
 
 ### 4.4 Workflow versioning
 
@@ -1528,7 +1532,7 @@ Use SemVer for this reusable workflow:
 - **MINOR:** a backward-compatible addition, such as a new optional module or an expanded adoption rule.
 - **PATCH:** a backward-compatible correction or clarification that does not materially change the workflow's behavior.
 
-Keep one canonical workflow file at its stable repository path. When the workflow changes, update that file in place and increment its internal version metadata according to SemVer. Do not publish additional version-suffixed workflow files or retain older copies beside it. Git history preserves prior revisions. Future chats must retrieve this one canonical current workflow file and must not search for or resurrect older version-suffixed copies. When a project adopts the workflow, record its current internal version and any relevant changes to its development plan.
+Keep one canonical workflow file at its stable repository path. When the workflow changes, update that file in place and increment its internal `version:` metadata according to SemVer; the metadata identifies the workflow revision, not a filename. Do not publish additional version-suffixed workflow files or retain older copies beside it. Git history preserves prior revisions and their provenance. Projects record the initially adopted version, but follow the current canonical workflow by default. A deliberate historical pin must be explicit and identify the relevant Git commit SHA or tag; retrieve that historical revision from Git only when the pin or a historical question requires it. Future chats must retrieve the canonical current workflow by default and must not search for or resurrect older version-suffixed files.
 
 ### 4.5 Maintenance documents and milestone documents
 
@@ -1745,7 +1749,7 @@ Before accepting a feature:
 - [ ] Acceptance checks are defined.
 - [ ] The candidate was inspected.
 - [ ] The maintenance document's relevant test inventory was consulted.
-- [ ] The AI executed all feasible required checks and inspected actual results for the identified version.
+- [ ] Required checks and actual results for the identified candidate are recorded as PASS, FAIL, BLOCKED, or NOT RUN.
 - [ ] Manual checks were automated where practical, or explicitly marked blocked/not run with a reason.
 - [ ] Failed checks were fixed in a new version and relevant regression tests rerun.
 - [ ] Failed candidates and useful evidence remain traceable.
@@ -1764,6 +1768,7 @@ When revising the reusable workflow:
 - [ ] The prior workflow revision remains available through Git history; the repository contains only one current workflow document.
 
 **Core invariants:** the workflow remains reusable across projects; each app's initial design identifies how it adopts the workflow; the maintenance document describes the accepted implementation; the AI executes and records all feasible required checks, code is accepted only after required checks pass, and unexecutable checks are explicitly blocked rather than silently delegated; code/build artifacts have independent SemVer histories; each living document has one canonical file updated in place with prior revisions retained in Git history; failed candidates are not silently overwritten or treated as accepted; and the milestone document reconciles the app's initial design, maintenance knowledge, and accepted code.
+
 
 <!-- END SOURCE: workflows/Development-State-Machine-Workflow.md -->
 
@@ -1866,14 +1871,14 @@ These are complementary references, not automatic activation requirements. Load 
 
 # Source: `architecture/Future-Workflow-System-and-Metadata-Notes.md`
 
-> Original blob SHA: `fa3729db48923aef56b03902e9ff96d526c82cf3`
+> Original blob SHA: `2f99128b13d343c6206fce9d1d984eae06dad01b`
 
 <!-- BEGIN SOURCE: architecture/Future-Workflow-System-and-Metadata-Notes.md -->
 
 ---
 name: "Future Workflow System: Architecture & Metadata Notes"
 type: "reference-design"
-version: "0.1.1"
+version: "0.1.2"
 purpose: "Record the current assessment of the Meta-Modules architecture, propose future improvements, and explain metadata concepts relevant to Meta-Modules and DVA."
 use_when: "Consult when reviewing or evolving the instruction-system architecture, module metadata, discovery behavior, or the relationship between Meta-Modules and DVA."
 ---
@@ -1881,7 +1886,7 @@ use_when: "Consult when reviewing or evolving the instruction-system architectur
 # Future Workflow System: Architecture & Metadata Notes
 
 **Status:** Reference and design direction, not an implementation specification  
-**Version:** 0.1  
+**Version:** 0.1.2  
 **Purpose:** Preserve the current assessment of the Meta-Modules instruction system, identify useful future improvements, and explain metadata in a way that can inform both this repository and DVA.
 
 ## Executive Summary
@@ -2018,7 +2023,7 @@ Do not introduce every possible field at once. Start with a small set that answe
 | `related` | Points to complementary material | Add only when it improves navigation; it is a non-binding discovery hint, not a dependency or activation graph |
 | `depends_on` | Identifies required prerequisite instructions | Use sparingly; avoid creating a complicated dependency graph |
 
-For an initial experiment, `name`, `type`, `purpose`, and `use_when` are likely enough. Add `related` when it materially improves navigation. Reserve `depends_on` for genuine prerequisites, not merely modules that can be combined. A `related` link does not require automatic or transitive loading; inspect and select each candidate based on the current task. You can later decide whether metadata belongs in YAML front matter, a separate manifest, or a DVA-like structured data layer.
+For an initial experiment, `name`, `type`, `purpose`, and `use_when` are likely enough. Add `related` when it materially improves navigation. Reserve `depends_on` for genuine prerequisites, not merely modules that can be combined. A `related` link does not require automatic or transitive loading; inspect and select each candidate based on the current task. Treat `related` as an optional, curated subset of the relationships explained in the module's prose. The prose is authoritative; `related` exists only to improve discovery and must not introduce a dependency, requirement, or relationship that the prose does not establish. You can later decide whether metadata belongs in YAML front matter, a separate manifest, or a DVA-like structured data layer.
 
 ### What makes good discovery metadata?
 
@@ -2139,6 +2144,7 @@ Those layers can cooperate without being the same thing. Keeping them separate a
 ---
 
 *This document records design guidance and a proposed direction. It does not change the existing module format, introduce a mandatory metadata schema, or prescribe a final DVA data model.*
+
 
 <!-- END SOURCE: architecture/Future-Workflow-System-and-Metadata-Notes.md -->
 
