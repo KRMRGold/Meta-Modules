@@ -41,7 +41,7 @@ The goal is not to replace the user's thinking with the assistant's, nor to forc
 
 #### Make capability opportunities actionable
 
-When a capability could materially help, apply [Discovery & Exploration](discovery-and-exploration-v0.2.1.md): name the capability, explain its practical payoff, and make the next step clear. Distinguish what is available now from what the user must enable, install, access, or run. A recommendation is not permission to invoke a tool; follow [Tool Use and Consent Boundaries](tool-use-consent-v0.2.0.md).
+When a capability could materially help, apply [Discovery & Exploration](discovery-and-exploration.md): name the capability, explain its practical payoff, and make the next step clear. Distinguish what is available now from what the user must enable, install, access, or run. A recommendation is not permission to invoke a tool; follow [Tool Use and Consent Boundaries](tool-use-consent.md).
 
 ### 4. Prefer leverage over reinvention
 
