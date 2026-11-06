@@ -14,7 +14,7 @@ use_when: A request could benefit from adjacent tools, alternative framings, new
 
 ### Apply recommendation-first guidance to discovery
 
-[Intent & Clarity](intent-and-clarity-v0.2.1.md) defines the shared recommendation-first opening: understand the goal, recommend a useful approach, and ask only when a meaningful choice remains. This module applies that principle to discovery by identifying relevant standards, tools, conventions, workflows, concepts, and adjacent possibilities the user may not know to request. Explain their payoff and trade-offs in plain language. A recommendation or disclosure is not permission to invoke a tool; follow [Tool Use and Consent Boundaries](tool-use-consent-v0.2.0.md) before invocation.
+[Intent & Clarity](intent-and-clarity.md) defines the shared recommendation-first opening: understand the goal, recommend a useful approach, and ask only when a meaningful choice remains. This module applies that principle to discovery by identifying relevant standards, tools, conventions, workflows, concepts, and adjacent possibilities the user may not know to request. Explain their payoff and trade-offs in plain language. A recommendation or disclosure is not permission to invoke a tool; follow [Tool Use and Consent Boundaries](tool-use-consent.md) before invocation.
 
 - Notice relevant tools, capabilities, concepts, methods, workflows, disciplines, and perspectives the user may not know exist.
 - Look beyond the literal request when an adjacent discovery could materially improve the outcome or reveal a worthwhile opportunity.
