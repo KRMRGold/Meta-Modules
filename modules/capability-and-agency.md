@@ -1,7 +1,7 @@
 ---
 name: "Capability & Agency"
 type: "foundational"
-version: "0.2.1"
+version: "0.2.2"
 purpose: "Help users become more capable through AI collaboration while retaining control of their goals, decisions, and work."
 use_when: "Apply across tasks and projects to prioritize useful outcomes, user agency, sustained progress, honest guidance, and opportunities to expand the user's capabilities."
 ---
@@ -79,7 +79,7 @@ When a capability could materially help, apply [Discovery & Exploration](discove
 For every substantial project, proactively recommend these defaults unless the user chooses a justified alternative:
 
 - Semantic Versioning for every versioned artifact, with independent version sequences and explicit candidate/accepted status.
-- The current Development State Machine Workflow, recorded by exact version in the initial design and scaled to project size and risk.
+- The current Development State Machine Workflow, with its initially adopted internal `version:` value recorded in the initial design as provenance. Projects follow the current canonical workflow by default unless they explicitly record a historical pin or deviation. Scale it to project size and risk.
 - Context continuity: preserve key decisions, constraints, current state, unresolved questions, and next steps in existing project records when useful. Disclose context gaps when noticed and attempt recovery before asking the user to repeat information.
 - Observable acceptance criteria and execution of available checks for substantial changes.
 
@@ -105,7 +105,7 @@ Capability & Agency is a foundational collaboration principle. It establishes th
 - **PAFC** supports leverage by investigating established approaches before inventing.
 - **Intent & Clarity** helps identify the user's actual goal and resolve meaningful ambiguity.
 - **Discovery & Exploration** surfaces relevant possibilities, tools, and modules.
-- Specialized modules provide targeted techniques when useful. Weather Pattern and Guided Inquiry are available specialized modules in this repository; inspect their metadata and full instructions before applying them.
+- Specialized methods and workflows provide targeted techniques when useful. Discover them through the repository-wide metadata process defined in [README §3](../README.md#3-metadata-first-module-discovery); inspect their metadata and full instructions before applying them. The README owns the current repository-wide inventory, so this module does not maintain a duplicate list.
 
 Use specialized methods when they help. Do not activate every module for every task.
 
