@@ -1,15 +1,15 @@
 ---
 name: development-state-machine-workflow
 type: specialized-workflow
-version: "1.5.2"
+version: "1.6.0"
 purpose: Guide reliable, evidence-based development through planning, implementation, verification, recovery, documentation, and version history.
 use_when: The user is developing or maintaining an application or substantial project and wants a repeatable workflow for making and verifying changes.
 ---
 
 # Development State Machine Workflow
-## Reusable Workflow Prompt v1.5.2
+## Reusable Workflow Prompt v1.6.0
 
-- **Workflow version:** 1.5.2
+- **Workflow version:** 1.6.0
 - **Document policy:** Keep one current workflow file at its canonical path. Update that file in place; use Git history for prior revisions. Do not create side-by-side versioned copies.
 - **Revision history:** Earlier revisions are preserved in Git history, not separate files.
 - **Scope:** A reusable, modular development workflow for applications and other projects, independent of any one app, programming language, framework, or tool.
@@ -31,7 +31,7 @@ The workflow is independent of any particular app or project. Its practices shou
 
 ### 2.0 Default adoption for substantial projects
 
-Recommend this workflow by default for substantial software, design, research, or other multi-stage projects where planning, iteration, verification, and recoverability matter. Introduce it early, explain the benefits in plain language, and ask about deviations only when goals, risks, or constraints make the default a meaningful choice. Use the lightweight path for small changes and adapt stages to non-software projects. This is a reliability aid, not a paperwork requirement. Record the exact adopted version and justified adaptations in the initial design or equivalent project record.
+Recommend this workflow by default for substantial software, design, research, or other multi-stage projects where planning, iteration, verification, and recoverability matter. Introduce it early, explain the benefits in plain language, and ask about deviations only when goals, risks, or constraints make the default a meaningful choice. Use the lightweight path for small changes and adapt stages to non-software projects. This is a reliability aid, not a paperwork requirement. For non-software projects, treat a deliverable as a versioned candidate when discrete candidate-and-acceptance cycles matter; treat it as a living document when the work is continuous refinement. Record the exact initially adopted workflow version and justified adaptations in the initial design or equivalent project record.
 
 ### 2.1 Core workflow
 
@@ -56,12 +56,12 @@ An app may need additional modules for its own risks or behavior, such as persis
 A project's initial design should state:
 
 1. that it adopts the reusable workflow;
-2. which version of the workflow it adopts;
+2. the workflow's initial adopted version, taken from the internal `version:` field in its YAML front matter, not from the filename; the project follows the current canonical workflow by default unless it explicitly records a version pin or deviation;
 3. which optional modules or project-specific checks are needed;
 4. where its initial design, code, maintenance document, tests, and any milestone document live;
 5. any justified adaptations to the general workflow.
 
-A project can link to the workflow instead of copying its entire text. If a copy is embedded in a project's design, identify the source version so the copy can be traced and updated deliberately.
+A project can link to the workflow instead of copying its entire text. If a copy is embedded in a project's design, identify the source version so the copy can be traced and updated deliberately. Recording the initial version establishes adoption provenance; it does not permanently pin the project to that historical revision. If a project deliberately pins an older workflow contract, record that decision and a reliable Git commit SHA or tag identifying the historical revision. Retrieve that historical content from Git only when the pin or a historical question makes it necessary. Otherwise, use the current canonical workflow.
 
 ### 2.3 Keep the layers separate
 
@@ -146,7 +146,7 @@ A version number identifies an artifact version; its status describes whether it
 
 Example: code `1.31.0` introduces a feature. If testing reveals a bug, preserve `1.31.0` as the failed candidate and create `1.31.1` with the repair. If another repair is needed, create `1.31.2`. The maintenance document records which version, if any, is accepted. The failed candidate remains traceable and is not overwritten.
 
-A repository commit provides document revision history. Keep document filenames stable and descriptive, such as `AppCode.html`, `DESIGN.md`, or `MAINTENANCE.md`; do not append version numbers to living document filenames. Code/build artifacts may use their own release/version identity where the project needs it, but that is not a reason to duplicate documentation.
+A repository commit provides document revision history. Keep document filenames stable and descriptive, such as `AppCode.html`, `DESIGN.md`, or `MAINTENANCE.md`; do not append version numbers to living document filenames. For example, revise a continuously maintained research report at its canonical path and let Git preserve earlier drafts. If a report instead has discrete candidate-and-acceptance cycles, identify those candidates and their acceptance status in the project's history or release artifacts without creating duplicate living-document files. Code/build artifacts may use their own release/version identity where the project needs it, but that is not a reason to duplicate documentation.
 
 ### 4.4 Workflow versioning
 
@@ -156,7 +156,7 @@ Use SemVer for this reusable workflow:
 - **MINOR:** a backward-compatible addition, such as a new optional module or an expanded adoption rule.
 - **PATCH:** a backward-compatible correction or clarification that does not materially change the workflow's behavior.
 
-Keep one canonical workflow file at its stable repository path. When the workflow changes, update that file in place and increment its internal version metadata according to SemVer. Do not publish additional version-suffixed workflow files or retain older copies beside it. Git history preserves prior revisions. Future chats must retrieve this one canonical current workflow file and must not search for or resurrect older version-suffixed copies. When a project adopts the workflow, record its current internal version and any relevant changes to its development plan.
+Keep one canonical workflow file at its stable repository path. When the workflow changes, update that file in place and increment its internal `version:` metadata according to SemVer; the metadata identifies the workflow revision, not a filename. Do not publish additional version-suffixed workflow files or retain older copies beside it. Git history preserves prior revisions and their provenance. Projects record the initially adopted version, but follow the current canonical workflow by default. A deliberate historical pin must be explicit and identify the relevant Git commit SHA or tag; retrieve that historical revision from Git only when the pin or a historical question requires it. Future chats must retrieve the canonical current workflow by default and must not search for or resurrect older version-suffixed files.
 
 ### 4.5 Maintenance documents and milestone documents
 
@@ -373,7 +373,7 @@ Before accepting a feature:
 - [ ] Acceptance checks are defined.
 - [ ] The candidate was inspected.
 - [ ] The maintenance document's relevant test inventory was consulted.
-- [ ] The AI executed all feasible required checks and inspected actual results for the identified version.
+- [ ] Required checks and actual results for the identified candidate are recorded as PASS, FAIL, BLOCKED, or NOT RUN.
 - [ ] Manual checks were automated where practical, or explicitly marked blocked/not run with a reason.
 - [ ] Failed checks were fixed in a new version and relevant regression tests rerun.
 - [ ] Failed candidates and useful evidence remain traceable.
