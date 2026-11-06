@@ -11,7 +11,7 @@ use_when: The user is developing or maintaining an application or substantial pr
 
 - **Workflow version:** 1.5.2
 - **Document policy:** Keep one current workflow file at its canonical path. Update that file in place; use Git history for prior revisions. Do not create side-by-side versioned copies.
-- **Previous version:** 1.5.1
+- **Revision history:** Earlier revisions are preserved in Git history, not separate files.
 - **Scope:** A reusable, modular development workflow for applications and other projects, independent of any one app, programming language, framework, or tool.
 - **Purpose:** Help people develop reliable applications without requiring them to already know the best development methods. The workflow guides design, implementation, verification, recovery, documentation, and version history, using evidence from actual work to improve the process over time.
 
@@ -316,7 +316,7 @@ Do not treat these labels as interchangeable. Source inspection cannot establish
 
 ### Maintenance document
 
-After a candidate passes the acceptance gate, update and version the app's maintenance document with:
+After a candidate passes the acceptance gate, update the app's one canonical maintenance document in place with:
 
 - current accepted app-code version and exact source path, commit, or other recoverable reference;
 - implemented behavior and important design decisions;
