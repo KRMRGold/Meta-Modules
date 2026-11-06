@@ -1,7 +1,7 @@
 ---
 name: "Future Workflow System: Architecture & Metadata Notes"
 type: "reference-design"
-version: "0.1.1"
+version: "0.1.2"
 purpose: "Record the current assessment of the Meta-Modules architecture, propose future improvements, and explain metadata concepts relevant to Meta-Modules and DVA."
 use_when: "Consult when reviewing or evolving the instruction-system architecture, module metadata, discovery behavior, or the relationship between Meta-Modules and DVA."
 ---
@@ -9,7 +9,7 @@ use_when: "Consult when reviewing or evolving the instruction-system architectur
 # Future Workflow System: Architecture & Metadata Notes
 
 **Status:** Reference and design direction, not an implementation specification  
-**Version:** 0.1  
+**Version:** 0.1.2  
 **Purpose:** Preserve the current assessment of the Meta-Modules instruction system, identify useful future improvements, and explain metadata in a way that can inform both this repository and DVA.
 
 ## Executive Summary
@@ -146,7 +146,7 @@ Do not introduce every possible field at once. Start with a small set that answe
 | `related` | Points to complementary material | Add only when it improves navigation; it is a non-binding discovery hint, not a dependency or activation graph |
 | `depends_on` | Identifies required prerequisite instructions | Use sparingly; avoid creating a complicated dependency graph |
 
-For an initial experiment, `name`, `type`, `purpose`, and `use_when` are likely enough. Add `related` when it materially improves navigation. Reserve `depends_on` for genuine prerequisites, not merely modules that can be combined. A `related` link does not require automatic or transitive loading; inspect and select each candidate based on the current task. You can later decide whether metadata belongs in YAML front matter, a separate manifest, or a DVA-like structured data layer.
+For an initial experiment, `name`, `type`, `purpose`, and `use_when` are likely enough. Add `related` when it materially improves navigation. Reserve `depends_on` for genuine prerequisites, not merely modules that can be combined. A `related` link does not require automatic or transitive loading; inspect and select each candidate based on the current task. Treat `related` as an optional, curated subset of the relationships explained in the module's prose. The prose is authoritative; `related` exists only to improve discovery and must not introduce a dependency, requirement, or relationship that the prose does not establish. You can later decide whether metadata belongs in YAML front matter, a separate manifest, or a DVA-like structured data layer.
 
 ### What makes good discovery metadata?
 
