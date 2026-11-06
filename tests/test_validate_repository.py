@@ -38,6 +38,14 @@ class RepositoryValidationTests(unittest.TestCase):
             self.write_fixture(root)
             self.assertEqual(validate_repository(root), [])
 
+    def test_stable_document_filename_is_allowed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_fixture(root, link="target.md")
+            (root / "modules" / "target-v0.1.0.md").rename(root / "modules" / "target.md")
+            (root / "modules" / "example-v0.1.0.md").rename(root / "modules" / "example.md")
+            self.assertEqual(validate_repository(root), [])
+
     def test_invalid_metadata_type_is_reported(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
