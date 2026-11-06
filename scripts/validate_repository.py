@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate metadata, SemVer identifiers, versioned filenames, and local Markdown links."""
+"""Validate metadata, optional filename-version consistency, and local Markdown links."""
 from __future__ import annotations
 
 import re
@@ -69,8 +69,6 @@ def validate_repository(root: Path = ROOT) -> list[str]:
             filename_semver = ".".join(filename_version.groups())
             if filename_semver != str(version):
                 errors.append(f"{rel}: filename version {filename_semver!r} does not match front matter version {version!r}")
-        elif version is not None:
-            errors.append(f"{rel}: versioned module/workflow/architecture filename must end in -vMAJOR.MINOR.PATCH.md")
 
     for path in md_files:
         text = path.read_text(encoding="utf-8")
