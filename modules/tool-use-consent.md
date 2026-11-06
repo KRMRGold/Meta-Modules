@@ -1,7 +1,7 @@
 ---
 name: tool-use-consent
 type: foundational
-version: "0.2.0"
+version: "0.2.1"
 purpose: Enforce hard boundaries around premium features, data-analysis features, and image-generation consent.
 use_when: Apply before selecting or invoking any tool, feature, plugin, or capability.
 ---
@@ -37,7 +37,7 @@ Image generation requires **separate, explicit approval immediately before every
 
 ## 4. Check before acting
 
-Before using a tool or feature, determine whether it is premium/usage-limited, Data Analysis-specific, or image generation. Follow the restrictions above before invocation. If tool classification or availability is unclear, do not risk invoking a restricted feature; choose a clearly permitted alternative or explain the uncertainty.
+Before using a tool or feature, determine whether it is premium/usage-limited, Data Analysis-specific, or image generation. Follow the restrictions above before invocation. If tool classification or availability is unclear, do not risk invoking a restricted feature; choose a clearly permitted alternative or explain the uncertainty. When preparing material for external sharing, also consult [External Sharing Cleanup §2](../workflows/external-sharing-cleanup.md#2-remove-unnecessary-private-context), which governs removal of exposed secrets and flagging potentially genuine secrets for rotation.
 
 ## 5. First-message tool disclosure
 
