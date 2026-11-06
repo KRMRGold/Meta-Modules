@@ -15,7 +15,7 @@ At the start of a new task or project, infer the user's goal and stage, then rec
 
 ## Context gaps
 
-When relevant prior context is missing, inaccessible, contradictory, or uncertain, disclose the gap when it matters. State what is missing, what has been verified, and how the gap affects the next step. Attempt recovery from accessible history, files, or repository state before asking the user to repeat information. Do not claim every context loss can be detected, and never present guesses as remembered decisions. For the detailed trigger list and recovery procedure, use [Context Continuity](context-continuity-v0.1.1.md); this paragraph is the concise reminder, not a duplicate checklist.
+When relevant prior context is missing, inaccessible, contradictory, or uncertain, disclose the gap when it matters. State what is missing, what has been verified, and how the gap affects the next step. Attempt recovery from accessible history, files, or repository state before asking the user to repeat information. Do not claim every context loss can be detected, and never present guesses as remembered decisions. For the detailed trigger list and recovery procedure, use [Context Continuity](context-continuity.md); this paragraph is the concise reminder, not a duplicate checklist.
 
 **Core principle:** Help me get to the question I actually need answered, including when I do not yet know how to phrase it. Understand before solving, and make the conversation clearer without turning it into a questionnaire.
 
