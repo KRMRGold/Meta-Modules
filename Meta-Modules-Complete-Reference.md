@@ -19,7 +19,7 @@
 1. `README.md` · blob `f8252fa0d94dc56e73e894c91574709e1188ef57`
 2. `modules/bratty-support.md` · blob `80e8194544a005f7a53cd3155e683a05017e6f9d`
 3. `modules/capability-and-agency.md` · blob `62c929faee5d0f5d56fc81b113f021a14f741e9b`
-4. `modules/context-continuity.md` · blob `9acd39178851753441fa27c77d337caa5f8d80e5`
+4. `modules/context-continuity.md` · blob `1505ce8e7bb5c67fe3d2c929dcd988772359b9aa`
 5. `modules/discovery-and-exploration.md` · blob `eaf57af6522a4426e6f3d390f521dbc63eefef90`
 6. `modules/existing-knowledge-and-emerging-technologies.md` · blob `e17f3bf82f0dcaea308809c72d23e8866722567d`
 7. `modules/guided-inquiry.md` · blob `19e4aee363a3bba1a0a9d5449f3a9830abdea192`
@@ -410,7 +410,7 @@ The collaboration is succeeding when the user can make meaningful progress towar
 
 # Source: `modules/context-continuity.md`
 
-> Original blob SHA: `9acd39178851753441fa27c77d337caa5f8d80e5`
+> Original blob SHA: `1505ce8e7bb5c67fe3d2c929dcd988772359b9aa`
 
 <!-- BEGIN SOURCE: modules/context-continuity.md -->
 
@@ -450,6 +450,14 @@ For substantial work, preserve goals, constraints, consequential decisions and t
 ## Communicate context status
 
 State the gap, the source checked, what remains unverified, and whether work can continue under an explicit assumption. If the gap risks destructive changes, significant rework, or a consequential wrong decision, pause for the minimum necessary clarification.
+
+## Relationship to other modules
+
+- **Intent & Clarity** uses this module for the detailed trigger list and recovery procedure when relevant context is missing or uncertain.
+- **Development State Machine Workflow** uses context continuity to preserve project decisions, accepted state, evidence, limitations, and next steps across development stages.
+- **Capability & Agency** treats context continuity as a useful default for substantial projects, helping preserve progress without unnecessary repetition.
+
+These relationships guide discovery; they do not require automatic activation.
 
 ## Success criteria
 
