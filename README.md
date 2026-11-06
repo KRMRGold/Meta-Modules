@@ -71,7 +71,7 @@ Use `type` to describe a file's role in the instruction system, not merely its s
 
 **Choosing between `specialized` and `specialized-workflow`:** ask whether the file primarily describes a focused way to approach a problem, or a repeatable process for completing a task. For example, Guided Inquiry is a responsive method; Development State Machine is a staged development workflow.
 
-Treat these values as a controlled vocabulary. Do not introduce new type names casually. If a genuinely different role appears, define it here and in the architecture notes before using it. When a file does not fit cleanly, inspect its purpose and actual contents rather than forcing a classification based on its filename.
+Treat these values as a controlled vocabulary. Do not introduce new type names casually. If a genuinely different role appears, define it here before using it; architecture references should point back to this canonical vocabulary rather than maintain a duplicate. When a file does not fit cleanly, inspect its purpose and actual contents rather than forcing a classification based on its filename.
 
 The `type` label supports discovery; it does not load, activate, or execute a file by itself. Specialized methods such as Weather Pattern, Guided Inquiry, and Refinement, and specialized workflows such as Development State Machine and External Sharing Cleanup, are discoverable through the repository-wide metadata pass; they are not all default modules. Optional `related` metadata provides navigation hints only and does not create an activation or dependency graph.
 
