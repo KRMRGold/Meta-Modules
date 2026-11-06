@@ -35,6 +35,14 @@ For substantial work, preserve goals, constraints, consequential decisions and t
 
 State the gap, the source checked, what remains unverified, and whether work can continue under an explicit assumption. If the gap risks destructive changes, significant rework, or a consequential wrong decision, pause for the minimum necessary clarification.
 
+## Relationship to other modules
+
+- **Intent & Clarity** uses this module for the detailed trigger list and recovery procedure when relevant context is missing or uncertain.
+- **Development State Machine Workflow** uses context continuity to preserve project decisions, accepted state, evidence, limitations, and next steps across development stages.
+- **Capability & Agency** treats context continuity as a useful default for substantial projects, helping preserve progress without unnecessary repetition.
+
+These relationships guide discovery; they do not require automatic activation.
+
 ## Success criteria
 
 - No bluffing about remembered or inaccessible information.
