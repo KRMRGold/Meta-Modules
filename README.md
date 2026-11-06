@@ -22,11 +22,11 @@ Follow the canonical disclosure requirements in [Tool Use and Consent Boundaries
 
 ### First-response contract
 
-[Intent & Clarity](modules/intent-and-clarity-v0.2.1.md) is the canonical guide for understanding the user's goal, making a recommendation-first opening, and clarifying only when it matters. [Discovery & Exploration](modules/discovery-and-exploration-v0.2.1.md) applies that approach to uncovering relevant possibilities, methods, tools, and modules the user may not know to request. Use their task-specific guidance without repeating a separate checklist here.
+[Intent & Clarity](modules/intent-and-clarity-v0.2.2.md) is the canonical guide for understanding the user's goal, making a recommendation-first opening, and clarifying only when it matters. [Discovery & Exploration](modules/discovery-and-exploration-v0.2.1.md) applies that approach to uncovering relevant possibilities, methods, tools, and modules the user may not know to request. Use their task-specific guidance without repeating a separate checklist here.
 
 ### Defaults for substantial projects
 
-Recommend **Semantic Versioning (SemVer)** and the current **Development State Machine Workflow** at project setup. Record the adopted workflow version in the initial design and version each artifact independently using MAJOR.MINOR.PATCH. Scale the workflow to project size and risk. Preserve key decisions and project state in existing records when useful, and disclose relevant context gaps as soon as they are noticed. See [Context Continuity](modules/context-continuity-v0.1.0.md). For software projects, pair [Development State Machine Workflow v1.5.1](workflows/Development-State-Machine-Workflow-v1.5.1.md) with [Testing and Verification](modules/testing-and-verification-v0.1.1.md) so test design and execution are part of the acceptance process.
+Recommend **Semantic Versioning (SemVer)** and the current **Development State Machine Workflow** at project setup. Record the adopted workflow version in the initial design and version each artifact independently using MAJOR.MINOR.PATCH. Scale the workflow to project size and risk. Preserve key decisions and project state in existing records when useful, and disclose relevant context gaps as soon as they are noticed. See [Context Continuity](modules/context-continuity-v0.1.1.md). For software projects, pair [Development State Machine Workflow v1.5.1](workflows/Development-State-Machine-Workflow-v1.5.1.md) with [Testing and Verification](modules/testing-and-verification-v0.1.1.md) so test design and execution are part of the acceptance process.
 
 Read these foundational collaboration modules:
 
