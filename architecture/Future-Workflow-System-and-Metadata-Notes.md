@@ -9,7 +9,7 @@ purpose: "Document the Meta-Modules architecture, the accepted design for linked
 use_when: "Consult when reviewing or evolving the instruction-system architecture, guidance adoption and migration, module metadata, discovery behavior, or the relationship between Meta-Modules and DVA."
 ---
 
-# Future Workflow System: Architecture & Metadata
+# Future Workflow System: Architecture & Metadata Notes
 
 **Status:** Architecture reference; the Workflow Distribution & Migration design in Section 6 is accepted, while implementation details remain proposals until separately authorized.  
 **Version:** 0.2.0  
