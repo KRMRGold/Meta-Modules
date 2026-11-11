@@ -6,7 +6,7 @@ from scripts.validate_repository import validate_repository
 
 
 class RepositoryValidationTests(unittest.TestCase):
-    def write_fixture(self, root: Path, *, module_type="foundational", link="target-v0.1.0.md"):
+    def write_fixture(self, root: Path, *, module_type="foundational", link="target-v0.1.0.md", related=None):
         module_dir = root / "modules"
         module_dir.mkdir(parents=True, exist_ok=True)
         (root / "README.md").write_text("# Test\n", encoding="utf-8")
@@ -27,8 +27,9 @@ class RepositoryValidationTests(unittest.TestCase):
             'version: "0.1.0"\n'
             'purpose: "A test module."\n'
             'use_when: "When testing."\n'
-            "---\n\n"
-            f"[Entry]({link})\n",
+            + (f"related: [{related}]\n" if related is not None else "")
+            + "---\n\n"
+            + f"[Entry]({link})\n",
             encoding="utf-8",
         )
 
@@ -71,6 +72,19 @@ class RepositoryValidationTests(unittest.TestCase):
             example.rename(renamed)
             errors = validate_repository(root)
             self.assertTrue(any("filename version" in error for error in errors), errors)
+
+    def test_related_filename_stem_must_match_exact_case(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_fixture(root, related="Target-v0.1.0")
+            errors = validate_repository(root)
+            self.assertTrue(any("exact, case-sensitive Markdown filename stem" in error for error in errors), errors)
+
+    def test_related_filename_stem_accepts_exact_match(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_fixture(root, related="target-v0.1.0")
+            self.assertEqual(validate_repository(root), [])
 
     def test_broken_local_link_is_reported(self):
         with tempfile.TemporaryDirectory() as tmp:

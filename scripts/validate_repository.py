@@ -47,6 +47,8 @@ def validate_repository(root: Path = ROOT) -> list[str]:
     ]
     if not metadata_files:
         errors.append("No metadata-bearing module/workflow/architecture files found.")
+    # `related` values are exact, case-sensitive filename stems, not display names.
+    related_targets = {path.stem for path in metadata_files}
     for path in metadata_files:
         data, error = read_front_matter(path)
         rel = path.relative_to(root).as_posix()
@@ -61,6 +63,14 @@ def validate_repository(root: Path = ROOT) -> list[str]:
         for key in REQUIRED_FIELDS:
             if key in data and (data[key] is None or not str(data[key]).strip()):
                 errors.append(f"{rel}: field {key!r} must not be empty")
+        related = data.get("related", [])
+        if related is not None:
+            if not isinstance(related, list):
+                errors.append(f"{rel}: field 'related' must be a YAML list of exact filename stems")
+            else:
+                for slug in related:
+                    if not isinstance(slug, str) or slug not in related_targets:
+                        errors.append(f"{rel}: related entry {slug!r} does not match an exact, case-sensitive Markdown filename stem")
         version = data.get("version")
         if version is not None and not SEMVER_RE.fullmatch(str(version)):
             errors.append(f"{rel}: version {version!r} must use MAJOR.MINOR.PATCH SemVer")
