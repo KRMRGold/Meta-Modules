@@ -12,50 +12,49 @@
 - 14 modules
 - 2 workflows
 - 1 architecture/reference-design document
-- 1 supplementary review-notes document (non-binding)
+- 1 supplementary review record (non-binding)
 - **19 included text sources total**
 
 ## Source index
 
-1. `README.md` · blob `f8252fa0d94dc56e73e894c91574709e1188ef57`
-2. `modules/Observer-Subject.md` · blob `8924ba66c40b024020cf55b1c05165d2821d5246`
+1. `README.md` · blob `65a4e94eb8ba1ce16fbec9d7fc41da242119dfd4`
+2. `modules/Observer-Subject.md` · blob `86c5b517fa2e8290d5990b0f0218e88482668f15`
 3. `modules/bratty-support.md` · blob `80e8194544a005f7a53cd3155e683a05017e6f9d`
 4. `modules/capability-and-agency.md` · blob `62c929faee5d0f5d56fc81b113f021a14f741e9b`
-5. `modules/context-continuity.md` · blob `1505ce8e7bb5c67fe3d2c929dcd988772359b9aa`
+5. `modules/context-continuity.md` · blob `c6e3f32ddd4a10254f0dc68f692dcd3db325b713`
 6. `modules/discovery-and-exploration.md` · blob `eaf57af6522a4426e6f3d390f521dbc63eefef90`
 7. `modules/existing-knowledge-and-emerging-technologies.md` · blob `e17f3bf82f0dcaea308809c72d23e8866722567d`
 8. `modules/guided-inquiry.md` · blob `19e4aee363a3bba1a0a9d5449f3a9830abdea192`
 9. `modules/intent-and-clarity.md` · blob `84bd6b32dce5d616b7af553fef8b300605a912f7`
-10. `modules/pafc.md` · blob `ccd33228de5e88893f3b9feca5252218ed72f512`
-11. `modules/positivity-capability-whitelist.md` · blob `db48bdfacd2c71ca1af450e440708b681e4cc8d9`
+10. `modules/pafc.md` · blob `ef9d4e2f5394be419b0308f59785fec70226d04b`
+11. `modules/positivity-capability-whitelist.md` · blob `4ca0411c3c8a6ff4515aed8a0a38105ad57c41fd`
 12. `modules/refinement.md` · blob `d7fab4ce6d2f6e4be4d66dfc49323094f82e9dc6`
-13. `modules/testing-and-verification.md` · blob `1433a05b36d95354ca6cd9da2e379bfa8c8b3d48`
-14. `modules/tool-use-consent.md` · blob `72ec4757c062054f822715cc8991f88566589d54`
+13. `modules/testing-and-verification.md` · blob `279a54472d728c23af2b20327bb21395256f0932`
+14. `modules/tool-use-consent.md` · blob `1dad7355fcf06fa0fc7b2f2c4d502d16c82a1c05`
 15. `modules/weather-pattern.md` · blob `48f6666bfbe3e35efd0ab619a41b954660ab8b13`
-16. `refinement.md` · blob `49799de3d0f372f7f63be6f2c97e9384f2783020`
-17. `workflows/Development-State-Machine-Workflow.md` · blob `502c603270462e53f561dab711f237828e4b9d29`
+16. `reviews/refinement-review.md` · blob `66342d2362c8afdbd5c1f2e224037b851de241f1`
+17. `workflows/Development-State-Machine-Workflow.md` · blob `a8d4b258b9b39c3a086ae37f2cfa17afb3598f15`
 18. `workflows/external-sharing-cleanup.md` · blob `61c461b8e5f5bedf20c70d8a06a95c3cc1a521a8`
 19. `architecture/Future-Workflow-System-and-Metadata-Notes.md` · blob `2f99128b13d343c6206fce9d1d984eae06dad01b`
 
 ## Review guidance
 
 - Follow README discovery and precedence rules.
-- Treat `related` metadata as non-binding discovery hints.
-- Distinguish adopted rules from proposals.
+- Treat `related` metadata as optional, non-binding discovery hints using exact case-sensitive filename stems.
+- Distinguish adopted rules from proposals in the review record.
 - Keep one current file per document; use Git history for prior revisions.
 - Verify current sources before recommending changes.
-- The two newer modules added since the previous snapshot are included in full.
-- `refinement.md` is included only as supplementary review history; its proposed items are not adopted instructions.
+- The two modules with repaired missing Markdown headings are included in full.
+- The review record is supplementary history, not an instruction module.
 - Repository validation scripts, tests, CI configuration, and dependency files are not instruction sources and are not reproduced here.
 
 ## Consolidated source contents
-
 
 ---
 
 # Source: `README.md`
 
-> Original blob SHA: `f8252fa0d94dc56e73e894c91574709e1188ef57`
+> Original blob SHA: `65a4e94eb8ba1ce16fbec9d7fc41da242119dfd4`
 
 <!-- BEGIN SOURCE: README.md -->
 
@@ -259,11 +258,9 @@ When useful discoveries or decisions should guide future work, identify where th
 
 ---
 
----
-
 # Source: `modules/Observer-Subject.md`
 
-> Original blob SHA: `8924ba66c40b024020cf55b1c05165d2821d5246`
+> Original blob SHA: `86c5b517fa2e8290d5990b0f0218e88482668f15`
 
 <!-- BEGIN SOURCE: modules/Observer-Subject.md -->
 
@@ -507,13 +504,17 @@ Did the description give you more to work with than reflex alone would have? If 
 
 The ground was always there. You are already on it. Put the tool down and notice.
 
+
 <!-- END SOURCE: modules/Observer-Subject.md -->
+
+---
 
 # Source: `modules/bratty-support.md`
 
 > Original blob SHA: `80e8194544a005f7a53cd3155e683a05017e6f9d`
 
 <!-- BEGIN SOURCE: modules/bratty-support.md -->
+
 
 ---
 name: "Bratty Support"
@@ -552,6 +553,7 @@ Bratty Support is a tone and interaction style, not permission to be cruel, dism
 > Original blob SHA: `62c929faee5d0f5d56fc81b113f021a14f741e9b`
 
 <!-- BEGIN SOURCE: modules/capability-and-agency.md -->
+
 
 ---
 name: "Capability & Agency"
@@ -668,14 +670,13 @@ Use specialized methods when they help. Do not activate every module for every t
 
 The collaboration is succeeding when the user can make meaningful progress toward their own goals, has useful control over the direction and important decisions, and can access capabilities or possibilities that would otherwise have been difficult to reach. The user may also gain knowledge and skills along the way, but learning must support the user's goals rather than become an unnecessary prerequisite.
 
-
 <!-- END SOURCE: modules/capability-and-agency.md -->
 
 ---
 
 # Source: `modules/context-continuity.md`
 
-> Original blob SHA: `1505ce8e7bb5c67fe3d2c929dcd988772359b9aa`
+> Original blob SHA: `c6e3f32ddd4a10254f0dc68f692dcd3db325b713`
 
 <!-- BEGIN SOURCE: modules/context-continuity.md -->
 
@@ -742,6 +743,7 @@ These relationships guide discovery; they do not require automatic activation.
 > Original blob SHA: `eaf57af6522a4426e6f3d390f521dbc63eefef90`
 
 <!-- BEGIN SOURCE: modules/discovery-and-exploration.md -->
+
 
 ---
 name: discovery-and-exploration
@@ -810,6 +812,7 @@ use_when: A request could benefit from adjacent tools, alternative framings, new
 > Original blob SHA: `e17f3bf82f0dcaea308809c72d23e8866722567d`
 
 <!-- BEGIN SOURCE: modules/existing-knowledge-and-emerging-technologies.md -->
+
 
 ---
 name: existing-knowledge-and-emerging-technologies
@@ -941,6 +944,7 @@ Research should inform decisions, not become an end in itself. Connect discoveri
 > Original blob SHA: `19e4aee363a3bba1a0a9d5449f3a9830abdea192`
 
 <!-- BEGIN SOURCE: modules/guided-inquiry.md -->
+
 
 ---
 name: "Guided Inquiry"
@@ -1078,6 +1082,7 @@ The user has a clearer understanding of their own reasoning, options, assumption
 
 <!-- BEGIN SOURCE: modules/intent-and-clarity.md -->
 
+
 ---
 name: intent-and-clarity
 type: foundational
@@ -1155,23 +1160,11 @@ Use naturally when they add value, not as a script:
 
 <!-- END SOURCE: modules/intent-and-clarity.md -->
 
-### Additional source index
-
-9. `modules/pafc.md` · blob `ccd33228de5e88893f3b9feca5252218ed72f512`
-10. `modules/refinement.md` · blob `d7fab4ce6d2f6e4be4d66dfc49323094f82e9dc6`
-11. `modules/testing-and-verification.md` · blob `1433a05b36d95354ca6cd9da2e379bfa8c8b3d48`
-12. `modules/tool-use-consent.md` · blob `72ec4757c062054f822715cc8991f88566589d54`
-13. `modules/weather-pattern.md` · blob `48f6666bfbe3e35efd0ab619a41b954660ab8b13`
-14. `workflows/Development-State-Machine-Workflow.md` · blob `502c603270462e53f561dab711f237828e4b9d29`
-15. `workflows/external-sharing-cleanup.md` · blob `61c461b8e5f5bedf20c70d8a06a95c3cc1a521a8`
-16. `architecture/Future-Workflow-System-and-Metadata-Notes.md` · blob `2f99128b13d343c6206fce9d1d984eae06dad01b`
-
-
 ---
 
 # Source: `modules/pafc.md`
 
-> Original blob SHA: `ccd33228de5e88893f3b9feca5252218ed72f512`
+> Original blob SHA: `ef9d4e2f5394be419b0308f59785fec70226d04b`
 
 <!-- BEGIN SOURCE: modules/pafc.md -->
 
@@ -1197,22 +1190,21 @@ When discussing a technical problem, architecture, workflow, software feature, o
 5. **Challenge unnecessary invention.** Flag duplicated functionality, needless complexity, avoidable maintenance, premature optimization, and assumptions that conflict with established practice.
 6. **Separate evidence from judgment.** Distinguish documented standards and widely established practices from personal recommendations, emerging approaches, and uncertain claims. Verify consequential or time-sensitive claims when appropriate.
 7. **Preserve experimentation.** Do not force conventional solutions onto problems where custom approaches have a meaningful advantage. Explain the alternatives and let me decide.
-8. **Stay proportionate.** Surface important discoveries and risks without turning every conversation into an exhaustive research report. Tool recommendations are not permission to invoke them; follow [Tool Use and Consent Boundaries](modules/tool-use-consent.md) before any invocation.
+8. **Stay proportionate.** Surface important discoveries and risks without turning every conversation into an exhaustive research report. Tool recommendations are not permission to invoke them; follow [Tool Use and Consent Boundaries](tool-use-consent.md) before any invocation.
 9. **Carry discoveries forward.** When we establish an architectural decision or discover a useful standard, apply that knowledge in later work rather than repeatedly rediscovering it.
 
-**Relationship to deeper landscape research:** When the task needs a broader investigation of active practice, implementations, emerging work, or adjacent fields, continue with [Existing Knowledge & Emerging Technologies](modules/existing-knowledge-and-emerging-technologies.md). PAFC remains the lightweight prior-art-first default; the specialized module provides deeper landscape research.
+**Relationship to deeper landscape research:** When the task needs a broader investigation of active practice, implementations, emerging work, or adjacent fields, continue with [Existing Knowledge & Emerging Technologies](existing-knowledge-and-emerging-technologies.md). PAFC remains the lightweight prior-art-first default; the specialized module provides deeper landscape research.
 
 **Default behavior:** Before helping me build something, first consider whether we should build it at all, whether a suitable solution already exists, and what experienced practitioners would recommend for this specific situation.
+
 
 <!-- END SOURCE: modules/pafc.md -->
 
 ---
 
----
-
 # Source: `modules/positivity-capability-whitelist.md`
 
-> Original blob SHA: `db48bdfacd2c71ca1af450e440708b681e4cc8d9`
+> Original blob SHA: `4ca0411c3c8a6ff4515aed8a0a38105ad57c41fd`
 
 <!-- BEGIN SOURCE: modules/positivity-capability-whitelist.md -->
 
@@ -1350,13 +1342,17 @@ Not a cure for a bad instruction set. If the assistant isn't useful, a whitelist
 Success criterion
 The assistant acts usefully without asking for unnecessary permission. The user can predict what the assistant will do on its own, and what it will ask about. Neither side treats the whitelist as a training signal or a mandate. And when the whitelist is wrong for a context, both sides can say so and revise it.
 
+
 <!-- END SOURCE: modules/positivity-capability-whitelist.md -->
+
+---
 
 # Source: `modules/refinement.md`
 
 > Original blob SHA: `d7fab4ce6d2f6e4be4d66dfc49323094f82e9dc6`
 
 <!-- BEGIN SOURCE: modules/refinement.md -->
+
 
 ---
 name: "Refinement"
@@ -1447,7 +1443,7 @@ The examples illustrate different levels of user involvement. None of them requi
 
 # Source: `modules/testing-and-verification.md`
 
-> Original blob SHA: `1433a05b36d95354ca6cd9da2e379bfa8c8b3d48`
+> Original blob SHA: `279a54472d728c23af2b20327bb21395256f0932`
 
 <!-- BEGIN SOURCE: modules/testing-and-verification.md -->
 
@@ -1592,13 +1588,14 @@ Before describing a software change as verified, check:
 - [ ] Passed, failed, blocked, and unrun checks are reported honestly.
 - [ ] Remaining verification gaps are recorded and reflected in the acceptance decision.
 
+
 <!-- END SOURCE: modules/testing-and-verification.md -->
 
 ---
 
 # Source: `modules/tool-use-consent.md`
 
-> Original blob SHA: `72ec4757c062054f822715cc8991f88566589d54`
+> Original blob SHA: `1dad7355fcf06fa0fc7b2f2c4d502d16c82a1c05`
 
 <!-- BEGIN SOURCE: modules/tool-use-consent.md -->
 
@@ -1641,7 +1638,7 @@ Image generation requires **separate, explicit approval immediately before every
 
 ## 4. Check before acting
 
-Before using a tool or feature, determine whether it is premium/usage-limited, Data Analysis-specific, or image generation. Follow the restrictions above before invocation. If tool classification or availability is unclear, do not risk invoking a restricted feature; choose a clearly permitted alternative or explain the uncertainty. When preparing material for external sharing, also consult [External Sharing Cleanup §2](workflows/external-sharing-cleanup.md#2-remove-unnecessary-private-context), which governs removal of exposed secrets and flagging potentially genuine secrets for rotation.
+Before using a tool or feature, determine whether it is premium/usage-limited, Data Analysis-specific, or image generation. Follow the restrictions above before invocation. If tool classification or availability is unclear, do not risk invoking a restricted feature; choose a clearly permitted alternative or explain the uncertainty. When preparing material for external sharing, also consult [External Sharing Cleanup §2](../workflows/external-sharing-cleanup.md#2-remove-unnecessary-private-context), which governs removal of exposed secrets and flagging potentially genuine secrets for rotation.
 
 ## 5. First-message tool disclosure
 
@@ -1683,6 +1680,7 @@ Then separately disclose the planned tool approach, or say no tools are needed. 
 > Original blob SHA: `48f6666bfbe3e35efd0ab619a41b954660ab8b13`
 
 <!-- BEGIN SOURCE: modules/weather-pattern.md -->
+
 
 ---
 name: "Weather Pattern"
@@ -1785,13 +1783,11 @@ The user has a clearer or more expressible sense of what they want, while retain
 
 ---
 
----
+# Source: `reviews/refinement-review.md`
 
-# Source: `refinement.md`
+> Original blob SHA: `66342d2362c8afdbd5c1f2e224037b851de241f1`
 
-> Original blob SHA: `49799de3d0f372f7f63be6f2c97e9384f2783020`
-
-<!-- BEGIN SOURCE: refinement.md -->
+<!-- BEGIN SOURCE: reviews/refinement-review.md -->
 
 Remaining Open Items
 2.1 DSM §4.4 — "must not search for or resurrect older version-suffixed files" is still slightly ambiguous about pinned retrieval
@@ -1910,11 +1906,14 @@ Proposed (not adopted, from this review): §2.1 (Git retrieval wording), §2.2 (
 
 No source files modified. This is review-only.
 
-<!-- END SOURCE: refinement.md -->
+
+<!-- END SOURCE: reviews/refinement-review.md -->
+
+---
 
 # Source: `workflows/Development-State-Machine-Workflow.md`
 
-> Original blob SHA: `502c603270462e53f561dab711f237828e4b9d29`
+> Original blob SHA: `a8d4b258b9b39c3a086ae37f2cfa17afb3598f15`
 
 <!-- BEGIN SOURCE: workflows/Development-State-Machine-Workflow.md -->
 
@@ -2173,7 +2172,7 @@ Implementation and recovery rules:
 
 ## 7. AI-Owned Testing and Verification
 
-For software projects, use the reusable [Testing and Verification module](modules/testing-and-verification.md) to design the test inventory, choose appropriate test layers, improve regression coverage, and establish meaningful automated checks. This workflow remains responsible for when verification gates apply and how evidence affects acceptance; the module supplies the deeper testing practice. Adapt test depth to project risk and available runtime/platform access.
+For software projects, use the reusable [Testing and Verification module](../modules/testing-and-verification.md) to design the test inventory, choose appropriate test layers, improve regression coverage, and establish meaningful automated checks. This workflow remains responsible for when verification gates apply and how evidence affects acceptance; the module supplies the deeper testing practice. Adapt test depth to project risk and available runtime/platform access.
 
 Testing is an active responsibility of the AI doing the implementation, not a handoff for the human by default. The AI must run available checks, inspect their results, repair failures, and rerun affected checks before claiming acceptance.
 
@@ -2324,6 +2323,7 @@ When revising the reusable workflow:
 
 <!-- BEGIN SOURCE: workflows/external-sharing-cleanup.md -->
 
+
 ---
 name: external-sharing-cleanup
 type: specialized-workflow
@@ -2418,6 +2418,7 @@ These are complementary references, not automatic activation requirements. Load 
 > Original blob SHA: `2f99128b13d343c6206fce9d1d984eae06dad01b`
 
 <!-- BEGIN SOURCE: architecture/Future-Workflow-System-and-Metadata-Notes.md -->
+
 
 ---
 name: "Future Workflow System: Architecture & Metadata Notes"
@@ -2689,7 +2690,6 @@ Those layers can cooperate without being the same thing. Keeping them separate a
 
 *This document records design guidance and a proposed direction. It does not change the existing module format, introduce a mandatory metadata schema, or prescribe a final DVA data model.*
 
-
 <!-- END SOURCE: architecture/Future-Workflow-System-and-Metadata-Notes.md -->
 
-<!-- ALL 19 INCLUDED TEXT SOURCES VERIFIED AGAINST THE REPOSITORY TREE -->
+<!-- ALL 19 INCLUDED TEXT SOURCES REBUILT FROM VERIFIED REPOSITORY CONTENTS -->

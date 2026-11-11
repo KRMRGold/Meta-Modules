@@ -1,5 +1,9 @@
-Remaining Open Items
-2.1 DSM §4.4 — "must not search for or resurrect older version-suffixed files" is still slightly ambiguous about pinned retrieval
+# Meta-Modules Review Record
+
+**Status:** Non-binding review history; adopted items are recorded below.
+
+## Remaining Review Notes
+2.1 DSM §4.4 — [ADOPTED 2026-11-11] "must not search for or resurrect older version-suffixed files" is still slightly ambiguous about pinned retrieval
 The revised §4.4 now says:
 
 "A deliberate historical pin must be explicit and identify the relevant Git commit SHA or tag; retrieve that historical revision from Git only when the pin or a historical question requires it. Future chats must retrieve the canonical current workflow by default and must not search for or resurrect older version-suffixed files."
@@ -29,7 +33,7 @@ Proposed refinement: Optional — add a short "Relationship to other modules" se
 
 Source: modules/existing-knowledge-and-emerging-technologies.md; modules/pafc.md.
 
-2.5 DSM §2.0 now covers non-software "candidate" but §6's "Implementation and recovery rules" still reads software-centric
+2.5 DSM §2.0 [ADOPTED 2026-11-11] now covers non-software "candidate" but §6's "Implementation and recovery rules" still reads software-centric
 §6 says "Identify and preserve the last accepted version before changing code," "Assign distinct versions to code/build candidates," "Do not mix unrequested features into a fix," and "Use actual errors and reproduction steps." These are all fine for software, and §2.0 now says to adapt stages to non-software projects. But the rules in §6 are not marked as software-specific, so a non-software adopter might read them as mandatory. §2.0's adaptation clause is one sentence; §6 is nine bullets.
 
 Proposed refinement: One sentence at the top of §6: "These rules are written for software; adapt the version/candidate vocabulary to the non-software deliverable type identified in §2.0 (versioned candidate vs. living document)."
@@ -67,7 +71,7 @@ Proposed refinement: Either (a) add related to the four modules that currently l
 
 Source: README §3; front matter of bratty-support.md, capability-and-agency.md, discovery-and-exploration.md, tool-use-consent.md.
 
-2.7 DSM §11 Final Checklist — two overlapping bullets remain
+2.7 DSM §11 [ADOPTED 2026-11-11] Final Checklist — two overlapping bullets remain
 Previous review (M5) noted §11's checklist overlaps §7's execution loop. The new §11 bullets:
 
 "Required checks and actual results for the identified candidate are recorded as PASS, FAIL, BLOCKED, or NOT RUN."
@@ -86,11 +90,9 @@ The added caveat is good: "The links above are illustrative references captured 
 No change needed. Flagging for completeness.
 
 2.9 Snapshot inventory vs. source index
-The consolidated reference's inventory says "16 source documents total." The source index lists 16 (1 README + 12 modules + 2 workflows + 1 architecture). The "Additional source index" section begins at item 9, which is correct (items 1–8 are listed in the first index). Reconciles.
+The earlier consolidated snapshot recorded 16 source documents (1 README + 12 modules + 2 workflows + 1 architecture). The 2026-11-11 snapshot now records 19 included text sources (1 README + 14 modules + 2 workflows + 1 architecture + 1 supplementary review record). The current snapshot index is rebuilt from the repository tree and source files.
 
-No issue.
-
-2.10 Tool Use and Consent related absence (subset of 2.6)
+2.10 Tool Use and Consent related absence (subset of 2.6) [ADOPTED 2026-11-11]
 tool-use-consent.md has no related field but is the most cross-referenced module in the repository (referenced by README §1, §5, §7; by Capability & Agency; by Discovery; by PAFC; by External Sharing Cleanup; by Bratty Support). If any module should have related for discovery, it is this one. Under the "prose is authoritative" rule, its lack of a "Relationship to other modules" section is also notable.
 
 Proposed refinement: Add a short "Relationship to other modules" section (it is the hard boundary; other modules defer to it) and consider a minimal related: [intent-and-clarity, discovery-and-exploration, capability-and-agency, external-sharing-cleanup]. Or state explicitly that Tool Use and Consent is intentionally relationship-light because it is a hard boundary that other modules must defer to, not a discovery target.
@@ -109,8 +111,6 @@ M4. intent-and-clarity.md related: [context-continuity] is one entry; its prose 
 M5. Architecture §5 table row for related now says "Add only when it improves navigation; it is a non-binding discovery hint, not a dependency or activation graph" — good. The row for depends_on says "Use sparingly; avoid creating a complicated dependency graph." Since no module currently uses depends_on, and the new README §3/§4 rule treats prose as authoritative, depends_on is effectively unused. Consider whether it should be removed from the schema or kept as a future option. (Minor — keeping it costs nothing.)
 
 4. Proposed Refinements vs. Adopted Rules
-Adopted (present in this snapshot): all "Resolved" items in §1, the precedence list, the related-as-subset rule, the non-software candidate clarification, the External Sharing Cleanup cross-reference in Tool Use and Consent, the architecture body/front-matter version alignment.
+Adopted in the 2026-11-11 refinement pass: §2.1 (Git-pin wording), §2.5 (software-specific note in §6), §2.7 (§11 checklist merge), and §2.10 (Tool Use and Consent relationship section and related metadata). The related-slug convention was also made explicit in the README, and the two related entries targeting the workflow were corrected to match its exact filename stem.
 
-Proposed (not adopted, from this review): §2.1 (Git retrieval wording), §2.2 (First-response contract split — optional), §2.3 (Testing related asymmetry — observation), §2.4 (Existing Knowledge relationship section — optional), §2.5 (§6 software-specific note), §2.6 / §2.10 (related consistency; Tool Use and Consent relationship section), §2.7 (§11 bullet merge).
-
-No source files modified. This is review-only.
+Still optional: §2.2 (First-response contract split), §2.3 (Testing and Verification relationship asymmetry), §2.4 (Existing Knowledge relationship section), and the remaining minor/editorial notes. These were not adopted because they are not necessary to resolve the reported correctness issues.

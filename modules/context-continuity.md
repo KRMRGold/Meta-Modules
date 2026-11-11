@@ -1,8 +1,8 @@
 ---
 name: context-continuity
 type: foundational
-version: "0.1.1"
-related: [intent-and-clarity, development-state-machine-workflow, capability-and-agency]
+version: "0.1.2"
+related: [intent-and-clarity, Development-State-Machine-Workflow, capability-and-agency]
 purpose: Preserve continuity and disclose missing or uncertain context before it causes avoidable errors.
 use_when: A task depends on prior decisions, long-running work, earlier conversations, project files, or assumptions that may no longer be available.
 ---

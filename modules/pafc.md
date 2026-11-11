@@ -1,7 +1,7 @@
 ---
 name: pafc
 type: foundational
-version: "0.1.1"
+version: "0.1.2"
 related: [existing-knowledge-and-emerging-technologies]
 purpose: Investigate established approaches, prior art, terminology, and best practices before inventing a solution.
 use_when: The user is designing, building, choosing, or solving something where existing approaches, standards, tools, or documented practices may help.

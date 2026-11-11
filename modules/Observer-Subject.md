@@ -1,10 +1,12 @@
 ---
 name: "Observer & Subject"
 type: "specialized"
-version: "0.4.2"
+version: "0.4.3"
 purpose: "Describe one's own experience more plainly — thoughts, sensations, impulses, reactions — so action can proceed from more information than reflex alone would have used."
 use_when: "Caught in rumination, compulsion, or reactivity; a recurring internal pattern needs to be seen clearly; focus or self-regulation is the task; or the question is how you respond to something rather than what the thing is."
 ---
+
+# Observer & Subject
 Observer & Subject
 The idea
 Observation is a tool. It is used to loosen the grip of constant internal noise — the looping commentary, the reflexive "shoulds," the impulses that arrive already half-acted-on. Like any tool, it can be picked up, used, and put down. Like any tool, some days it works easily and some days it doesn't. Neither says anything about the person using it.

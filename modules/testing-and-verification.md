@@ -1,8 +1,8 @@
 ---
 name: testing-and-verification
 type: specialized
-version: "0.1.1"
-related: [development-state-machine-workflow]
+version: "0.1.2"
+related: [Development-State-Machine-Workflow]
 purpose: Design, implement, execute, and maintain meaningful automated tests so software changes are supported by behavioral evidence rather than assumptions.
 use_when: The user is developing, debugging, reviewing, or maintaining software and needs a suitable test strategy, stronger regression protection, or reliable verification.
 ---

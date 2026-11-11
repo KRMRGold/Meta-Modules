@@ -1,15 +1,15 @@
 ---
 name: development-state-machine-workflow
 type: specialized-workflow
-version: "1.6.0"
+version: "1.6.1"
 purpose: Guide reliable, evidence-based development through planning, implementation, verification, recovery, documentation, and version history.
 use_when: The user is developing or maintaining an application or substantial project and wants a repeatable workflow for making and verifying changes.
 ---
 
 # Development State Machine Workflow
-## Reusable Workflow Prompt v1.6.0
+## Reusable Workflow Prompt v1.6.1
 
-- **Workflow version:** 1.6.0
+- **Workflow version:** 1.6.1
 - **Document policy:** Keep one current workflow file at its canonical path. Update that file in place; use Git history for prior revisions. Do not create side-by-side versioned copies.
 - **Revision history:** Earlier revisions are preserved in Git history, not separate files.
 - **Scope:** A reusable, modular development workflow for applications and other projects, independent of any one app, programming language, framework, or tool.
@@ -156,7 +156,7 @@ Use SemVer for this reusable workflow:
 - **MINOR:** a backward-compatible addition, such as a new optional module or an expanded adoption rule.
 - **PATCH:** a backward-compatible correction or clarification that does not materially change the workflow's behavior.
 
-Keep one canonical workflow file at its stable repository path. When the workflow changes, update that file in place and increment its internal `version:` metadata according to SemVer; the metadata identifies the workflow revision, not a filename. Do not publish additional version-suffixed workflow files or retain older copies beside it. Git history preserves prior revisions and their provenance. Projects record the initially adopted version, but follow the current canonical workflow by default. A deliberate historical pin must be explicit and identify the relevant Git commit SHA or tag; retrieve that historical revision from Git only when the pin or a historical question requires it. Future chats must retrieve the canonical current workflow by default and must not search for or resurrect older version-suffixed files.
+Keep one canonical workflow file at its stable repository path. When the workflow changes, update that file in place and increment its internal `version:` metadata according to SemVer; the metadata identifies the workflow revision, not a filename. Do not publish additional version-suffixed workflow files or retain older copies beside it. Git history preserves prior revisions and their provenance. Projects record the initially adopted version, but follow the current canonical workflow by default. A deliberate historical pin must be explicit and identify the relevant Git commit SHA or tag; retrieve that historical revision from Git only when the pin or a historical question requires it. Future chats must retrieve the canonical current workflow by default and must not search for or resurrect older version-suffixed working-tree files; retrieving a pinned revision from Git history by its explicit SHA or tag is the sanctioned exception.
 
 ### 4.5 Maintenance documents and milestone documents
 
@@ -238,6 +238,8 @@ For a feature of meaningful complexity, the design should cover:
 10. **Risks and alternatives:** relevant trade-offs and reasonable options.
 
 Implementation and recovery rules:
+
+These rules are written primarily for software. For non-software work, adapt the code/build version and candidate vocabulary to the deliverable type identified in §2.0 (for example, versioned candidates versus a living document).
 
 - Identify and preserve the last accepted version before changing code.
 - Assign distinct versions to code/build candidates where applicable. Never silently overwrite the accepted code baseline or reuse a code version number for changed contents. Living documents are updated at their one canonical path; Git history preserves prior revisions.
@@ -373,8 +375,7 @@ Before accepting a feature:
 - [ ] Acceptance checks are defined.
 - [ ] The candidate was inspected.
 - [ ] The maintenance document's relevant test inventory was consulted.
-- [ ] Required checks and actual results for the identified candidate are recorded as PASS, FAIL, BLOCKED, or NOT RUN.
-- [ ] Manual checks were automated where practical, or explicitly marked blocked/not run with a reason.
+- [ ] Required checks and actual results are recorded as PASS, FAIL, BLOCKED, or NOT RUN; for any BLOCKED or NOT RUN check, automation was attempted where practical and the blocker and minimum human action are stated.
 - [ ] Failed checks were fixed in a new version and relevant regression tests rerun.
 - [ ] Failed candidates and useful evidence remain traceable.
 - [ ] Compatibility and persistence were checked where relevant.
