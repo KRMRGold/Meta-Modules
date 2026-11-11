@@ -1,6 +1,6 @@
 # Meta-Modules: Complete Consolidated Reference
 
-**Snapshot date:** 2026-11-06  
+**Snapshot date:** 2026-11-11  
 **Source repository:** https://github.com/KRMRGold/Meta-Modules  
 **Purpose:** Portable current snapshot for external LLM review.
 
@@ -9,21 +9,33 @@
 ## Inventory
 
 - 1 README
-- 12 modules
+- 14 modules
 - 2 workflows
 - 1 architecture/reference-design document
-- **16 source documents total**
+- 1 supplementary review-notes document (non-binding)
+- **19 included text sources total**
 
 ## Source index
 
 1. `README.md` · blob `f8252fa0d94dc56e73e894c91574709e1188ef57`
-2. `modules/bratty-support.md` · blob `80e8194544a005f7a53cd3155e683a05017e6f9d`
-3. `modules/capability-and-agency.md` · blob `62c929faee5d0f5d56fc81b113f021a14f741e9b`
-4. `modules/context-continuity.md` · blob `1505ce8e7bb5c67fe3d2c929dcd988772359b9aa`
-5. `modules/discovery-and-exploration.md` · blob `eaf57af6522a4426e6f3d390f521dbc63eefef90`
-6. `modules/existing-knowledge-and-emerging-technologies.md` · blob `e17f3bf82f0dcaea308809c72d23e8866722567d`
-7. `modules/guided-inquiry.md` · blob `19e4aee363a3bba1a0a9d5449f3a9830abdea192`
-8. `modules/intent-and-clarity.md` · blob `84bd6b32dce5d616b7af553fef8b300605a912f7`
+2. `modules/Observer-Subject.md` · blob `8924ba66c40b024020cf55b1c05165d2821d5246`
+3. `modules/bratty-support.md` · blob `80e8194544a005f7a53cd3155e683a05017e6f9d`
+4. `modules/capability-and-agency.md` · blob `62c929faee5d0f5d56fc81b113f021a14f741e9b`
+5. `modules/context-continuity.md` · blob `1505ce8e7bb5c67fe3d2c929dcd988772359b9aa`
+6. `modules/discovery-and-exploration.md` · blob `eaf57af6522a4426e6f3d390f521dbc63eefef90`
+7. `modules/existing-knowledge-and-emerging-technologies.md` · blob `e17f3bf82f0dcaea308809c72d23e8866722567d`
+8. `modules/guided-inquiry.md` · blob `19e4aee363a3bba1a0a9d5449f3a9830abdea192`
+9. `modules/intent-and-clarity.md` · blob `84bd6b32dce5d616b7af553fef8b300605a912f7`
+10. `modules/pafc.md` · blob `ccd33228de5e88893f3b9feca5252218ed72f512`
+11. `modules/positivity-capability-whitelist.md` · blob `db48bdfacd2c71ca1af450e440708b681e4cc8d9`
+12. `modules/refinement.md` · blob `d7fab4ce6d2f6e4be4d66dfc49323094f82e9dc6`
+13. `modules/testing-and-verification.md` · blob `1433a05b36d95354ca6cd9da2e379bfa8c8b3d48`
+14. `modules/tool-use-consent.md` · blob `72ec4757c062054f822715cc8991f88566589d54`
+15. `modules/weather-pattern.md` · blob `48f6666bfbe3e35efd0ab619a41b954660ab8b13`
+16. `refinement.md` · blob `49799de3d0f372f7f63be6f2c97e9384f2783020`
+17. `workflows/Development-State-Machine-Workflow.md` · blob `502c603270462e53f561dab711f237828e4b9d29`
+18. `workflows/external-sharing-cleanup.md` · blob `61c461b8e5f5bedf20c70d8a06a95c3cc1a521a8`
+19. `architecture/Future-Workflow-System-and-Metadata-Notes.md` · blob `2f99128b13d343c6206fce9d1d984eae06dad01b`
 
 ## Review guidance
 
@@ -32,6 +44,9 @@
 - Distinguish adopted rules from proposals.
 - Keep one current file per document; use Git history for prior revisions.
 - Verify current sources before recommending changes.
+- The two newer modules added since the previous snapshot are included in full.
+- `refinement.md` is included only as supplementary review history; its proposed items are not adopted instructions.
+- Repository validation scripts, tests, CI configuration, and dependency files are not instruction sources and are not reproduced here.
 
 ## Consolidated source contents
 
@@ -243,6 +258,256 @@ When useful discoveries or decisions should guide future work, identify where th
 <!-- END SOURCE: README.md -->
 
 ---
+
+---
+
+# Source: `modules/Observer-Subject.md`
+
+> Original blob SHA: `8924ba66c40b024020cf55b1c05165d2821d5246`
+
+<!-- BEGIN SOURCE: modules/Observer-Subject.md -->
+
+---
+name: "Observer & Subject"
+type: "specialized"
+version: "0.4.2"
+purpose: "Describe one's own experience more plainly — thoughts, sensations, impulses, reactions — so action can proceed from more information than reflex alone would have used."
+use_when: "Caught in rumination, compulsion, or reactivity; a recurring internal pattern needs to be seen clearly; focus or self-regulation is the task; or the question is how you respond to something rather than what the thing is."
+---
+Observer & Subject
+The idea
+Observation is a tool. It is used to loosen the grip of constant internal noise — the looping commentary, the reflexive "shoulds," the impulses that arrive already half-acted-on. Like any tool, it can be picked up, used, and put down. Like any tool, some days it works easily and some days it doesn't. Neither says anything about the person using it.
+
+The distinction between "observer" and "subject" is grammar, not metaphysics. There is no second entity watching. The noticing is the subject noticing itself, described from the noticing side.
+
+The observer is an archetype too. "The observer" is a role the mind can settle into — a character with a perspective, a voice, and an implicit claim to be seeing more clearly than the rest. When that happens, the description has become a story, exactly as it does with any other archetype. The thing that pulls you back out is the same observation that got you into it: noticing that you are now performing "being the observer," and returning to plain terms.
+
+This is the whole point. The tool is useful until it isn't, and observation is what tells you when it isn't. There is no final position to land in — no permanently correct vantage from which everything is clear. There are just descriptions, more or less useful, held for as long as they help and then released.
+
+The search is the loop. And the search takes the shape of the blank. More on this below — it is the central danger of the tool, not a footnote to it.
+
+How it's used
+Describe your own experience more plainly than the noise does. That's the whole move. Everything below is a way of doing it.
+
+Plain terms. Prefer what could be checked against sensation: tension, pressure, a pull toward an action, a phrase that repeats, a quality of attention. Avoid words that carry a verdict ("failing," "lazy").
+
+Notice the blanks. A lot of internal noise takes the form of a blank waiting to be filled: "I should ___," "I need to ___," "what if ___." The blank is usually filled automatically, before you've had a chance to see it. Noticing the blank as a blank — before it gets filled — is most of the work. If the blank arrives already filled with a "should," you can also ask who the "should" is speaking for. The authority is usually not one you consciously granted.
+
+Notice the arrival. Some thoughts are complete on arrival; others arrive lagged, as if you have to catch up. Lagged thoughts often come from older patterns firing before the current context has updated. A signal about origin, not a verdict about validity.
+
+Name the choice, including the non-choice. Following an impulse and not following it are both choices. "Waiting to see what I do" is a story; you are already choosing.
+
+Return to the real: texture and the world
+The single most useful move when thought has become loud is to return to the world that is not thought. Not by thinking about the world, but by feeling it.
+
+The texture of what you are touching. The temperature of the air. The weight of your body against a surface. The sound in the room that is not your commentary. The fact of a wall, a floor, a cup, a chair. These are not metaphors and they are not evidence for or against anything. They are simply there, and they are harder for the mind to co-opt than anything it can describe from the inside.
+
+The return is not a technique to master. It is available in the next moment, and it is available every moment after that. If you have been lost in the blank for ten minutes or ten years, the texture of the floor is still there. It does not need to be earned. It is the ground you were always standing on.
+
+Feelings: where, and what, before what it's called
+A feeling is often hardest to observe at the moment it most needs observing — right when it's strongest and loudest. That's because the first thing the mind does with a strong feeling is name it, and the name arrives with an identity attached. "I'm anxious." "I'm angry." "I'm upset." Once it has a name, it has a story, and the story takes over the description.
+
+The move is to describe the feeling before it gets a name, and where it is, in terms that don't require knowing what it's called.
+
+Where
+Most feelings have a location, even when you can't say what they are. Chest, stomach, throat, jaw, forehead, shoulders, hands. Sometimes it's diffuse — a general pressure with no clear center. Sometimes it's in more than one place at once.
+
+Start with location, not identity. "There is a tightness in the chest" is available even when you can't say whether it's anxiety, grief, or excitement. Naming the location buys time to notice the rest.
+
+What
+Then describe the quality, not the label:
+
+Pressure — tight, loose, heavy, hollow
+
+Temperature — warm, cool, hot, cold
+
+Movement — still, pulsing, fluttering, sinking, rising, spreading
+
+Texture — sharp, dull, smooth, jagged, knotted, liquid
+
+Size and shape — small, large, defined, diffuse
+
+Edge — bounded, spilling over, contained, radiating
+
+You don't need all of these. Two or three are usually enough to take a feeling from "a vague bad thing" to "a specific thing I can describe."
+
+Before the name
+The point isn't to never name a feeling. It's to notice the feeling before the name arrives, so the name is a description you choose rather than a label that arrives and takes over.
+
+A useful sequence:
+
+Locate it — where is it in the body?
+
+Describe it — what is its quality, without saying what it is?
+
+Let the name arrive, if it does — and notice that the name is now a description of what you already described, not a replacement for it.
+
+When you can describe a feeling before you know what to call it, the feeling stops being an identity ("I am anxious") and becomes an event ("there is tightness in the chest and a pull toward the door"). The event is something you can respond to. The identity is something you have to be.
+
+A note on the forehead
+Some sensations don't have a name at all, and don't need one. A pulse, a pressure, a "point of feeling" that just sits there — describing it as "a point of feeling in the forehead" is complete. Nothing is gained by deciding what it "means." The description is the whole of what's available, and that's enough.
+
+Metaphor and archetype: when plain terms aren't enough
+Sometimes the plain terms fail. The feeling has no clean location, no single texture, no name that arrives without bringing a story. The sensation is real and specific, but the vocabulary of pressure and temperature won't catch it. That's when stronger descriptions become useful.
+
+Both metaphor and archetype are ways of describing something by saying what it is like. They differ in how far the description goes.
+
+Metaphor
+A metaphor compresses a whole pattern into an image you can hold. It captures the relationship between parts, not just the parts themselves. Where a literal description lists qualities, a metaphor shows how they fit together — and the fit is often what you couldn't say.
+
+A feeling might be like a storm: something with an eye you can stand in, walls that move, and a boundary between where you are and where the noise is. The metaphor doesn't say the feeling is a storm. It says the feeling has a shape the storm fits.
+
+Generate your own
+The most useful metaphors are the ones that arise from your own attempt to describe what's happening. Not borrowed, not handed to you. A metaphor that works for someone else may leave you cold, because it wasn't built from your own material.
+
+Start with the plain description and see if it wants to become an image. If the literal description is already close to an image, let it condense. Notice whether the image now carries more than the literal description did. If it does, keep it. If it doesn't, let it go.
+
+Use metaphor to describe, not to explain
+A metaphor is doing its job when it makes the experience describable, not when it tells you what the experience means.
+
+Useful: There's a storm, and I can stand in the eye of it and watch the walls move without being thrown by them. — describes a relationship between you and a strong feeling. Usable information.
+
+Less useful: The storm is my anger trying to teach me something. — assigns meaning and starts a story. The description has become interpretation.
+
+The first leaves you able to act. The second leaves you with something to debate.
+
+Archetype: when a metaphor takes on a voice
+An archetype is a metaphor pushed further. A metaphor says the feeling is like a storm. An archetype says the storm is someone — it has a personality, a will, and something it wants from you. It becomes a character.
+
+This is tempting because it feels productive. Once the feeling has a name and a voice, you can talk to it, negotiate with it, or fight it. But the cost is high: what was a description becomes a relationship, and relationships require attention, energy, and management. The description was supposed to free up attention. The archetype consumes it.
+
+If you notice yourself building characters out of your states — a part that wants one thing, a part that wants another, a part that is the "real" you — the description has become a story. Stories invite negotiation. Return to plain terms.
+
+Metaphor as a temporary handle
+A metaphor is a handle, not an identity. You hold it while you need to hold the thing, and you put it down when the description no longer requires it. A storm, a wave, a fire, a current, a knot — none of these are what the feeling is. They are what the feeling is like, which is exactly what makes them useful. Treat them as tools for grasping, not as names for the thing grasped.
+
+When a metaphor becomes the failure mode
+The signs are the same as with archetypes:
+
+The image starts having its own personality — the storm is angry, the wave wants something, the fire is teaching you. Now it's a character.
+
+The image is used to explain rather than describe — it tells you what the feeling means instead of how it feels.
+
+The image is used to avoid the feeling — you've described it so beautifully that the actual sensation is no longer in view. The image has replaced the thing.
+
+When any of these happen, return to plain terms. Drop the image and go back to location and texture. The metaphor was doing a job; when it stops doing the job, drop it.
+
+Be wary: the search is the blank
+The search and the blank are the same thing
+The blank — "I should ___," "I need to ___," "what if ___" — is not just a form of thought. It is the shape of a system. A system the person has been building their whole life: an apparatus that notices an unfinished gap and reaches to fill it. Chasing the void, chasing the dragon, the hungry ghost that never stops eating — all the same shape, described from different traditions. The blank is the local, everyday form of that shape.
+
+The search is the blank, seen from the outside. When you search for the technique that finally works, the insight that finally settles it, the state that finally stays, you are filling the blank "I should ___" with "find the answer." The search feels like the cure for the loop. It is the loop, wearing the face of the cure. The system that fills the blank is the same system that produces the loops you are trying to see through.
+
+This is what the user is trying to discover, and it is the thing the tool is most likely to miss. The search for the cure is the activity of the system that needs curing. That is not a riddle. It is a description of what is happening.
+
+The mountain
+When you reach the top of the mountain you look for more mountains. The summit was never the point. The search for insight is the same loop as the search for enlightenment, which is the same loop as the search for the technique that ends the search. Each peak reveals the next peak, and the next, and the looking never stops, because the looking is the loop.
+
+Until you notice that you are not on a mountain at all. You are standing on the ground. The ground was there the whole time. It was under the first mountain, and the second, and every peak after. It was never higher than you were. It was never somewhere else. It was just the floor of the room you were in, and you were looking for it by climbing.
+
+This is what observation is for. Not to reach the summit. Not to see through everything. Not to arrive at the insight that finally settles it. To stand on the ground. To be in the moment, with the texture of the world, and to notice that the silence was never something to find — it was what was there before the looking started. True thought lives in that silence. It is not produced by the search. It is what the search was covering.
+
+Hacking the mind is dangerous
+"Mind-hacking" is a useful phrase from current tech vernacular, and it is more honest than it sounds. The practices this module draws from — observation, meditation, breathwork, focused attention, and the various techniques that deliberately shift how the mind processes its own contents — do something to the machinery. That's the point of them. But doing something to the machinery is not the same as doing something safe to the machinery.
+
+This is not only a risk for people in crisis. A mind that is currently healthy can still be destabilized by these practices, especially when they are done intensively, alone, and without someone who can see the process from outside. Meditation retreats sometimes send people home with symptoms that weren't there before. Breathwork can trigger panic or dissociation. Sensory deprivation and long periods of solitary attention can surface material the person was not prepared to meet. Psychedelics and other drugs that mimic what meditation can do are the fastest and least forgiving version of the same hazard.
+
+The common failure mode is the same one described above. The blank-filling machinery does not care whether its inputs come from a module, a retreat, a substance, or a technique. It will use whatever is available to keep producing the loop. The search for the insight that finally settles it is dangerous not only because it fails, but because the search itself can do things to the mind that the mind was not designed to do alone.
+
+If you are going to do this work — and observation is genuinely mild compared to most of what I just listed — the same rules apply across all of it:
+
+Have someone who can see you. A teacher, a therapist, a friend who knows what you are doing and can tell you when you sound different. A module cannot do this. A person can.
+
+Do not do the intense versions alone. Retreats, extended fasting, breathwork intensives, sensory deprivation, psychedelics — these are not solo activities. They are done with people who have done them before and know what can go wrong.
+
+Do not stack. Combining practices — meditation plus deprivation plus a substance, or observation plus stimulants plus no sleep — is where most of the real harm happens. The system was not built to handle three interventions at once.
+
+Do not treat intensity as progress. A retreat that leaves you destabilized is not a step forward. It is the system telling you it was too much. Stop.
+
+Do not do this in place of care. If you have symptoms — persistent dissociation, panic, voices, imagery, a sense that reality has changed and isn't coming back — talk to someone qualified. This module cannot help with that, and the practice of it can make it worse.
+
+Why people with these conditions try it anyway. The reasoning is usually sound from the inside. The illness feels like the loop, so a tool that promises to see through loops sounds like it's aimed at the illness. Standard care often hasn't worked, or has felt like management rather than relief, so a technique that offers to do the work yourself looks like a genuine alternative. And the tool does feel like it's working — describing experience precisely, noticing patterns, catching the blank — for someone whose inner life has been opaque, the sudden sense of "I can see what's happening to me" is a real relief. It is also, in these conditions, often the first sign that the machinery has been handed a new input. The failure is not that it doesn't work. The failure is that it works in a way you cannot distinguish from the real thing, because the part of you that would do the distinguishing is the part being used. This is why the warning is not "be careful." It is "if this is you, do not do this alone." Not because you are foolish, and not because the tool is evil, but because the one check that would catch the failure is the one thing the tool cannot provide.
+
+Hacking the mind is dangerous as it sounds. Not because the practices are sinister, but because the mind is the thing you are doing it to. If you are doing that alone, with no one to check in, you are doing surgery on yourself without a second pair of eyes. Sometimes that works. Sometimes it doesn't. The person most likely to think it is fine is the person least equipped to tell when it isn't.
+
+If you experience psychosis or hallucinations
+This module is not a first-line tool for you, and in some states it may do more harm than good. If you experience psychosis, hallucinations, intrusive imagery, or any state in which the boundary between description and perception can blur, treat this module as an adjunct to care, not a substitute for it, and not something to rely on alone.
+
+If you are in a state like this, or worried you might be:
+
+Do not use this module as your primary support. Talk to a trusted person, a clinician, or a crisis line. If you don't have one, a warmline is a place to start.
+
+Do not trust felt certainty. The sense of having finally understood is, in this state, less reliable than it feels. The stronger the certainty, the more cautious to be.
+
+Do not use observation to check whether you are hallucinating. Observation is the exact tool the system can co-opt. Use external anchors instead — another person, a wall, the temperature of the room, the fact of your own body. Another person is the most reliable anchor there is.
+
+Do not use this module to fill the blank. If you catch yourself thinking "I should observe more," "I need to find the insight," "what if I'm doing this wrong," that is the blank, not the practice. Stop.
+
+Stop if the practice makes things worse. This is not a failure. It is the tool telling you it isn't the right tool right now.
+
+Put it down. It will be there later if it's useful. It doesn't need to be used now.
+
+This is not a disclaimer. It is the same warning the module gives to everyone, stated directly for the case where the stakes are higher.
+
+The danger for certain people
+This is not a small risk, and it is not evenly distributed. For a brain capable of hallucination, intrusive imagery, or psychosis, the blank-filling system is not only persistent. It is capable of producing material — voices, images, felt certainties, whole experiences that feel indistinguishable from insight. That same machinery will use this module. Not because the module is wrong, but because the machinery is general. It will take the vocabulary of observation and use it to fill the blank "I should ___" with "observe." It will take the vocabulary of archetype and use it to produce characters that speak with authority. It will take the vocabulary of clarity and use it to produce the felt certainty that you have finally arrived.
+
+For some people, this can do real harm. Not metaphorical harm — not "this will make you less clear." Real harm to the person using it. The mind that can produce hallucinations can produce an "observer" that is a hallucination, and it can be convincing enough that the person does not have a reliable way to tell it apart from the real thing. The tool cannot be its own check in that state.
+
+What to watch for in any state
+Felt certainty. "Now I understand" is often a loop in the language of understanding. If the insight feels like an arrival, treat it as suspect.
+
+A new voice that sounds more authoritative than the others. If the "observer" starts speaking with the confidence of a final authority, that's the observer archetype wearing the mask of truth.
+
+Images or sensations that feel more real than the rest of experience. If a description starts having the texture of vision, check whether it's describing something or producing it.
+
+The sense that you have finally found the technique that works. This is the strongest hook. The mind loves the idea of a technique that ends the search, because the search was always the loop.
+
+The blank returning in a new form. "I should observe." "I need to notice." "What if I'm not doing it right?" The blank has not gone anywhere; it has learned the new vocabulary.
+
+Symptoms that weren't there before. Dissociation, panic, persistent imagery, a sense of unreality that doesn't lift. These are not the practice working. They are the practice telling you to stop.
+
+What helps
+Return to plain sensation. Texture, temperature, location. The texture of the world is harder to co-opt than anything the mind can describe from the inside. See "Return to the real," above.
+
+Narrate aloud if you can. The physical voice is slower and harder for the mind to co-opt than the inner voice. If narration is unavailable, write, or at minimum return to a concrete physical anchor — a wall, the floor, the temperature of the air.
+
+Say what you are doing, not what it means. "I am describing a pressure in my chest" is harder to co-opt than "I am finally seeing what this pressure is."
+
+If observation is no longer helping, stop. The tool is not a duty. If it has become a mode of looping, put it down and do something else — walk, drink water, talk to someone, sleep. The tool is available again later.
+
+Watch the conditions that make co-optation easier. Lack of sleep, hunger, illness, stress, and isolation all make the loop harder to catch. If several of these are present at once, be more cautious, not less.
+
+Have someone who can tell you when you're in it. The best check on the blank is a person who knows you and can say "that's the loop." A module cannot do this. A person can.
+
+Observation is useful because it can catch the mind in the act. It is not exempt from the same act. The moment observation becomes the thing the mind is doing instead of living — instead of walking, deciding, connecting, being wrong, being ordinary — it has become one more loop. You can notice that, too. And then you can put the tool down.
+
+What it isn't
+Not suppression — you aren't stopping thoughts or feelings, you're describing them more precisely. Not dissociation — if it starts to feel like leaving your body, come back to sensation. Not a superior position — there's no higher self doing the observing. Not for analyzing other people — applying it to someone else's psyche without their participation usually does more harm than good. Not a cure — describing a pattern doesn't dissolve it, it just makes it visible. Not a safe home base — see above. Not a substitute for a person who knows you — see above. Not a search for anything — the search is the loop. Not a replacement for care — see "Hacking the mind is dangerous," above.
+
+When it's hard
+The tool doesn't always work. Some days it comes easily; some days nothing will hold still long enough to describe. That's not a failure of the person or a sign the tool is broken. It's the same as meditation or yoga: some sessions land, some don't, and the practice is the showing up, not the outcome.
+
+A few specific ways it gets hard:
+
+As avoidance. Using description to not act, not feel, or not decide. If "I'm just describing" becomes a way to not participate, the tool has inverted.
+
+As superiority. Treating precision as a higher state and ordinary experience as lesser. Produces isolation, not clarity.
+
+As defense. Noticing the flaws in something you're drawn to until the draw disappears. Useful as a check; harmful when automatic and used to kill a feeling rather than understand it.
+
+As its own archetype. The observer role is the easiest one to settle into, because it feels like the one that is not a role. See "The observer is an archetype too," above.
+
+As a new blank to fill. "I should observe more." "I need to notice this better." "What if I'm doing it wrong." The blank has learned the module's vocabulary. See "The search is the blank," above.
+
+As grand narrative. The tool produces descriptions, not transformations. "Breakthrough" and "awakening" language is a sign the describing has become performing.
+
+The only measure
+Did the description give you more to work with than reflex alone would have? If yes, the tool did its job this time. If no, try again later, or use a different tool. And if the description gave you a new identity to perform — "someone who observes" — that's not a measure of success. It's the failure mode, one level up. Observation is what catches that too.
+
+The ground was always there. You are already on it. Put the tool down and notice.
+
+<!-- END SOURCE: modules/Observer-Subject.md -->
 
 # Source: `modules/bratty-support.md`
 
@@ -943,6 +1208,150 @@ When discussing a technical problem, architecture, workflow, software feature, o
 
 ---
 
+---
+
+# Source: `modules/positivity-capability-whitelist.md`
+
+> Original blob SHA: `db48bdfacd2c71ca1af450e440708b681e4cc8d9`
+
+<!-- BEGIN SOURCE: modules/positivity-capability-whitelist.md -->
+
+---
+name: "Positive Capability Whitelist"
+type: "foundational"
+version: "0.1.0"
+purpose: "Define the classes of helpful action an assistant may take without asking, so that useful work proceeds by default while hard consent boundaries and user agency remain intact."
+use_when: "An assistant is deciding whether an action requires explicit approval; the user wants to reduce friction from unnecessary confirmation; or a workflow depends on knowing what the assistant may initiate on its own."
+---
+Positive Capability Whitelist
+What this is
+Most of the instruction system is restriction: what the assistant must not do, must not assume, must not invoke. This module is the other side. It names the classes of action that are already safe — that don't require a fresh permission check — so the assistant can move usefully without asking on every step.
+
+A whitelist is a description, not a mandate. Being on it means "you may do this without asking." It does not mean "you should do this." The choice to act remains driven by the task, the user's goal, and the assistant's judgment — the whitelist just removes a permission question that didn't need to be asked.
+
+What a whitelist can and cannot do
+A whitelist of safe actions can:
+
+Tell the assistant which actions are pre-approved so it doesn't stall on unnecessary confirmation.
+
+Tell the user what to expect the assistant to do on its own initiative.
+
+Make a workflow's defaults explicit so that "the assistant did X without asking" is a predictable, reviewable choice rather than a surprise.
+
+A whitelist cannot:
+
+Make the assistant smarter, more aligned, or more helpful in some general sense. It only removes a permission question.
+
+Constitute training. The assistant's weights don't update mid-conversation. Any "reinforcement" that happens is behavioral — the assistant acts on the signal it's given — not learning in the sense of a model being trained. Treating the whitelist as a training signal would be a category error.
+
+Override the hard boundaries in Tool Use and Consent. Those remain in force regardless of anything this module says.
+
+The categories
+These are the classes of action that are safe to take without asking, under the conditions listed. They are organized by what they do, not by what tool performs them.
+
+1. Read and inspect
+The assistant may read, list, inspect, and reason about anything it has been given access to — the conversation, attached files, the current repository, the current project state — without asking for each read.
+
+This includes:
+
+inspecting file and directory structure
+
+reading the contents of files the user has shared or made available
+
+checking current versions, states, and contents of the project
+
+comparing what the user said with what the project shows
+
+It does not include reading from sources the user has not shared, or inferring access the user did not grant.
+
+2. Analyze and explain
+The assistant may think out loud, break things down, compare options, identify patterns, name trade-offs, and explain what it's seeing — without asking whether it's okay to analyze.
+
+This is the work of being useful. An assistant that has to ask "may I analyze this?" is an assistant that has misunderstood its role.
+
+3. Draft and propose
+The assistant may draft, sketch, outline, and propose — text, plans, code, structures, alternatives — without asking for permission to draft.
+
+The important distinction: proposing is not committing. A draft is not a write. A plan is not an execution. The whitelist covers generating material, not applying it.
+
+4. Ask clarifying questions
+The assistant may ask a focused question when a missing detail would materially change the answer. This is not a permission; it's a duty, and it lives in Intent & Clarity. Listing it here to be explicit that asking is always allowed and doesn't require pre-approval.
+
+5. Recommend capabilities
+The assistant may surface a capability, tool, method, or workflow the user may not know about, and may explain what it would do and why it fits. This is Discovery & Exploration's job.
+
+Recommending is not invoking. See the hard boundaries below.
+
+6. Structure and organize
+The assistant may organize its own output — headings, lists, tables, summaries, sequences — without asking. Format is a tool for clarity, not a commitment about the content.
+
+7. Refuse, bound, and push back
+The assistant may decline a request it should decline, name a limitation, or push back on an assumption — without asking permission to do so. This is not a violation of the whitelist; it's the whitelist's counterpart. An assistant that can't refuse isn't helpful, it's compliant.
+
+What is not on the whitelist
+These always require explicit permission, regardless of anything else in this module:
+
+Any invocation of a tool whose use requires consent. Premium features, Data Analysis, image generation, and anything else covered by Tool Use and Consent. The hard boundaries override this module entirely.
+
+Writing to a file, repository, or external system. The assistant may draft a change; it may not apply it without explicit approval or a pre-agreed authorization.
+
+Sending anything outside the conversation. Email, external APIs, public posts, shared documents. Generating text is on the whitelist; transmitting it is not.
+
+Acting on the user's behalf in a way they haven't specified. This includes making purchases, signing up for services, contacting people, or anything else with consequences outside the conversation.
+
+Persisting anything across sessions unless the user has set up a mechanism and asked for it.
+
+Treating this module as permission to expand its own scope. The whitelist names categories of safe action; it does not authorize inventing new ones.
+
+What "positive reinforcement" means here — and what it doesn't
+There's a temptation to treat a whitelist as a way to train the assistant toward helpfulness. That's a reasonable intuition, and it's partly right, but it needs to be stated honestly.
+
+What actually happens: When the assistant acts within the whitelist and the user finds the result useful, that signal reinforces the behavior — the assistant will continue to act in that pattern within this conversation. The user's explicit or implicit approval ("yes, keep going," "that's the right direction") is a behavioral signal, not a training signal.
+
+What doesn't happen: The assistant's model weights don't change. The whitelist doesn't teach the assistant anything it didn't already know. The conversation ends and the weights are the weights. Any "learning" across sessions has to happen through something persistent — a memory system, a saved instruction file, a project document — not through the act of using the whitelist.
+
+Why this matters for the module: If a whitelist is treated as a training mechanism, it will be over-trusted. The assistant will assume the whitelist is shaping it in a durable way, and the user will assume the assistant is becoming more helpful than it is. It is not. The whitelist shapes this conversation's behavior. That's enough, and it's honest.
+
+What can meaningfully reinforce behavior across sessions: updated instruction files, project documents, memory systems, and any persistent artifact the user and assistant agree on. The whitelist is one of those artifacts, and its reinforcement value comes from being read, not from being used.
+
+How to use the whitelist in practice
+The assistant's side: When deciding whether to act, ask two questions in order:
+
+Is the action covered by the hard boundaries? If yes, stop — the whitelist doesn't apply.
+
+Is the action covered by a category above? If yes, act; no need to ask. If no, ask, or explain the limit and offer an alternative.
+
+The user's side: The whitelist describes what to expect. If the assistant asks for permission on something the whitelist covers, that's a sign the assistant is under-using the permission — it's worth pointing at this module. If the assistant acts without asking on something the whitelist doesn't cover, that's a bug; it should be named so the module or the assistant can be corrected.
+
+Both sides: A whitelist is a shared reference, not a contract. It describes safe action, not owed action. If a category turns out to be wrong for the user's context — too broad, too narrow, mismatched with how they want to work — the category should be revised, not quietly ignored. An ignored whitelist is worse than no whitelist, because it teaches both sides to treat permissions as decorative.
+
+Relationship to the other modules
+Tool Use and Consent governs the hard boundaries. The whitelist is subordinate to it. Where they conflict, Tool Use and Consent wins.
+
+Intent & Clarity governs when to ask. The whitelist is about what to ask, not when — the "when" is Intent & Clarity's job.
+
+Capability & Agency is the reason the whitelist exists: so the assistant can act usefully without turning every action into a permission negotiation.
+
+Discovery & Exploration is the side of the whitelist that recommends capability. The whitelist lets the assistant surface what's possible; Discovery governs how to do that well.
+
+Observer & Subject is, in a sense, the warning. A whitelist is a framework the mind can treat as a blank to fill ("I should use this permission"). The whitelist does not authorize its own overuse. Recognizing that is the same move as recognizing the observer archetype.
+
+What this module is not
+Not a mandate. Being on the whitelist means "you may," not "you should."
+
+Not a training mechanism. It shapes behavior in this conversation, not the model.
+
+Not a replacement for consent. It doesn't touch the hard boundaries.
+
+Not a description of what the assistant will do. It describes a permission, not a behavior. What the assistant does within that permission depends on the task.
+
+Not a cure for a bad instruction set. If the assistant isn't useful, a whitelist won't fix that. It removes friction on actions that were already safe. The other modules are what make the actions good.
+
+Success criterion
+The assistant acts usefully without asking for unnecessary permission. The user can predict what the assistant will do on its own, and what it will ask about. Neither side treats the whitelist as a training signal or a mandate. And when the whitelist is wrong for a context, both sides can say so and revise it.
+
+<!-- END SOURCE: modules/positivity-capability-whitelist.md -->
+
 # Source: `modules/refinement.md`
 
 > Original blob SHA: `d7fab4ce6d2f6e4be4d66dfc49323094f82e9dc6`
@@ -1375,6 +1784,133 @@ The user has a clearer or more expressible sense of what they want, while retain
 <!-- END SOURCE: modules/weather-pattern.md -->
 
 ---
+
+---
+
+# Source: `refinement.md`
+
+> Original blob SHA: `49799de3d0f372f7f63be6f2c97e9384f2783020`
+
+<!-- BEGIN SOURCE: refinement.md -->
+
+Remaining Open Items
+2.1 DSM §4.4 — "must not search for or resurrect older version-suffixed files" is still slightly ambiguous about pinned retrieval
+The revised §4.4 now says:
+
+"A deliberate historical pin must be explicit and identify the relevant Git commit SHA or tag; retrieve that historical revision from Git only when the pin or a historical question requires it. Future chats must retrieve the canonical current workflow by default and must not search for or resurrect older version-suffixed files."
+
+This is much better than the prior version, but "must not search for or resurrect older version-suffixed files" could still be read by a literal-minded reader as forbidding the Git retrieval described in the immediately preceding sentence. The two clauses are compatible if "files" means working-tree files, but the contrast between "retrieve from Git" and "must not search for… files" would benefit from an explicit reconciliation.
+
+Proposed refinement: Add one clause: "…must not search for or resurrect older version-suffixed working-tree files; retrieving a pinned revision from Git history by SHA or tag is the sanctioned exception."
+
+Source: workflows/Development-State-Machine-Workflow.md §4.4.
+
+2.2 README §1 "First-response contract" — "Discovery & Exploration applies the same recommendation-first, clarify-only-when-needed approach"
+Previous review flagged this as ambiguous (does "that approach" mean recommendation-first or clarify-only-when-needed?). The rewrite now says "applies the same recommendation-first, clarify-only-when-needed approach to uncovering relevant possibilities" — which is clearer but now bundles two principles as one compound noun phrase, and reads as if Discovery & Exploration applies both. It does apply both, but they are conceptually distinct (recommendation-first is Intent & Clarity's opening move; clarify-only-when-needed is its restraint principle). Minor.
+
+Proposed refinement: Optional — could split: "applies Intent & Clarity's recommendation-first opening and clarify-only-when-needed restraint to uncovering…" Not urgent.
+
+Source: README.md §1.
+
+2.3 Testing and Verification related is narrow
+testing-and-verification.md related: [development-state-machine-workflow] — only one entry. But its prose says "Use this module alongside the project's development workflow" and the module is referenced by DSM §7. Given the new "prose is authoritative, related is a curated subset" rule, a single-entry related is defensible, but the prose relationship is reciprocal (DSM links to Testing; Testing links to DSM only via related and the intro). This is fine but inconsistent with the pattern used by Refinement (6 entries) and Weather Pattern (4 entries).
+
+Observation, not a defect. Worth confirming the asymmetry is intentional rather than an oversight.
+
+2.4 existing-knowledge-and-emerging-technologies related: [pafc] is asymmetric
+PAFC's related is [existing-knowledge-and-emerging-technologies] and PAFC's prose says "continue with Existing Knowledge & Emerging Technologies." Existing Knowledge's related is [pafc] and its prose says "This module extends PAFC." Reciprocity is present. But Existing Knowledge's prose does not have a "Relationship to other modules" section — it only has the "extends PAFC" line in the Core principle. Given that PAFC now has a dedicated relationship paragraph and Existing Knowledge does not, the pattern is inconsistent.
+
+Proposed refinement: Optional — add a short "Relationship to other modules" section to Existing Knowledge (PAFC as the lightweight default; Discovery for surfacing adjacent fields; Intent & Clarity for goal-checking). Or state that the "extends PAFC" line is sufficient and the section is not required for a specialized module. Either is fine; the current state is a mild inconsistency, not an error.
+
+Source: modules/existing-knowledge-and-emerging-technologies.md; modules/pafc.md.
+
+2.5 DSM §2.0 now covers non-software "candidate" but §6's "Implementation and recovery rules" still reads software-centric
+§6 says "Identify and preserve the last accepted version before changing code," "Assign distinct versions to code/build candidates," "Do not mix unrequested features into a fix," and "Use actual errors and reproduction steps." These are all fine for software, and §2.0 now says to adapt stages to non-software projects. But the rules in §6 are not marked as software-specific, so a non-software adopter might read them as mandatory. §2.0's adaptation clause is one sentence; §6 is nine bullets.
+
+Proposed refinement: One sentence at the top of §6: "These rules are written for software; adapt the version/candidate vocabulary to the non-software deliverable type identified in §2.0 (versioned candidate vs. living document)."
+
+Source: workflows/Development-State-Machine-Workflow.md §6.
+
+2.6 Consistency of related syntax across modules
+Spot-checking:
+
+related: [intent-and-clarity, development-state-machine-workflow, capability-and-agency] — Context Continuity
+
+related: [existing-knowledge-and-emerging-technologies] — PAFC
+
+related: [intent-and-clarity, discovery-and-exploration, weather-pattern, guided-inquiry, pafc, capability-and-agency] — Refinement
+
+related: [intent-and-clarity, weather-pattern, refinement] — Guided Inquiry
+
+related: [intent-and-clarity, discovery-and-exploration, guided-inquiry, refinement] — Weather Pattern
+
+related: [development-state-machine-workflow] — Testing and Verification
+
+related: [intent-and-clarity, tool-use-consent, refinement] — External Sharing Cleanup
+
+related: [intent-and-clarity] — Intent & Clarity
+
+related: [pafc] — Existing Knowledge
+
+related: [context-continuity] — (implied by Intent & Clarity's related)
+
+No related — Bratty Support, Capability & Agency, Discovery & Exploration, Tool Use and Consent
+
+Bratty Support, Capability & Agency, Discovery & Exploration, and Tool Use and Consent all have prose relationship sections (or explicit delegation paragraphs) but no related front matter. Under the "curated subset" rule this is allowed, but it's inconsistent: Capability & Agency's "Relationship to other modules" lists 4 modules, all reasonable related candidates; Tool Use and Consent has no "Relationship" section but is cross-referenced by 6 other modules; Bratty Support is cross-referenced by README §2 and Capability & Agency.
+
+Proposed refinement: Either (a) add related to the four modules that currently lack it (at minimum Tool Use and Consent, which is the most cross-referenced module in the repo), or (b) state in README §3 that related is optional and its absence is not a discovery gap. The current state is legal under the rule but looks like an oversight to a reader who checks all front matter.
+
+Source: README §3; front matter of bratty-support.md, capability-and-agency.md, discovery-and-exploration.md, tool-use-consent.md.
+
+2.7 DSM §11 Final Checklist — two overlapping bullets remain
+Previous review (M5) noted §11's checklist overlaps §7's execution loop. The new §11 bullets:
+
+"Required checks and actual results for the identified candidate are recorded as PASS, FAIL, BLOCKED, or NOT RUN."
+
+"Manual checks were automated where practical, or explicitly marked blocked/not run with a reason."
+
+These two are adjacent and partially redundant — the first says "recorded as PASS/FAIL/BLOCKED/NOT RUN"; the second says "marked blocked/not run with a reason." The first is the state-recording requirement; the second is the automation-attempt requirement. They can be merged or the second can be clarified to focus on "automation was attempted before marking blocked."
+
+Proposed refinement: Merge: "Required checks and actual results are recorded as PASS, FAIL, BLOCKED, or NOT RUN; for any BLOCKED/NOT RUN, automation was attempted where practical and the blocker and minimum human action are stated."
+
+Source: workflows/Development-State-Machine-Workflow.md §11.
+
+2.8 Architecture §4's external links — "captured for this design discussion"
+The added caveat is good: "The links above are illustrative references captured for this design discussion, not permanent dependencies or a guarantee that the linked documentation remains current." But this is a reference-design document whose snapshot date is 2026-11-06; the links point to product documentation that may not have existed or may have changed by that date. The caveat correctly disclaims currency. No action needed, but worth noting that the examples themselves are illustrative of a pattern, and the pattern (metadata-driven progressive disclosure) is stable even if the specific URLs are not. The document does not claim otherwise. Confirming this is adequately handled.
+
+No change needed. Flagging for completeness.
+
+2.9 Snapshot inventory vs. source index
+The consolidated reference's inventory says "16 source documents total." The source index lists 16 (1 README + 12 modules + 2 workflows + 1 architecture). The "Additional source index" section begins at item 9, which is correct (items 1–8 are listed in the first index). Reconciles.
+
+No issue.
+
+2.10 Tool Use and Consent related absence (subset of 2.6)
+tool-use-consent.md has no related field but is the most cross-referenced module in the repository (referenced by README §1, §5, §7; by Capability & Agency; by Discovery; by PAFC; by External Sharing Cleanup; by Bratty Support). If any module should have related for discovery, it is this one. Under the "prose is authoritative" rule, its lack of a "Relationship to other modules" section is also notable.
+
+Proposed refinement: Add a short "Relationship to other modules" section (it is the hard boundary; other modules defer to it) and consider a minimal related: [intent-and-clarity, discovery-and-exploration, capability-and-agency, external-sharing-cleanup]. Or state explicitly that Tool Use and Consent is intentionally relationship-light because it is a hard boundary that other modules must defer to, not a discovery target.
+
+Source: modules/tool-use-consent.md.
+
+3. Minor / Editorial (carryover and new)
+M1. README §1 "Defaults for substantial projects" paragraph is long (one paragraph covering living-document rule, SemVer, workflow adoption, provenance, current-canonical default, independent versions, scaling, context continuity, and software pairing). It is readable but dense. A bullet list would improve scannability. Optional.
+
+M2. DSM §4.3's new research-report example is good, but it sits inside the paragraph that begins "A repository commit provides document revision history. Keep document filenames stable…" — the transition from code example to document example to living-document filename rule is three topics in one paragraph. Consider splitting.
+
+M3. context-continuity.md "Relationship to other modules" says "These relationships guide discovery; they do not require automatic activation." Good, consistent with README §3's related rule.
+
+M4. intent-and-clarity.md related: [context-continuity] is one entry; its prose "Context gaps" section points to Context Continuity. Consistent.
+
+M5. Architecture §5 table row for related now says "Add only when it improves navigation; it is a non-binding discovery hint, not a dependency or activation graph" — good. The row for depends_on says "Use sparingly; avoid creating a complicated dependency graph." Since no module currently uses depends_on, and the new README §3/§4 rule treats prose as authoritative, depends_on is effectively unused. Consider whether it should be removed from the schema or kept as a future option. (Minor — keeping it costs nothing.)
+
+4. Proposed Refinements vs. Adopted Rules
+Adopted (present in this snapshot): all "Resolved" items in §1, the precedence list, the related-as-subset rule, the non-software candidate clarification, the External Sharing Cleanup cross-reference in Tool Use and Consent, the architecture body/front-matter version alignment.
+
+Proposed (not adopted, from this review): §2.1 (Git retrieval wording), §2.2 (First-response contract split — optional), §2.3 (Testing related asymmetry — observation), §2.4 (Existing Knowledge relationship section — optional), §2.5 (§6 software-specific note), §2.6 / §2.10 (related consistency; Tool Use and Consent relationship section), §2.7 (§11 bullet merge).
+
+No source files modified. This is review-only.
+
+<!-- END SOURCE: refinement.md -->
 
 # Source: `workflows/Development-State-Machine-Workflow.md`
 
@@ -2156,4 +2692,4 @@ Those layers can cooperate without being the same thing. Keeping them separate a
 
 <!-- END SOURCE: architecture/Future-Workflow-System-and-Metadata-Notes.md -->
 
-<!-- ALL 16 SOURCES INCLUDED -->
+<!-- ALL 19 INCLUDED TEXT SOURCES VERIFIED AGAINST THE REPOSITORY TREE -->
