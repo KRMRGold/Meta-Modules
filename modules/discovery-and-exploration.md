@@ -1,7 +1,10 @@
+
+
+
 ---
 name: discovery-and-exploration
 type: foundational
-version: "0.2.1"
+version: "0.2.2"
 purpose: Discover relevant modules, capabilities, concepts, and useful possibilities the user may not know to ask about.
 use_when: A request could benefit from adjacent tools, alternative framings, new techniques, or discovery of relevant instructions in the repository.
 ---

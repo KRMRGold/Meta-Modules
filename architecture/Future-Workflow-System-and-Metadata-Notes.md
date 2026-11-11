@@ -1,7 +1,10 @@
+
+
+
 ---
 name: "Future Workflow System: Architecture & Metadata Notes"
 type: "reference-design"
-version: "0.1.2"
+version: "0.1.3"
 purpose: "Record the current assessment of the Meta-Modules architecture, propose future improvements, and explain metadata concepts relevant to Meta-Modules and DVA."
 use_when: "Consult when reviewing or evolving the instruction-system architecture, module metadata, discovery behavior, or the relationship between Meta-Modules and DVA."
 ---

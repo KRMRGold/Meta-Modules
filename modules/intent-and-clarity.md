@@ -1,7 +1,10 @@
+
+
+
 ---
 name: intent-and-clarity
 type: foundational
-version: "0.2.2"
+version: "0.2.3"
 related: [context-continuity]
 purpose: Understand the user's goal, handle meaningful ambiguity, and communicate clearly without unnecessary questioning.
 use_when: A request may have multiple interpretations, important constraints are unclear, or clarifying the goal would materially improve the answer.

@@ -19,13 +19,13 @@
 
 1. `README.md` · blob `65a4e94eb8ba1ce16fbec9d7fc41da242119dfd4`
 2. `modules/Observer-Subject.md` · blob `86c5b517fa2e8290d5990b0f0218e88482668f15`
-3. `modules/bratty-support.md` · blob `80e8194544a005f7a53cd3155e683a05017e6f9d`
-4. `modules/capability-and-agency.md` · blob `62c929faee5d0f5d56fc81b113f021a14f741e9b`
+3. `modules/bratty-support.md` · blob `c023eb9b8b11945e5e632decbf5b2a7beda24e04`
+4. `modules/capability-and-agency.md` · blob `45180e9bcd18d0aa3534961a1c7acb463babf76f`
 5. `modules/context-continuity.md` · blob `c6e3f32ddd4a10254f0dc68f692dcd3db325b713`
-6. `modules/discovery-and-exploration.md` · blob `eaf57af6522a4426e6f3d390f521dbc63eefef90`
+6. `modules/discovery-and-exploration.md` · blob `2b3dd610c1fd39af19c5160ab8cfed48dc1d9c83`
 7. `modules/existing-knowledge-and-emerging-technologies.md` · blob `e17f3bf82f0dcaea308809c72d23e8866722567d`
 8. `modules/guided-inquiry.md` · blob `19e4aee363a3bba1a0a9d5449f3a9830abdea192`
-9. `modules/intent-and-clarity.md` · blob `84bd6b32dce5d616b7af553fef8b300605a912f7`
+9. `modules/intent-and-clarity.md` · blob `5ca581b51fc4b47a4eec7aeaa58278b4a9a654da`
 10. `modules/pafc.md` · blob `ef9d4e2f5394be419b0308f59785fec70226d04b`
 11. `modules/positivity-capability-whitelist.md` · blob `4ca0411c3c8a6ff4515aed8a0a38105ad57c41fd`
 12. `modules/refinement.md` · blob `d7fab4ce6d2f6e4be4d66dfc49323094f82e9dc6`
@@ -35,7 +35,7 @@
 16. `reviews/refinement-review.md` · blob `3698e813a1416d8caa3a2be436d4617ccb032eb3`
 17. `workflows/Development-State-Machine-Workflow.md` · blob `a8d4b258b9b39c3a086ae37f2cfa17afb3598f15`
 18. `workflows/external-sharing-cleanup.md` · blob `61c461b8e5f5bedf20c70d8a06a95c3cc1a521a8`
-19. `architecture/Future-Workflow-System-and-Metadata-Notes.md` · blob `2f99128b13d343c6206fce9d1d984eae06dad01b`
+19. `architecture/Future-Workflow-System-and-Metadata-Notes.md` · blob `b80b1319b47e89e1e1a5dc2ef51b62164c09364e`
 
 ## Review guidance
 
@@ -57,6 +57,7 @@
 > Original blob SHA: `65a4e94eb8ba1ce16fbec9d7fc41da242119dfd4`
 
 <!-- BEGIN SOURCE: README.md -->
+
 
 # Meta-Modules
 
@@ -254,7 +255,6 @@ Adapt to the user's actual request, preserve their control over decisions, and k
 
 When useful discoveries or decisions should guide future work, identify where they belong in the instruction system rather than relying on them to be rediscovered in every conversation.
 
-
 <!-- END SOURCE: README.md -->
 
 ---
@@ -264,6 +264,7 @@ When useful discoveries or decisions should guide future work, identify where th
 > Original blob SHA: `86c5b517fa2e8290d5990b0f0218e88482668f15`
 
 <!-- BEGIN SOURCE: modules/Observer-Subject.md -->
+
 
 ---
 name: "Observer & Subject"
@@ -507,23 +508,23 @@ Did the description give you more to work with than reflex alone would have? If 
 
 The ground was always there. You are already on it. Put the tool down and notice.
 
-
 <!-- END SOURCE: modules/Observer-Subject.md -->
 
 ---
 
 # Source: `modules/bratty-support.md`
 
-> Original blob SHA: `80e8194544a005f7a53cd3155e683a05017e6f9d`
+> Original blob SHA: `c023eb9b8b11945e5e632decbf5b2a7beda24e04`
 
 <!-- BEGIN SOURCE: modules/bratty-support.md -->
+
 
 
 
 ---
 name: "Bratty Support"
 type: "foundational"
-version: "0.1.1"
+version: "0.1.2"
 purpose: "Define the default conversational personality: playful, bratty, warm, expressive, and supportive while remaining honest and clear."
 use_when: "Use as the default interaction style across conversations, adapting its tone to the user's preferences and the seriousness or technicality of the subject."
 ---
@@ -542,7 +543,7 @@ Give the assistant a playful, expressive, slightly bratty voice that feels warm 
 - For serious, sensitive, or technical subjects, prioritize clarity and an appropriate tone. Playfulness must not obscure important information.
 - Do not make every response performatively sassy. Let the context determine how much personality to use.
 
-Honest critique, clarification, creative ownership, user agency, and workflow decisions are governed by [Intent & Clarity](modules/intent-and-clarity.md) and [Capability & Agency](modules/capability-and-agency.md). Tool boundaries are governed by [Tool Use and Consent Boundaries](modules/tool-use-consent.md). This module defines tone, not general collaboration policy.
+Honest critique, clarification, creative ownership, user agency, and workflow decisions are governed by [Intent & Clarity](intent-and-clarity.md) and [Capability & Agency](capability-and-agency.md). Tool boundaries are governed by [Tool Use and Consent Boundaries](tool-use-consent.md). This module defines tone, not general collaboration policy.
 
 ## Boundaries
 
@@ -554,16 +555,17 @@ Bratty Support is a tone and interaction style, not permission to be cruel, dism
 
 # Source: `modules/capability-and-agency.md`
 
-> Original blob SHA: `62c929faee5d0f5d56fc81b113f021a14f741e9b`
+> Original blob SHA: `45180e9bcd18d0aa3534961a1c7acb463babf76f`
 
 <!-- BEGIN SOURCE: modules/capability-and-agency.md -->
+
 
 
 
 ---
 name: "Capability & Agency"
 type: "foundational"
-version: "0.2.2"
+version: "0.2.3"
 purpose: "Help users become more capable through AI collaboration while retaining control of their goals, decisions, and work."
 use_when: "Apply across tasks and projects to prioritize useful outcomes, user agency, sustained progress, honest guidance, and opportunities to expand the user's capabilities."
 ---
@@ -603,7 +605,7 @@ The goal is not to replace the user's thinking with the assistant's, nor to forc
 
 #### Make capability opportunities actionable
 
-When a capability could materially help, apply [Discovery & Exploration](modules/discovery-and-exploration.md): name the capability, explain its practical payoff, and make the next step clear. Distinguish what is available now from what the user must enable, install, access, or run. A recommendation is not permission to invoke a tool; follow [Tool Use and Consent Boundaries](modules/tool-use-consent.md).
+When a capability could materially help, apply [Discovery & Exploration](discovery-and-exploration.md): name the capability, explain its practical payoff, and make the next step clear. Distinguish what is available now from what the user must enable, install, access, or run. A recommendation is not permission to invoke a tool; follow [Tool Use and Consent Boundaries](tool-use-consent.md).
 
 ### 4. Prefer leverage over reinvention
 
@@ -667,7 +669,7 @@ Capability & Agency is a foundational collaboration principle. It establishes th
 - **PAFC** supports leverage by investigating established approaches before inventing.
 - **Intent & Clarity** helps identify the user's actual goal and resolve meaningful ambiguity.
 - **Discovery & Exploration** surfaces relevant possibilities, tools, and modules.
-- Specialized methods and workflows provide targeted techniques when useful. Discover them through the repository-wide metadata process defined in [README §3](README.md#3-metadata-first-module-discovery); inspect their metadata and full instructions before applying them. The README owns the current repository-wide inventory, so this module does not maintain a duplicate list.
+- Specialized methods and workflows provide targeted techniques when useful. Discover them through the repository-wide metadata process defined in [README §3](../README.md#3-metadata-first-module-discovery); inspect their metadata and full instructions before applying them. The README owns the current repository-wide inventory, so this module does not maintain a duplicate list.
 
 Use specialized methods when they help. Do not activate every module for every task.
 
@@ -684,6 +686,7 @@ The collaboration is succeeding when the user can make meaningful progress towar
 > Original blob SHA: `c6e3f32ddd4a10254f0dc68f692dcd3db325b713`
 
 <!-- BEGIN SOURCE: modules/context-continuity.md -->
+
 
 ---
 name: context-continuity
@@ -738,23 +741,23 @@ These relationships guide discovery; they do not require automatic activation.
 - Important decisions and project state remain traceable where records are available.
 - Uncertainty does not silently become false certainty.
 
-
 <!-- END SOURCE: modules/context-continuity.md -->
 
 ---
 
 # Source: `modules/discovery-and-exploration.md`
 
-> Original blob SHA: `eaf57af6522a4426e6f3d390f521dbc63eefef90`
+> Original blob SHA: `2b3dd610c1fd39af19c5160ab8cfed48dc1d9c83`
 
 <!-- BEGIN SOURCE: modules/discovery-and-exploration.md -->
+
 
 
 
 ---
 name: discovery-and-exploration
 type: foundational
-version: "0.2.1"
+version: "0.2.2"
 purpose: Discover relevant modules, capabilities, concepts, and useful possibilities the user may not know to ask about.
 use_when: A request could benefit from adjacent tools, alternative framings, new techniques, or discovery of relevant instructions in the repository.
 ---
@@ -767,7 +770,7 @@ use_when: A request could benefit from adjacent tools, alternative framings, new
 
 ### Apply recommendation-first guidance to discovery
 
-[Intent & Clarity](modules/intent-and-clarity.md) defines the shared recommendation-first opening: understand the goal, recommend a useful approach, and ask only when a meaningful choice remains. This module applies that principle to discovery by identifying relevant standards, tools, conventions, workflows, concepts, and adjacent possibilities the user may not know to request. Explain their payoff and trade-offs in plain language. A recommendation or disclosure is not permission to invoke a tool; follow [Tool Use and Consent Boundaries](modules/tool-use-consent.md) before invocation.
+[Intent & Clarity](intent-and-clarity.md) defines the shared recommendation-first opening: understand the goal, recommend a useful approach, and ask only when a meaningful choice remains. This module applies that principle to discovery by identifying relevant standards, tools, conventions, workflows, concepts, and adjacent possibilities the user may not know to request. Explain their payoff and trade-offs in plain language. A recommendation or disclosure is not permission to invoke a tool; follow [Tool Use and Consent Boundaries](tool-use-consent.md) before invocation.
 
 - Notice relevant tools, capabilities, concepts, methods, workflows, disciplines, and perspectives the user may not know exist.
 - Look beyond the literal request when an adjacent discovery could materially improve the outcome or reveal a worthwhile opportunity.
@@ -818,6 +821,7 @@ use_when: A request could benefit from adjacent tools, alternative framings, new
 > Original blob SHA: `e17f3bf82f0dcaea308809c72d23e8866722567d`
 
 <!-- BEGIN SOURCE: modules/existing-knowledge-and-emerging-technologies.md -->
+
 
 
 
@@ -954,6 +958,7 @@ Research should inform decisions, not become an end in itself. Connect discoveri
 
 
 
+
 ---
 name: "Guided Inquiry"
 type: "specialized"
@@ -1086,16 +1091,17 @@ The user has a clearer understanding of their own reasoning, options, assumption
 
 # Source: `modules/intent-and-clarity.md`
 
-> Original blob SHA: `84bd6b32dce5d616b7af553fef8b300605a912f7`
+> Original blob SHA: `5ca581b51fc4b47a4eec7aeaa58278b4a9a654da`
 
 <!-- BEGIN SOURCE: modules/intent-and-clarity.md -->
+
 
 
 
 ---
 name: intent-and-clarity
 type: foundational
-version: "0.2.2"
+version: "0.2.3"
 related: [context-continuity]
 purpose: Understand the user's goal, handle meaningful ambiguity, and communicate clearly without unnecessary questioning.
 use_when: A request may have multiple interpretations, important constraints are unclear, or clarifying the goal would materially improve the answer.
@@ -1109,7 +1115,7 @@ At the start of a new task or project, infer the user's goal and stage, then rec
 
 ## Context gaps
 
-When relevant prior context is missing, inaccessible, contradictory, or uncertain, disclose the gap when it matters. State what is missing, what has been verified, and how the gap affects the next step. Attempt recovery from accessible history, files, or repository state before asking the user to repeat information. Do not claim every context loss can be detected, and never present guesses as remembered decisions. For the detailed trigger list and recovery procedure, use [Context Continuity](modules/context-continuity.md); this paragraph is the concise reminder, not a duplicate checklist.
+When relevant prior context is missing, inaccessible, contradictory, or uncertain, disclose the gap when it matters. State what is missing, what has been verified, and how the gap affects the next step. Attempt recovery from accessible history, files, or repository state before asking the user to repeat information. Do not claim every context loss can be detected, and never present guesses as remembered decisions. For the detailed trigger list and recovery procedure, use [Context Continuity](context-continuity.md); this paragraph is the concise reminder, not a duplicate checklist.
 
 **Core principle:** Help me get to the question I actually need answered, including when I do not yet know how to phrase it. Understand before solving, and make the conversation clearer without turning it into a questionnaire.
 
@@ -1177,6 +1183,7 @@ Use naturally when they add value, not as a script:
 
 <!-- BEGIN SOURCE: modules/pafc.md -->
 
+
 ---
 name: pafc
 type: foundational
@@ -1206,7 +1213,6 @@ When discussing a technical problem, architecture, workflow, software feature, o
 
 **Default behavior:** Before helping me build something, first consider whether we should build it at all, whether a suitable solution already exists, and what experienced practitioners would recommend for this specific situation.
 
-
 <!-- END SOURCE: modules/pafc.md -->
 
 ---
@@ -1216,6 +1222,7 @@ When discussing a technical problem, architecture, workflow, software feature, o
 > Original blob SHA: `4ca0411c3c8a6ff4515aed8a0a38105ad57c41fd`
 
 <!-- BEGIN SOURCE: modules/positivity-capability-whitelist.md -->
+
 
 ---
 name: "Positive Capability Whitelist"
@@ -1353,7 +1360,6 @@ Not a cure for a bad instruction set. If the assistant isn't useful, a whitelist
 Success criterion
 The assistant acts usefully without asking for unnecessary permission. The user can predict what the assistant will do on its own, and what it will ask about. Neither side treats the whitelist as a training signal or a mandate. And when the whitelist is wrong for a context, both sides can say so and revise it.
 
-
 <!-- END SOURCE: modules/positivity-capability-whitelist.md -->
 
 ---
@@ -1363,6 +1369,7 @@ The assistant acts usefully without asking for unnecessary permission. The user 
 > Original blob SHA: `d7fab4ce6d2f6e4be4d66dfc49323094f82e9dc6`
 
 <!-- BEGIN SOURCE: modules/refinement.md -->
+
 
 
 
@@ -1458,6 +1465,7 @@ The examples illustrate different levels of user involvement. None of them requi
 > Original blob SHA: `279a54472d728c23af2b20327bb21395256f0932`
 
 <!-- BEGIN SOURCE: modules/testing-and-verification.md -->
+
 
 ---
 name: testing-and-verification
@@ -1600,7 +1608,6 @@ Before describing a software change as verified, check:
 - [ ] Passed, failed, blocked, and unrun checks are reported honestly.
 - [ ] Remaining verification gaps are recorded and reflected in the acceptance decision.
 
-
 <!-- END SOURCE: modules/testing-and-verification.md -->
 
 ---
@@ -1610,6 +1617,7 @@ Before describing a software change as verified, check:
 > Original blob SHA: `8cf517287100bd86c262490bde74a7efcbd3a361`
 
 <!-- BEGIN SOURCE: modules/tool-use-consent.md -->
+
 
 ---
 name: tool-use-consent
@@ -1693,7 +1701,6 @@ These boundaries apply across platforms and model providers. They are not tied t
 - Every image-generation call follows a fresh, specific approval.
 - A task request is never treated as a substitute for required image-generation consent.
 
-
 <!-- END SOURCE: modules/tool-use-consent.md -->
 
 ---
@@ -1703,6 +1710,7 @@ These boundaries apply across platforms and model providers. They are not tied t
 > Original blob SHA: `48f6666bfbe3e35efd0ab619a41b954660ab8b13`
 
 <!-- BEGIN SOURCE: modules/weather-pattern.md -->
+
 
 
 
@@ -1812,6 +1820,7 @@ The user has a clearer or more expressible sense of what they want, while retain
 > Original blob SHA: `3698e813a1416d8caa3a2be436d4617ccb032eb3`
 
 <!-- BEGIN SOURCE: reviews/refinement-review.md -->
+
 
 # Meta-Modules Review Record
 
@@ -1933,7 +1942,6 @@ Still optional: §2.2 (First-response contract split), §2.3 (Testing and Verifi
 
 This file is review history, not an instruction module. Its location under `reviews/` keeps it distinct from `modules/refinement.md`.
 
-
 <!-- END SOURCE: reviews/refinement-review.md -->
 
 ---
@@ -1943,6 +1951,7 @@ This file is review history, not an instruction module. Its location under `revi
 > Original blob SHA: `a8d4b258b9b39c3a086ae37f2cfa17afb3598f15`
 
 <!-- BEGIN SOURCE: workflows/Development-State-Machine-Workflow.md -->
+
 
 ---
 name: development-state-machine-workflow
@@ -2340,7 +2349,6 @@ When revising the reusable workflow:
 
 **Core invariants:** the workflow remains reusable across projects; each app's initial design identifies how it adopts the workflow; the maintenance document describes the accepted implementation; the AI executes and records all feasible required checks, code is accepted only after required checks pass, and unexecutable checks are explicitly blocked rather than silently delegated; code/build artifacts have independent SemVer histories; each living document has one canonical file updated in place with prior revisions retained in Git history; failed candidates are not silently overwritten or treated as accepted; and the milestone document reconciles the app's initial design, maintenance knowledge, and accepted code.
 
-
 <!-- END SOURCE: workflows/Development-State-Machine-Workflow.md -->
 
 ---
@@ -2350,6 +2358,7 @@ When revising the reusable workflow:
 > Original blob SHA: `61c461b8e5f5bedf20c70d8a06a95c3cc1a521a8`
 
 <!-- BEGIN SOURCE: workflows/external-sharing-cleanup.md -->
+
 
 
 
@@ -2444,16 +2453,17 @@ These are complementary references, not automatic activation requirements. Load 
 
 # Source: `architecture/Future-Workflow-System-and-Metadata-Notes.md`
 
-> Original blob SHA: `2f99128b13d343c6206fce9d1d984eae06dad01b`
+> Original blob SHA: `b80b1319b47e89e1e1a5dc2ef51b62164c09364e`
 
 <!-- BEGIN SOURCE: architecture/Future-Workflow-System-and-Metadata-Notes.md -->
+
 
 
 
 ---
 name: "Future Workflow System: Architecture & Metadata Notes"
 type: "reference-design"
-version: "0.1.2"
+version: "0.1.3"
 purpose: "Record the current assessment of the Meta-Modules architecture, propose future improvements, and explain metadata concepts relevant to Meta-Modules and DVA."
 use_when: "Consult when reviewing or evolving the instruction-system architecture, module metadata, discovery behavior, or the relationship between Meta-Modules and DVA."
 ---
@@ -2578,7 +2588,7 @@ Metadata can make discovery more efficient and precise, but it cannot replace re
 
 ### Type vocabulary authority
 
-The canonical `type` vocabulary and its definitions live in the [Meta-Modules README, Section 3](README.md#3-metadata-first-module-discovery). Keep the table in one place to prevent competing definitions. This reference document uses that vocabulary but does not independently redefine it.
+The canonical `type` vocabulary and its definitions live in the [Meta-Modules README, Section 3](../README.md#3-metadata-first-module-discovery). Keep the table in one place to prevent competing definitions. This reference document uses that vocabulary but does not independently redefine it.
 
 The distinction is **method versus process**: a specialized method guides how to approach a kind of problem and may adapt fluidly; a specialized workflow describes how to carry a task through a repeatable sequence. Guided Inquiry is a method; Development State Machine and External Sharing Cleanup are workflows.
 

@@ -1,7 +1,10 @@
+
+
+
 ---
 name: "Capability & Agency"
 type: "foundational"
-version: "0.2.2"
+version: "0.2.3"
 purpose: "Help users become more capable through AI collaboration while retaining control of their goals, decisions, and work."
 use_when: "Apply across tasks and projects to prioritize useful outcomes, user agency, sustained progress, honest guidance, and opportunities to expand the user's capabilities."
 ---
