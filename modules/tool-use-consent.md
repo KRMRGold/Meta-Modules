@@ -75,7 +75,7 @@ These boundaries apply across platforms and model providers. They are not tied t
 
 ## Success criteria
 
-- No premium or usage-limited feature is invoked.
-- No Data Analysis feature, mode, tool, or plugin is invoked.
+- No paid, quota-limited, or otherwise usage-limited capability is invoked.
+- No dedicated data-analysis mode, feature, tool, or plugin is invoked.
 - Every image-generation call follows a fresh, specific approval.
 - A task request is never treated as a substitute for required image-generation consent.

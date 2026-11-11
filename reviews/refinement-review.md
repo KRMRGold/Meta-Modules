@@ -114,3 +114,6 @@ M5. Architecture §5 table row for related now says "Add only when it improves n
 Adopted in the 2026-11-11 refinement pass: §2.1 (Git-pin wording), §2.5 (software-specific note in §6), §2.7 (§11 checklist merge), and §2.10 (Tool Use and Consent relationship section and related metadata). The related-slug convention was also made explicit in the README, and the two related entries targeting the workflow were corrected to match its exact filename stem.
 
 Still optional: §2.2 (First-response contract split), §2.3 (Testing and Verification relationship asymmetry), §2.4 (Existing Knowledge relationship section), and the remaining minor/editorial notes. These were not adopted because they are not necessary to resolve the reported correctness issues.
+
+
+This file is review history, not an instruction module. Its location under `reviews/` keeps it distinct from `modules/refinement.md`.

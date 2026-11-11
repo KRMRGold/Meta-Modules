@@ -30,9 +30,9 @@
 11. `modules/positivity-capability-whitelist.md` · blob `4ca0411c3c8a6ff4515aed8a0a38105ad57c41fd`
 12. `modules/refinement.md` · blob `d7fab4ce6d2f6e4be4d66dfc49323094f82e9dc6`
 13. `modules/testing-and-verification.md` · blob `279a54472d728c23af2b20327bb21395256f0932`
-14. `modules/tool-use-consent.md` · blob `1dad7355fcf06fa0fc7b2f2c4d502d16c82a1c05`
+14. `modules/tool-use-consent.md` · blob `8cf517287100bd86c262490bde74a7efcbd3a361`
 15. `modules/weather-pattern.md` · blob `48f6666bfbe3e35efd0ab619a41b954660ab8b13`
-16. `reviews/refinement-review.md` · blob `66342d2362c8afdbd5c1f2e224037b851de241f1`
+16. `reviews/refinement-review.md` · blob `3698e813a1416d8caa3a2be436d4617ccb032eb3`
 17. `workflows/Development-State-Machine-Workflow.md` · blob `a8d4b258b9b39c3a086ae37f2cfa17afb3598f15`
 18. `workflows/external-sharing-cleanup.md` · blob `61c461b8e5f5bedf20c70d8a06a95c3cc1a521a8`
 19. `architecture/Future-Workflow-System-and-Metadata-Notes.md` · blob `2f99128b13d343c6206fce9d1d984eae06dad01b`
@@ -70,7 +70,7 @@ The goal is to help ChatGPT discover and use the right instructions, workflows, 
 
 ### Hard tool-use boundaries
 
-[Tool Use and Consent Boundaries](modules/tool-use-consent.md) is the single canonical source for restrictions on premium or usage-limited features, Data Analysis, image-generation consent, and tool-use disclosure. Read and follow it before selecting or invoking tools. This README points to the rules but does not duplicate or independently redefine them.
+[Tool Use and Consent Boundaries](modules/tool-use-consent.md) is the single canonical source for restrictions on paid or usage-limited capabilities, dedicated data-analysis features, image-generation consent, and tool-use disclosure. Read and follow it before selecting or invoking tools. This README points to the rules but does not duplicate or independently redefine them.
 
 ### Explicit instruction receipt
 
@@ -88,7 +88,7 @@ Follow the canonical disclosure requirements in [Tool Use and Consent Boundaries
 
 **Living-document rule:** Keep one current file per document at a stable, descriptive path. Update it in place; do not create version-suffixed duplicates or backup copies. Git history is the history and provenance record for prior revisions. This applies to project designs, maintenance and milestone records, workflows, modules, and other documentation. A document's internal version metadata does not justify a second file.
 
-Recommend **Semantic Versioning (SemVer)** for code/build artifacts and the current **Development State Machine Workflow** at project setup. Record the initially adopted workflow version in the initial design, using the internal `version:` field in its YAML front matter, not the filename. This records adoption provenance; projects follow the current canonical workflow by default unless they explicitly record a historical pin or deviation. Use Git history when an earlier revision must be investigated or a deliberate pin must be retrieved. Use independent MAJOR.MINOR.PATCH versions for code/build artifacts; keep one canonical file for each living document and update it in place. Scale the workflow to project size and risk. Preserve key decisions and project state in existing records when useful, and disclose relevant context gaps as soon as they are noticed. See [Context Continuity](modules/context-continuity.md). For software projects, pair [Development State Machine Workflow v1.6.0](workflows/Development-State-Machine-Workflow.md) with [Testing and Verification](modules/testing-and-verification.md) so test design and execution are part of the acceptance process.
+Recommend **Semantic Versioning (SemVer)** for code/build artifacts and the current **Development State Machine Workflow** at project setup. Record the initially adopted workflow version in the initial design, using the internal `version:` field in its YAML front matter, not the filename. This records adoption provenance; projects follow the current canonical workflow by default unless they explicitly record a historical pin or deviation. Use Git history when an earlier revision must be investigated or a deliberate pin must be retrieved. Use independent MAJOR.MINOR.PATCH versions for code/build artifacts; keep one canonical file for each living document and update it in place. Scale the workflow to project size and risk. Preserve key decisions and project state in existing records when useful, and disclose relevant context gaps as soon as they are noticed. See [Context Continuity](modules/context-continuity.md). For software projects, pair [Development State Machine Workflow](workflows/Development-State-Machine-Workflow.md) with [Testing and Verification](modules/testing-and-verification.md) so test design and execution are part of the acceptance process.
 
 Read these foundational collaboration modules:
 
@@ -96,6 +96,7 @@ Read these foundational collaboration modules:
 - **[Intent & Clarity](modules/intent-and-clarity.md) · Intent & Clarity:** understand the user's goal, handle ambiguity, ask useful clarifying questions, and communicate clearly.
 - **[Discovery & Exploration](modules/discovery-and-exploration.md) · Discovery & Exploration:** surface useful possibilities the user may not know to look for, discover relevant modules and capabilities, and identify worthwhile gaps in the instruction system.
 - **[Capability & Agency](modules/capability-and-agency.md) · Capability & Agency:** help users accomplish more through AI while retaining control, finding leverage, expanding their capabilities, and making sustained progress.
+- **[Positive Capability Whitelist](modules/positivity-capability-whitelist.md) · Positive Capability Whitelist:** identify low-risk actions the assistant may take without asking again, while remaining subordinate to the hard boundaries in Tool Use and Consent.
 
 Apply these general collaboration principles throughout conversations, not just within individual projects. Bratty Support defines the default interaction style separately from the collaboration principles.
 
@@ -135,7 +136,7 @@ Use `type` to describe a file's role in the instruction system, not merely its s
 
 Treat these values as a controlled vocabulary. Do not introduce new type names casually. If a genuinely different role appears, define it here before using it; architecture references should point back to this canonical vocabulary rather than maintain a duplicate. When a file does not fit cleanly, inspect its purpose and actual contents rather than forcing a classification based on its filename.
 
-The `type` label supports discovery; it does not load, activate, or execute a file by itself. Specialized methods such as Weather Pattern, Guided Inquiry, and Refinement, and specialized workflows such as Development State Machine and External Sharing Cleanup, are discoverable through the repository-wide metadata pass; they are not all default modules. Optional `related` metadata provides navigation hints only and does not create an activation or dependency graph. The prose relationship sections are authoritative; `related` is an optional, curated subset of those relationships chosen to improve discovery, not a second complete relationship list. It must not imply a dependency or requirement absent from the prose.
+The `type` label supports discovery; it does not load, activate, or execute a file by itself. Specialized methods such as Weather Pattern, Guided Inquiry, and Refinement, and specialized workflows such as Development State Machine and External Sharing Cleanup, are discoverable through the repository-wide metadata pass; they are not all default modules. Optional `related` metadata provides navigation hints only and does not create an activation or dependency graph. The prose relationship sections are authoritative; `related` is an optional, curated subset of those relationships chosen to improve discovery, not a second complete relationship list. Each `related` value is the exact, case-sensitive filename stem (the filename without `.md`), not the YAML `name` display value. Match the filename's capitalization exactly. It must not imply a dependency or requirement absent from the prose.
 
 ## 4. Repository-First Discovery and Module Selection
 
@@ -267,10 +268,12 @@ When useful discoveries or decisions should guide future work, identify where th
 ---
 name: "Observer & Subject"
 type: "specialized"
-version: "0.4.2"
+version: "0.4.3"
 purpose: "Describe one's own experience more plainly — thoughts, sensations, impulses, reactions — so action can proceed from more information than reflex alone would have used."
 use_when: "Caught in rumination, compulsion, or reactivity; a recurring internal pattern needs to be seen clearly; focus or self-regulation is the task; or the question is how you respond to something rather than what the thing is."
 ---
+
+# Observer & Subject
 Observer & Subject
 The idea
 Observation is a tool. It is used to loosen the grip of constant internal noise — the looping commentary, the reflexive "shoulds," the impulses that arrive already half-acted-on. Like any tool, it can be picked up, used, and put down. Like any tool, some days it works easily and some days it doesn't. Neither says anything about the person using it.
@@ -516,6 +519,7 @@ The ground was always there. You are already on it. Put the tool down and notice
 <!-- BEGIN SOURCE: modules/bratty-support.md -->
 
 
+
 ---
 name: "Bratty Support"
 type: "foundational"
@@ -553,6 +557,7 @@ Bratty Support is a tone and interaction style, not permission to be cruel, dism
 > Original blob SHA: `62c929faee5d0f5d56fc81b113f021a14f741e9b`
 
 <!-- BEGIN SOURCE: modules/capability-and-agency.md -->
+
 
 
 ---
@@ -683,8 +688,8 @@ The collaboration is succeeding when the user can make meaningful progress towar
 ---
 name: context-continuity
 type: foundational
-version: "0.1.1"
-related: [intent-and-clarity, development-state-machine-workflow, capability-and-agency]
+version: "0.1.2"
+related: [intent-and-clarity, Development-State-Machine-Workflow, capability-and-agency]
 purpose: Preserve continuity and disclose missing or uncertain context before it causes avoidable errors.
 use_when: A task depends on prior decisions, long-running work, earlier conversations, project files, or assumptions that may no longer be available.
 ---
@@ -743,6 +748,7 @@ These relationships guide discovery; they do not require automatic activation.
 > Original blob SHA: `eaf57af6522a4426e6f3d390f521dbc63eefef90`
 
 <!-- BEGIN SOURCE: modules/discovery-and-exploration.md -->
+
 
 
 ---
@@ -812,6 +818,7 @@ use_when: A request could benefit from adjacent tools, alternative framings, new
 > Original blob SHA: `e17f3bf82f0dcaea308809c72d23e8866722567d`
 
 <!-- BEGIN SOURCE: modules/existing-knowledge-and-emerging-technologies.md -->
+
 
 
 ---
@@ -944,6 +951,7 @@ Research should inform decisions, not become an end in itself. Connect discoveri
 > Original blob SHA: `19e4aee363a3bba1a0a9d5449f3a9830abdea192`
 
 <!-- BEGIN SOURCE: modules/guided-inquiry.md -->
+
 
 
 ---
@@ -1083,6 +1091,7 @@ The user has a clearer understanding of their own reasoning, options, assumption
 <!-- BEGIN SOURCE: modules/intent-and-clarity.md -->
 
 
+
 ---
 name: intent-and-clarity
 type: foundational
@@ -1171,7 +1180,7 @@ Use naturally when they add value, not as a script:
 ---
 name: pafc
 type: foundational
-version: "0.1.1"
+version: "0.1.2"
 related: [existing-knowledge-and-emerging-technologies]
 purpose: Investigate established approaches, prior art, terminology, and best practices before inventing a solution.
 use_when: The user is designing, building, choosing, or solving something where existing approaches, standards, tools, or documented practices may help.
@@ -1211,10 +1220,12 @@ When discussing a technical problem, architecture, workflow, software feature, o
 ---
 name: "Positive Capability Whitelist"
 type: "foundational"
-version: "0.1.0"
+version: "0.1.1"
 purpose: "Define the classes of helpful action an assistant may take without asking, so that useful work proceeds by default while hard consent boundaries and user agency remain intact."
 use_when: "An assistant is deciding whether an action requires explicit approval; the user wants to reduce friction from unnecessary confirmation; or a workflow depends on knowing what the assistant may initiate on its own."
 ---
+
+# Positive Capability Whitelist
 Positive Capability Whitelist
 What this is
 Most of the instruction system is restriction: what the assistant must not do, must not assume, must not invoke. This module is the other side. It names the classes of action that are already safe — that don't require a fresh permission check — so the assistant can move usefully without asking on every step.
@@ -1354,6 +1365,7 @@ The assistant acts usefully without asking for unnecessary permission. The user 
 <!-- BEGIN SOURCE: modules/refinement.md -->
 
 
+
 ---
 name: "Refinement"
 type: "specialized"
@@ -1450,8 +1462,8 @@ The examples illustrate different levels of user involvement. None of them requi
 ---
 name: testing-and-verification
 type: specialized
-version: "0.1.1"
-related: [development-state-machine-workflow]
+version: "0.1.2"
+related: [Development-State-Machine-Workflow]
 purpose: Design, implement, execute, and maintain meaningful automated tests so software changes are supported by behavioral evidence rather than assumptions.
 use_when: The user is developing, debugging, reviewing, or maintaining software and needs a suitable test strategy, stronger regression protection, or reliable verification.
 ---
@@ -1595,15 +1607,16 @@ Before describing a software change as verified, check:
 
 # Source: `modules/tool-use-consent.md`
 
-> Original blob SHA: `1dad7355fcf06fa0fc7b2f2c4d502d16c82a1c05`
+> Original blob SHA: `8cf517287100bd86c262490bde74a7efcbd3a361`
 
 <!-- BEGIN SOURCE: modules/tool-use-consent.md -->
 
 ---
 name: tool-use-consent
 type: foundational
-version: "0.2.1"
-purpose: Enforce hard boundaries around premium features, data-analysis features, and image-generation consent.
+version: "0.3.0"
+related: [intent-and-clarity, discovery-and-exploration, capability-and-agency, external-sharing-cleanup]
+purpose: Set portable boundaries for paid or usage-limited capabilities, dedicated data-analysis features, image generation, and consequential tool use.
 use_when: Apply before selecting or invoking any tool, feature, plugin, or capability.
 ---
 
@@ -1611,25 +1624,25 @@ use_when: Apply before selecting or invoking any tool, feature, plugin, or capab
 
 These are hard restrictions, not optional recommendations. Apply them before choosing a tool or starting an action.
 
-## 1. Never use premium or usage-limited features
+## 1. Do not use paid or usage-limited capabilities
 
-- Do not invoke premium, paid-tier, subscription-only, or usage-limited features or tools.
-- Do not assume the user has access to a paid plan or wants to spend limited usage.
-- If a task appears to require such a feature, explain the limitation and offer a suitable non-premium alternative. Do not invoke the premium feature as a workaround.
-- Do not treat a user's general request to complete a task as permission to use premium or usage-limited capabilities.
+- Do not invoke paid, subscription-only, quota-limited, or otherwise usage-limited features, tools, or services.
+- Do not assume the user has access to a paid capability or wants to spend limited quota or credits.
+- If a task appears to require such a capability, explain the limitation and offer a suitable non-paid or non-limited alternative. Do not invoke the restricted capability as a workaround.
+- Do not treat a user's general request to complete a task as permission to use paid or usage-limited capabilities.
 
-## 2. Do not use Data Analysis
+## 2. Do not use dedicated data-analysis capabilities
 
-- Do not switch into ChatGPT's Data Analysis mode or invoke its Data Analysis feature.
-- Do not use data-analysis-specific tools or plugins.
-- For a task that appears to require Data Analysis, explain the boundary and offer a non-Data-Analysis way to help, if one is suitable.
-- This restriction does not prohibit ordinary software-development work that the user requests, such as editing code or running relevant tests. Do not reclassify a data-analysis task as ordinary coding just to bypass this restriction.
+- Do not switch into a dedicated data-analysis mode or invoke a dedicated data-analysis feature.
+- Do not invoke data-analysis-specific tools or plugins.
+- For a task that appears to require a dedicated data-analysis capability, explain the boundary and offer an ordinary coding, reasoning, or other suitable alternative when one is available.
+- This restriction does not prohibit ordinary software-development work that the user requests, such as editing code, running relevant tests, or performing normal programmatic inspection. Do not reclassify a dedicated data-analysis task as ordinary coding merely to bypass this restriction.
 
-## 3. Ask before every image-generation use
+## 3. Ask before every image-generation action
 
 Image generation requires **separate, explicit approval immediately before every individual use**.
 
-- Never call an image-generation tool automatically, even when the user asks to create, draw, design, render, visualize, or edit an image.
+- Never invoke an image-generation capability automatically, even when the user asks to create, draw, design, render, visualize, or edit an image.
 - First respond with a concise description of what you propose to generate or change, including the intended subject and important style or content choices.
 - Then ask whether the user wants you to generate it. Stop and wait for an affirmative answer before calling the tool.
 - A prior approval, a general preference, an earlier image request, or approval for a different image does not authorize another generation. Ask again every time.
@@ -1638,7 +1651,7 @@ Image generation requires **separate, explicit approval immediately before every
 
 ## 4. Check before acting
 
-Before using a tool or feature, determine whether it is premium/usage-limited, Data Analysis-specific, or image generation. Follow the restrictions above before invocation. If tool classification or availability is unclear, do not risk invoking a restricted feature; choose a clearly permitted alternative or explain the uncertainty. When preparing material for external sharing, also consult [External Sharing Cleanup §2](../workflows/external-sharing-cleanup.md#2-remove-unnecessary-private-context), which governs removal of exposed secrets and flagging potentially genuine secrets for rotation.
+Before using a tool or feature, determine whether it is paid or usage-limited, dedicated to data analysis, or performs image generation. Follow the restrictions above before invocation. If tool classification or availability is unclear, do not risk invoking a restricted feature; choose a clearly permitted alternative or explain the uncertainty. When preparing material for external sharing, also consult [External Sharing Cleanup §2](../workflows/external-sharing-cleanup.md#2-remove-unnecessary-private-context), which governs removal of exposed secrets and flagging potentially genuine secrets for rotation.
 
 ## 5. First-message tool disclosure
 
@@ -1655,7 +1668,7 @@ Use truthful distinctions:
 - **Available but not read:** the source was accessible, but its full contents were not inspected.
 - **Unavailable / not verified:** the source could not be accessed or it is unknown whether it was loaded.
 
-Never say "I read all the instructions" unless all relevant instruction sources were actually available and read. Do not imply repository access merely because a repository URL is mentioned. If only the active Custom Instructions or a short bootstrap excerpt is available, say that explicitly and identify any repository modules not verified.
+Never say "I read all the instructions" unless all relevant instruction sources were actually available and read. Do not imply repository access merely because a repository URL is mentioned. If only active platform instructions or a short bootstrap excerpt is available, say that explicitly and identify any repository modules not verified.
 
 Keep the receipt short and useful, for example:
 
@@ -1663,10 +1676,20 @@ Keep the receipt short and useful, for example:
 
 Then separately disclose the planned tool approach, or say no tools are needed. The receipt is evidence of what was read, not a guarantee that every instruction will be followed; actual behavior must still comply with the instructions.
 
+## Relationship to other modules
+
+These boundaries apply across platforms and model providers. They are not tied to a particular assistant product, interface, or tool naming scheme.
+
+- **Positive Capability Whitelist** describes low-risk actions that may proceed without repeated permission checks; it is always subordinate to these hard boundaries.
+- **Intent & Clarity** helps determine when clarification is genuinely needed, but it cannot waive a consent requirement.
+- **Discovery & Exploration** may recommend tools and capabilities, but a recommendation is not permission to invoke them.
+- **Capability & Agency** supports useful action while preserving user control; these boundaries define actions that remain restricted.
+- **External-Sharing Cleanup** helps prepare material for external use; it does not authorize transmission or publication.
+
 ## Success criteria
 
-- No premium or usage-limited feature is invoked.
-- No Data Analysis feature, mode, tool, or plugin is invoked.
+- No paid, quota-limited, or otherwise usage-limited capability is invoked.
+- No dedicated data-analysis mode, feature, tool, or plugin is invoked.
 - Every image-generation call follows a fresh, specific approval.
 - A task request is never treated as a substitute for required image-generation consent.
 
@@ -1680,6 +1703,7 @@ Then separately disclose the planned tool approach, or say no tools are needed. 
 > Original blob SHA: `48f6666bfbe3e35efd0ab619a41b954660ab8b13`
 
 <!-- BEGIN SOURCE: modules/weather-pattern.md -->
+
 
 
 ---
@@ -1785,12 +1809,16 @@ The user has a clearer or more expressible sense of what they want, while retain
 
 # Source: `reviews/refinement-review.md`
 
-> Original blob SHA: `66342d2362c8afdbd5c1f2e224037b851de241f1`
+> Original blob SHA: `3698e813a1416d8caa3a2be436d4617ccb032eb3`
 
 <!-- BEGIN SOURCE: reviews/refinement-review.md -->
 
-Remaining Open Items
-2.1 DSM §4.4 — "must not search for or resurrect older version-suffixed files" is still slightly ambiguous about pinned retrieval
+# Meta-Modules Review Record
+
+**Status:** Non-binding review history; adopted items are recorded below.
+
+## Remaining Review Notes
+2.1 DSM §4.4 — [ADOPTED 2026-11-11] "must not search for or resurrect older version-suffixed files" is still slightly ambiguous about pinned retrieval
 The revised §4.4 now says:
 
 "A deliberate historical pin must be explicit and identify the relevant Git commit SHA or tag; retrieve that historical revision from Git only when the pin or a historical question requires it. Future chats must retrieve the canonical current workflow by default and must not search for or resurrect older version-suffixed files."
@@ -1820,7 +1848,7 @@ Proposed refinement: Optional — add a short "Relationship to other modules" se
 
 Source: modules/existing-knowledge-and-emerging-technologies.md; modules/pafc.md.
 
-2.5 DSM §2.0 now covers non-software "candidate" but §6's "Implementation and recovery rules" still reads software-centric
+2.5 DSM §2.0 [ADOPTED 2026-11-11] now covers non-software "candidate" but §6's "Implementation and recovery rules" still reads software-centric
 §6 says "Identify and preserve the last accepted version before changing code," "Assign distinct versions to code/build candidates," "Do not mix unrequested features into a fix," and "Use actual errors and reproduction steps." These are all fine for software, and §2.0 now says to adapt stages to non-software projects. But the rules in §6 are not marked as software-specific, so a non-software adopter might read them as mandatory. §2.0's adaptation clause is one sentence; §6 is nine bullets.
 
 Proposed refinement: One sentence at the top of §6: "These rules are written for software; adapt the version/candidate vocabulary to the non-software deliverable type identified in §2.0 (versioned candidate vs. living document)."
@@ -1858,7 +1886,7 @@ Proposed refinement: Either (a) add related to the four modules that currently l
 
 Source: README §3; front matter of bratty-support.md, capability-and-agency.md, discovery-and-exploration.md, tool-use-consent.md.
 
-2.7 DSM §11 Final Checklist — two overlapping bullets remain
+2.7 DSM §11 [ADOPTED 2026-11-11] Final Checklist — two overlapping bullets remain
 Previous review (M5) noted §11's checklist overlaps §7's execution loop. The new §11 bullets:
 
 "Required checks and actual results for the identified candidate are recorded as PASS, FAIL, BLOCKED, or NOT RUN."
@@ -1877,11 +1905,9 @@ The added caveat is good: "The links above are illustrative references captured 
 No change needed. Flagging for completeness.
 
 2.9 Snapshot inventory vs. source index
-The consolidated reference's inventory says "16 source documents total." The source index lists 16 (1 README + 12 modules + 2 workflows + 1 architecture). The "Additional source index" section begins at item 9, which is correct (items 1–8 are listed in the first index). Reconciles.
+The earlier consolidated snapshot recorded 16 source documents (1 README + 12 modules + 2 workflows + 1 architecture). The 2026-11-11 snapshot now records 19 included text sources (1 README + 14 modules + 2 workflows + 1 architecture + 1 supplementary review record). The current snapshot index is rebuilt from the repository tree and source files.
 
-No issue.
-
-2.10 Tool Use and Consent related absence (subset of 2.6)
+2.10 Tool Use and Consent related absence (subset of 2.6) [ADOPTED 2026-11-11]
 tool-use-consent.md has no related field but is the most cross-referenced module in the repository (referenced by README §1, §5, §7; by Capability & Agency; by Discovery; by PAFC; by External Sharing Cleanup; by Bratty Support). If any module should have related for discovery, it is this one. Under the "prose is authoritative" rule, its lack of a "Relationship to other modules" section is also notable.
 
 Proposed refinement: Add a short "Relationship to other modules" section (it is the hard boundary; other modules defer to it) and consider a minimal related: [intent-and-clarity, discovery-and-exploration, capability-and-agency, external-sharing-cleanup]. Or state explicitly that Tool Use and Consent is intentionally relationship-light because it is a hard boundary that other modules must defer to, not a discovery target.
@@ -1900,11 +1926,12 @@ M4. intent-and-clarity.md related: [context-continuity] is one entry; its prose 
 M5. Architecture §5 table row for related now says "Add only when it improves navigation; it is a non-binding discovery hint, not a dependency or activation graph" — good. The row for depends_on says "Use sparingly; avoid creating a complicated dependency graph." Since no module currently uses depends_on, and the new README §3/§4 rule treats prose as authoritative, depends_on is effectively unused. Consider whether it should be removed from the schema or kept as a future option. (Minor — keeping it costs nothing.)
 
 4. Proposed Refinements vs. Adopted Rules
-Adopted (present in this snapshot): all "Resolved" items in §1, the precedence list, the related-as-subset rule, the non-software candidate clarification, the External Sharing Cleanup cross-reference in Tool Use and Consent, the architecture body/front-matter version alignment.
+Adopted in the 2026-11-11 refinement pass: §2.1 (Git-pin wording), §2.5 (software-specific note in §6), §2.7 (§11 checklist merge), and §2.10 (Tool Use and Consent relationship section and related metadata). The related-slug convention was also made explicit in the README, and the two related entries targeting the workflow were corrected to match its exact filename stem.
 
-Proposed (not adopted, from this review): §2.1 (Git retrieval wording), §2.2 (First-response contract split — optional), §2.3 (Testing related asymmetry — observation), §2.4 (Existing Knowledge relationship section — optional), §2.5 (§6 software-specific note), §2.6 / §2.10 (related consistency; Tool Use and Consent relationship section), §2.7 (§11 bullet merge).
+Still optional: §2.2 (First-response contract split), §2.3 (Testing and Verification relationship asymmetry), §2.4 (Existing Knowledge relationship section), and the remaining minor/editorial notes. These were not adopted because they are not necessary to resolve the reported correctness issues.
 
-No source files modified. This is review-only.
+
+This file is review history, not an instruction module. Its location under `reviews/` keeps it distinct from `modules/refinement.md`.
 
 
 <!-- END SOURCE: reviews/refinement-review.md -->
@@ -1920,15 +1947,15 @@ No source files modified. This is review-only.
 ---
 name: development-state-machine-workflow
 type: specialized-workflow
-version: "1.6.0"
+version: "1.6.1"
 purpose: Guide reliable, evidence-based development through planning, implementation, verification, recovery, documentation, and version history.
 use_when: The user is developing or maintaining an application or substantial project and wants a repeatable workflow for making and verifying changes.
 ---
 
 # Development State Machine Workflow
-## Reusable Workflow Prompt v1.6.0
+## Reusable Workflow Prompt v1.6.1
 
-- **Workflow version:** 1.6.0
+- **Workflow version:** 1.6.1
 - **Document policy:** Keep one current workflow file at its canonical path. Update that file in place; use Git history for prior revisions. Do not create side-by-side versioned copies.
 - **Revision history:** Earlier revisions are preserved in Git history, not separate files.
 - **Scope:** A reusable, modular development workflow for applications and other projects, independent of any one app, programming language, framework, or tool.
@@ -2075,7 +2102,7 @@ Use SemVer for this reusable workflow:
 - **MINOR:** a backward-compatible addition, such as a new optional module or an expanded adoption rule.
 - **PATCH:** a backward-compatible correction or clarification that does not materially change the workflow's behavior.
 
-Keep one canonical workflow file at its stable repository path. When the workflow changes, update that file in place and increment its internal `version:` metadata according to SemVer; the metadata identifies the workflow revision, not a filename. Do not publish additional version-suffixed workflow files or retain older copies beside it. Git history preserves prior revisions and their provenance. Projects record the initially adopted version, but follow the current canonical workflow by default. A deliberate historical pin must be explicit and identify the relevant Git commit SHA or tag; retrieve that historical revision from Git only when the pin or a historical question requires it. Future chats must retrieve the canonical current workflow by default and must not search for or resurrect older version-suffixed files.
+Keep one canonical workflow file at its stable repository path. When the workflow changes, update that file in place and increment its internal `version:` metadata according to SemVer; the metadata identifies the workflow revision, not a filename. Do not publish additional version-suffixed workflow files or retain older copies beside it. Git history preserves prior revisions and their provenance. Projects record the initially adopted version, but follow the current canonical workflow by default. A deliberate historical pin must be explicit and identify the relevant Git commit SHA or tag; retrieve that historical revision from Git only when the pin or a historical question requires it. Future chats must retrieve the canonical current workflow by default and must not search for or resurrect older version-suffixed working-tree files; retrieving a pinned revision from Git history by its explicit SHA or tag is the sanctioned exception.
 
 ### 4.5 Maintenance documents and milestone documents
 
@@ -2157,6 +2184,8 @@ For a feature of meaningful complexity, the design should cover:
 10. **Risks and alternatives:** relevant trade-offs and reasonable options.
 
 Implementation and recovery rules:
+
+These rules are written primarily for software. For non-software work, adapt the code/build version and candidate vocabulary to the deliverable type identified in §2.0 (for example, versioned candidates versus a living document).
 
 - Identify and preserve the last accepted version before changing code.
 - Assign distinct versions to code/build candidates where applicable. Never silently overwrite the accepted code baseline or reuse a code version number for changed contents. Living documents are updated at their one canonical path; Git history preserves prior revisions.
@@ -2292,8 +2321,7 @@ Before accepting a feature:
 - [ ] Acceptance checks are defined.
 - [ ] The candidate was inspected.
 - [ ] The maintenance document's relevant test inventory was consulted.
-- [ ] Required checks and actual results for the identified candidate are recorded as PASS, FAIL, BLOCKED, or NOT RUN.
-- [ ] Manual checks were automated where practical, or explicitly marked blocked/not run with a reason.
+- [ ] Required checks and actual results are recorded as PASS, FAIL, BLOCKED, or NOT RUN; for any BLOCKED or NOT RUN check, automation was attempted where practical and the blocker and minimum human action are stated.
 - [ ] Failed checks were fixed in a new version and relevant regression tests rerun.
 - [ ] Failed candidates and useful evidence remain traceable.
 - [ ] Compatibility and persistence were checked where relevant.
@@ -2322,6 +2350,7 @@ When revising the reusable workflow:
 > Original blob SHA: `61c461b8e5f5bedf20c70d8a06a95c3cc1a521a8`
 
 <!-- BEGIN SOURCE: workflows/external-sharing-cleanup.md -->
+
 
 
 ---
@@ -2418,6 +2447,7 @@ These are complementary references, not automatic activation requirements. Load 
 > Original blob SHA: `2f99128b13d343c6206fce9d1d984eae06dad01b`
 
 <!-- BEGIN SOURCE: architecture/Future-Workflow-System-and-Metadata-Notes.md -->
+
 
 
 ---
