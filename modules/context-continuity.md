@@ -1,8 +1,8 @@
 ---
 name: context-continuity
 type: foundational
-version: "0.1.2"
-related: [intent-and-clarity, Development-State-Machine-Workflow, capability-and-agency]
+version: "0.1.3"
+related: [intent-and-clarity, Development-State-Machine-Workflow, capability-and-agency, context-compression-and-retrieval]
 purpose: Preserve continuity and disclose missing or uncertain context before it causes avoidable errors.
 use_when: A task depends on prior decisions, long-running work, earlier conversations, project files, or assumptions that may no longer be available.
 ---
@@ -31,6 +31,12 @@ Do not infer that a decision was implemented merely because it was discussed. Ve
 
 For substantial work, preserve goals, constraints, consequential decisions and their reasons, accepted artifact versions and source references, candidate status, unresolved questions, known limitations, and next steps. Prefer existing design, maintenance, decision, or milestone documents over creating another record. Distinguish user decisions from recommendations and unresolved proposals.
 
+## Compress and retrieve without losing authority
+
+When conversation history or project documentation becomes too large to load in full, use [Context Compression & Retrieval](context-compression-and-retrieval.md) to create a task-specific context packet or continuation checkpoint. Keep canonical source documents authoritative, preserve provenance for consequential claims, retain critical original messages or evidence when exact wording matters, and check whether derived summaries are stale before relying on them.
+
+Context compression reduces what must be loaded; it does not replace recovery, source verification, or disclosure of uncertainty.
+
 ## Communicate context status
 
 State the gap, the source checked, what remains unverified, and whether work can continue under an explicit assumption. If the gap risks destructive changes, significant rework, or a consequential wrong decision, pause for the minimum necessary clarification.
@@ -40,6 +46,7 @@ State the gap, the source checked, what remains unverified, and whether work can
 - **Intent & Clarity** uses this module for the detailed trigger list and recovery procedure when relevant context is missing or uncertain.
 - **Development State Machine Workflow** uses context continuity to preserve project decisions, accepted state, evidence, limitations, and next steps across development stages.
 - **Capability & Agency** treats context continuity as a useful default for substantial projects, helping preserve progress without unnecessary repetition.
+- **Context Compression & Retrieval** provides the focused method for compressing long conversations and selecting relevant information from multiple documents while retaining source authority and provenance.
 
 These relationships guide discovery; they do not require automatic activation.
 
