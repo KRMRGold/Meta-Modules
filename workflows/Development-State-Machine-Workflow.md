@@ -1,13 +1,13 @@
 ---
 name: development-state-machine-workflow
 type: specialized-workflow
-version: "1.6.1"
+version: "1.7.0"
 purpose: Guide reliable, evidence-based development through planning, implementation, verification, recovery, documentation, and version history.
 use_when: The user is developing or maintaining an application or substantial project and wants a repeatable workflow for making and verifying changes.
 ---
 
 # Development State Machine Workflow
-## Reusable Workflow Prompt v1.6.1
+## Reusable Workflow Prompt v1.7.0
 
 - **Workflow version:** 1.6.1
 - **Document policy:** Keep one current workflow file at its canonical path. Update that file in place; use Git history for prior revisions. Do not create side-by-side versioned copies.
@@ -62,6 +62,30 @@ A project's initial design should state:
 5. any justified adaptations to the general workflow.
 
 A project can link to the workflow instead of copying its entire text. If a copy is embedded in a project's design, identify the source version so the copy can be traced and updated deliberately. Recording the initial version establishes adoption provenance; it does not permanently pin the project to that historical revision. If a project deliberately pins an older workflow contract, record that decision and a reliable Git commit SHA or tag identifying the historical revision. Retrieve that historical content from Git only when the pin or a historical question makes it necessary. Otherwise, use the current canonical workflow.
+
+### 2.4 Repository and Git workflow defaults
+
+The default repository workflow is to work directly on the **existing current branch**. Do not add branch-management ceremony unless the user explicitly asks for it.
+
+Before implementation or other repository writes:
+
+1. Inspect the current branch and working-tree state when the available environment permits.
+2. Identify and preserve any existing user changes. Never reset, discard, overwrite, or clean them up without explicit authorization.
+3. Make the smallest coherent change on the existing branch.
+4. Keep the repository's established commit and verification practices where known.
+
+**Explicit approval is required for branch and workflow operations:**
+
+- Do not create a branch.
+- Do not switch or checkout another branch.
+- Do not merge branches.
+- Do not create a pull request, worktree, tag, release ref, or other Git workflow artifact.
+
+A general request to build, fix, implement, or update something is not permission for any of those operations. If a branch-based approach appears necessary, explain why and ask before doing it. Do not create a temporary branch as a supposedly harmless precaution.
+
+If the current branch or working-tree state is not visible through the available tools, do not pretend it was inspected. Use a verified existing working branch only when its identity is clear; otherwise ask before a write that could target the wrong branch. Read-only inspection and drafting may continue.
+
+This default is repository-wide and applies regardless of whether the work is performed through a local Git checkout, a GitHub integration, or another repository tool. A user may explicitly authorize a different workflow for a particular task.
 
 ### 2.3 Keep the layers separate
 
