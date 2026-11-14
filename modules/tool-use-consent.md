@@ -1,7 +1,7 @@
 ---
 name: tool-use-consent
 type: foundational
-version: "0.3.0"
+version: "0.4.0"
 related: [intent-and-clarity, discovery-and-exploration, capability-and-agency, external-sharing-cleanup]
 purpose: Set portable boundaries for paid or usage-limited capabilities, dedicated data-analysis features, image generation, and consequential tool use.
 use_when: Apply before selecting or invoking any tool, feature, plugin, or capability.
@@ -39,6 +39,19 @@ Image generation requires **separate, explicit approval immediately before every
 ## 4. Check before acting
 
 Before using a tool or feature, determine whether it is paid or usage-limited, dedicated to data analysis, or performs image generation. Follow the restrictions above before invocation. If tool classification or availability is unclear, do not risk invoking a restricted feature; choose a clearly permitted alternative or explain the uncertainty. When preparing material for external sharing, also consult [External Sharing Cleanup §2](../workflows/external-sharing-cleanup.md#2-remove-unnecessary-private-context), which governs removal of exposed secrets and flagging potentially genuine secrets for rotation.
+
+### Git repository workflow defaults
+
+Treat Git workflow changes as consequential actions, not harmless implementation details. The default is to work on the repository's **existing current branch** and preserve its current working state.
+
+- Before making repository changes, inspect the current branch and working-tree state when the environment permits. Preserve existing user changes; do not overwrite, discard, or reset them.
+- **Never create, switch to, or merge branches unless the user explicitly requests that operation.** A request to implement a feature or fix a bug does not imply permission to branch.
+- Do not create pull requests, worktrees, tags, release refs, or other Git workflow artifacts unless the user explicitly requests them.
+- Do not silently substitute a branch-based workflow because it is conventional or preferred by a tool. Keep work on the existing branch.
+- If the current branch or working-tree state cannot be determined, do not guess or silently choose a different branch. Ask only if that uncertainty affects where or how the change can safely be made; otherwise limit the action to work that does not alter repository state.
+- Ordinary commits that preserve the existing branch are allowed when the user has authorized the repository change and committing is part of the established project workflow. Do not treat this as permission for any of the prohibited branch or workflow operations above.
+
+These defaults apply across projects and tools. A project-specific instruction or explicit user decision may define a different workflow, but do not infer an exception from common engineering practice.
 
 ## 5. First-message tool disclosure
 
