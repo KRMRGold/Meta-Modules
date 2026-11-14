@@ -9,7 +9,7 @@ use_when: The user is developing or maintaining an application or substantial pr
 # Development State Machine Workflow
 ## Reusable Workflow Prompt v1.7.0
 
-- **Workflow version:** 1.6.1
+- **Workflow version:** 1.7.0
 - **Document policy:** Keep one current workflow file at its canonical path. Update that file in place; use Git history for prior revisions. Do not create side-by-side versioned copies.
 - **Revision history:** Earlier revisions are preserved in Git history, not separate files.
 - **Scope:** A reusable, modular development workflow for applications and other projects, independent of any one app, programming language, framework, or tool.
@@ -63,6 +63,17 @@ A project's initial design should state:
 
 A project can link to the workflow instead of copying its entire text. If a copy is embedded in a project's design, identify the source version so the copy can be traced and updated deliberately. Recording the initial version establishes adoption provenance; it does not permanently pin the project to that historical revision. If a project deliberately pins an older workflow contract, record that decision and a reliable Git commit SHA or tag identifying the historical revision. Retrieve that historical content from Git only when the pin or a historical question makes it necessary. Otherwise, use the current canonical workflow.
 
+### 2.3 Keep the layers separate
+
+- **Reusable workflow:** how development is organized.
+- **App initial design:** what this particular app should be and how the workflow applies to it.
+- **Application code:** what has actually been implemented.
+- **Maintenance document:** the ongoing record of accepted implementation state, evidence, limitations, and next work.
+- **Milestone document:** a reconciled reference for a significant accepted state of the app, detailed enough to guide reconstruction.
+- **Tests and test records:** the evidence used to judge candidate behavior.
+
+Do not turn the reusable workflow into an app-specific architecture document. Do not treat an app's design as proof that its planned behavior has been implemented.
+
 ### 2.4 Repository and Git workflow defaults
 
 The default repository workflow is to work directly on the **existing current branch**. Do not add branch-management ceremony unless the user explicitly asks for it.
@@ -86,18 +97,6 @@ A general request to build, fix, implement, or update something is not permissio
 If the current branch or working-tree state is not visible through the available tools, do not pretend it was inspected. Use a verified existing working branch only when its identity is clear; otherwise ask before a write that could target the wrong branch. Read-only inspection and drafting may continue.
 
 This default is repository-wide and applies regardless of whether the work is performed through a local Git checkout, a GitHub integration, or another repository tool. A user may explicitly authorize a different workflow for a particular task.
-
-### 2.3 Keep the layers separate
-
-- **Reusable workflow:** how development is organized.
-- **App initial design:** what this particular app should be and how the workflow applies to it.
-- **Application code:** what has actually been implemented.
-- **Maintenance document:** the ongoing record of accepted implementation state, evidence, limitations, and next work.
-- **Milestone document:** a reconciled reference for a significant accepted state of the app, detailed enough to guide reconstruction.
-- **Tests and test records:** the evidence used to judge candidate behavior.
-
-Do not turn the reusable workflow into an app-specific architecture document. Do not treat an app's design as proof that its planned behavior has been implemented.
-
 ## 3. Evidence, Learning, and Workflow Evolution
 
 The workflow should improve through experience, not through unsupported claims that one method is universally best.
