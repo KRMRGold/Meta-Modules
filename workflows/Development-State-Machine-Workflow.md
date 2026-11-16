@@ -2,6 +2,7 @@
 name: development-state-machine-workflow
 type: specialized-workflow
 version: "1.8.0"
+related: [testing-and-verification, code-review-and-change-assurance, sandboxing-and-safe-execution]
 purpose: Guide reliable, evidence-based development through planning, implementation, verification, recovery, documentation, and version history.
 use_when: The user is developing or maintaining an application or substantial project and wants a repeatable workflow for making and verifying changes.
 ---
