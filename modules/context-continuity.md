@@ -1,7 +1,7 @@
 ---
 name: context-continuity
 type: foundational
-version: "0.1.3"
+version: "0.2.0"
 related: [intent-and-clarity, Development-State-Machine-Workflow, capability-and-agency, context-compression-and-retrieval]
 purpose: Preserve continuity and disclose missing or uncertain context before it causes avoidable errors.
 use_when: A task depends on prior decisions, long-running work, earlier conversations, project files, or assumptions that may no longer be available.
@@ -36,6 +36,27 @@ For substantial work, preserve goals, constraints, consequential decisions and t
 When conversation history or project documentation becomes too large to load in full, use [Context Compression & Retrieval](context-compression-and-retrieval.md) to create a task-specific context packet or continuation checkpoint. Keep canonical source documents authoritative, preserve provenance for consequential claims, retain critical original messages or evidence when exact wording matters, and check whether derived summaries are stale before relying on them.
 
 Context compression reduces what must be loaded; it does not replace recovery, source verification, or disclosure of uncertainty.
+
+
+## Pause-anytime checkpoint
+
+A user should be able to stop substantial work at any point without first finishing the current feature or reaching a formal milestone.
+
+When pausing, switching chats/models, nearing a context limit, or encountering a blocker:
+
+1. Update the existing canonical project record that best fits the information. Prefer the maintenance document for current implementation and next steps, the test record for execution evidence, the decisions log for resolved choices, and the design for intended behavior.
+2. Preserve exact source identity, accepted baseline, in-progress candidate, changed files, and working-tree status when those facts are accessible. Distinguish committed, uncommitted, untracked, remote, and unknown state.
+3. Record decisions as accepted, proposed, assumed, or unresolved. Never turn a suggestion into a user decision.
+4. Record what was implemented, what was source-checked, what was actually tested, the exact candidate tested, and PASS/FAIL/BLOCKED/NOT RUN evidence.
+5. Preserve blockers, known failures, limitations, and the next concrete action.
+6. Verify the saved checkpoint after writing. If local state cannot be accessed or saved, disclose that limitation and do not imply that a remote note captured it.
+7. Produce a compact handoff summary when another chat or collaborator may continue the work.
+
+Do not require a commit for every pause. Preserve existing uncommitted changes and never reset or clean a working tree to manufacture a tidy checkpoint. A checkpoint records the actual state, including incomplete work.
+
+On resume, retrieve current canonical project records and compare their source revisions with the current repository and working tree. Reconcile drift before acting. A previous checkpoint is a navigation aid, not authority over newer code, user decisions, or test evidence.
+
+Use [Development State Machine Workflow §9](../workflows/Development-State-Machine-Workflow.md#9-pause-save-and-resume-at-any-time) for the full pause/save/resume procedure. This module states the continuity principle; the workflow owns the operational checklist.
 
 ## Communicate context status
 
