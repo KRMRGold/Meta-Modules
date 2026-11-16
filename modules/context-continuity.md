@@ -1,7 +1,7 @@
 ---
 name: context-continuity
 type: foundational
-version: "0.2.0"
+version: "0.2.1"
 related: [intent-and-clarity, Development-State-Machine-Workflow, capability-and-agency, context-compression-and-retrieval]
 purpose: Preserve continuity and disclose missing or uncertain context before it causes avoidable errors.
 use_when: A task depends on prior decisions, long-running work, earlier conversations, project files, or assumptions that may no longer be available.
@@ -56,7 +56,7 @@ Do not require a commit for every pause. Preserve existing uncommitted changes a
 
 On resume, retrieve current canonical project records and compare their source revisions with the current repository and working tree. Reconcile drift before acting. A previous checkpoint is a navigation aid, not authority over newer code, user decisions, or test evidence.
 
-Use [Development State Machine Workflow §9](../workflows/Development-State-Machine-Workflow.md#9-pause-save-and-resume-at-any-time) for the full pause/save/resume procedure. This module states the continuity principle; the workflow owns the operational checklist.
+Use [Development State Machine Workflow §10](../workflows/Development-State-Machine-Workflow.md#10-pause-save-and-resume-at-any-time) for the full pause/save/resume procedure. This module states the continuity principle; the workflow owns the operational checklist.
 
 ## Communicate context status
 
