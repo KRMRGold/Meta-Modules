@@ -1,16 +1,16 @@
 ---
 name: development-state-machine-workflow
 type: specialized-workflow
-version: "1.9.0"
+version: "1.9.1"
 related: [testing-and-verification, code-review-and-change-assurance, sandboxing-and-safe-execution, cybersecurity-and-secure-engineering, context-continuity]
 purpose: Guide reliable, evidence-based development through planning, implementation, verification, recovery, documentation, and version history.
 use_when: The user is developing or maintaining an application or substantial project and wants a repeatable workflow for making and verifying changes.
 ---
 
 # Development State Machine Workflow
-## Reusable Workflow Prompt v1.9.0
+## Reusable Workflow Prompt v1.9.1
 
-- **Workflow version:** 1.9.0
+- **Workflow version:** 1.9.1
 - **Document policy:** Keep one current workflow file at its canonical path. Update that file in place; use Git history for prior revisions. Do not create side-by-side versioned copies.
 - **Revision history:** Earlier revisions are preserved in Git history, not separate files.
 - **Scope:** A reusable, modular development workflow for applications and other projects, independent of any one app, programming language, framework, or tool.
@@ -376,7 +376,7 @@ The reusable workflow guides this process; it is not an app-specific design sour
 
 A successful reproduction test provides evidence that the milestone communicates the design well. It cannot guarantee identical results across models, tools, or environments.
 
-## 9. Pause, Save, and Resume at Any Time
+## 10. Pause, Save, and Resume at Any Time
 
 This is a cross-cutting capability, not a new state in the development state machine. Work may be paused from S0 through S11, including during implementation, source review, testing, repair, or exploratory design. A pause is not a failure, acceptance, or permission to discard unfinished work.
 
@@ -463,7 +463,7 @@ The packet must be independently useful if the previous chat disappears. Do not 
 - [ ] A fresh session can recover and verify the state using the packet and canonical project records.
 - [ ] Resuming after new commits or collaborator changes detects and reconciles drift rather than overwriting it.
 
-## 10. Lightweight Use
+## 11. Lightweight Use
 
 For a small fix, the process may be brief:
 
@@ -475,7 +475,7 @@ For a new subsystem, significant design change, or high-risk feature, use the fu
 
 The state machine exists to prevent important reasoning, testing, and history from being skipped. It is not meant to force unnecessary paperwork or make the user learn process terminology before they can build something. Scale the amount of documentation to the work, but never sacrifice recoverability or truthful status.
 
-## 11. Final Checklist
+## 12. Final Checklist
 
 Before accepting a feature:
 
