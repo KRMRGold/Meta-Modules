@@ -1,16 +1,16 @@
 ---
 name: development-state-machine-workflow
 type: specialized-workflow
-version: "1.9.1"
+version: "1.9.2"
 related: [testing-and-verification, code-review-and-change-assurance, sandboxing-and-safe-execution, cybersecurity-and-secure-engineering, context-continuity]
 purpose: Guide reliable, evidence-based development through planning, implementation, verification, recovery, documentation, and version history.
 use_when: The user is developing or maintaining an application or substantial project and wants a repeatable workflow for making and verifying changes.
 ---
 
 # Development State Machine Workflow
-## Reusable Workflow Prompt v1.9.1
+## Reusable Workflow Prompt v1.9.2
 
-- **Workflow version:** 1.9.1
+- **Workflow version:** 1.9.2
 - **Document policy:** Keep one current workflow file at its canonical path. Update that file in place; use Git history for prior revisions. Do not create side-by-side versioned copies.
 - **Revision history:** Earlier revisions are preserved in Git history, not separate files.
 - **Scope:** A reusable, modular development workflow for applications and other projects, independent of any one app, programming language, framework, or tool.
@@ -382,7 +382,7 @@ This is a cross-cutting capability, not a new state in the development state mac
 
 **Core rule: any meaningful stopping point must leave enough durable state to resume without relying on the current chat's hidden context.** Do not wait for a milestone, a clean build, a completed feature, or an impending message limit.
 
-### 9.1 Pause triggers
+### 10.1 Pause triggers
 
 Create or refresh a checkpoint when:
 
@@ -395,7 +395,7 @@ Create or refresh a checkpoint when:
 
 For substantial work, offer a concise checkpoint at natural stopping points. If the user wants to stop immediately, prioritize preserving state over finishing polish.
 
-### 9.2 Two-layer checkpoint
+### 10.2 Two-layer checkpoint
 
 Use the existing project records; do not create a new session file for every pause.
 
@@ -404,7 +404,7 @@ Use the existing project records; do not create a new session file for every pau
 
 A conversation summary is not a substitute for saving files. A successful file write is not proof that local uncommitted work was saved. State which layer was updated and which remains outstanding.
 
-### 9.3 Required checkpoint contents
+### 10.3 Required checkpoint contents
 
 Include only relevant detail, but preserve these fields for substantial work:
 
@@ -423,7 +423,7 @@ Include only relevant detail, but preserve these fields for substantial work:
 
 Do not record hidden chain-of-thought. Record decisions, concise rationale, evidence, and unresolved questions.
 
-### 9.4 Saving rules
+### 10.4 Saving rules
 
 - Save changes to the correct canonical project documents in place. Do not create duplicate "session", "backup", "latest2", or timestamped copies.
 - Preserve the user's existing uncommitted changes. Never reset, clean, overwrite, or discard them to make a checkpoint look tidy.
@@ -433,7 +433,7 @@ Do not record hidden chain-of-thought. Record decisions, concise rationale, evid
 - Prefer atomic writes for checkpoint files where the environment supports them. Verify the saved content after writing.
 - Record an explicit checkpoint timestamp only when reliable time is available; source commit and revision identity are more important than a timestamp.
 
-### 9.5 Resume procedure
+### 10.5 Resume procedure
 
 At the beginning of a new session or after a long interruption:
 
@@ -446,13 +446,13 @@ At the beginning of a new session or after a long interruption:
 7. State any material context gap or conflict before proceeding. Ask the user only for facts that cannot be recovered and would change the next action.
 8. Continue from the verified state; do not restart completed work or assume an old next step is still correct.
 
-### 9.6 Fresh-chat handoff packet
+### 10.6 Fresh-chat handoff packet
 
 When a new chat is likely, provide a compact packet the user can paste or point the next chat toward. It should begin with the repository and exact task, then the canonical files to read, the verified state, the last test evidence, open blockers, and one next action. Tell the next session to verify current sources rather than treating the packet as unquestionable truth.
 
 The packet must be independently useful if the previous chat disappears. Do not depend on the previous assistant's memory or imply that the next chat automatically has access to this conversation.
 
-### 9.7 Pause/resume acceptance checks
+### 10.7 Pause/resume acceptance checks
 
 - [ ] A pause at any workflow stage leaves a usable checkpoint.
 - [ ] The checkpoint distinguishes accepted, candidate, failed, and unverified work.
