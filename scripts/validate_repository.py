@@ -22,7 +22,7 @@ def markdown_files(root: Path) -> list[Path]:
 
 
 def read_front_matter(path: Path):
-    text = path.read_text(encoding="utf-8")
+    text = path.read_text(encoding="utf-8").lstrip("\ufeff \t\r\n")
     if not text.startswith("---\n"):
         return None, "missing YAML front matter"
     end = text.find("\n---", 4)
@@ -80,7 +80,14 @@ def validate_repository(root: Path = ROOT) -> list[str]:
             if filename_semver != str(version):
                 errors.append(f"{rel}: filename version {filename_semver!r} does not match front matter version {version!r}")
 
-    for path in md_files:
+    # Consolidated snapshots embed Markdown whose relative links belong to the
+    # original source files, not the snapshot's root-level location.
+    link_files = [
+        path for path in md_files
+        if path == root / "README.md"
+        or any(path.is_relative_to(root / folder) for folder in ("modules", "workflows", "architecture"))
+    ]
+    for path in link_files:
         text = path.read_text(encoding="utf-8")
         rel = path.relative_to(root).as_posix()
         for match in LINK_RE.finditer(text):
