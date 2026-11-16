@@ -38,7 +38,7 @@ class RepositoryValidationTests(unittest.TestCase):
             root = Path(tmp)
             self.write_fixture(root)
             example = root / "modules" / "example-v0.1.0.md"
-            example.write_text("\\n\\n" + example.read_text(encoding="utf-8"), encoding="utf-8")
+            example.write_text("\n\n" + example.read_text(encoding="utf-8"), encoding="utf-8")
             self.assertEqual(validate_repository(root), [])
 
     def test_consolidated_reference_snapshot_links_are_not_checked_as_source_links(self):
@@ -46,7 +46,7 @@ class RepositoryValidationTests(unittest.TestCase):
             root = Path(tmp)
             self.write_fixture(root)
             (root / "Meta-Modules-Complete-Reference.md").write_text(
-                "[Embedded source link](modules/not-present.md)\\n", encoding="utf-8"
+                "[Embedded source link](modules/not-present.md)\n", encoding="utf-8"
             )
             self.assertEqual(validate_repository(root), [])
 
