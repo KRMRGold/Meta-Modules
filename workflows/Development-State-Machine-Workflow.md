@@ -1,15 +1,15 @@
 ---
 name: development-state-machine-workflow
 type: specialized-workflow
-version: "1.7.0"
+version: "1.8.0"
 purpose: Guide reliable, evidence-based development through planning, implementation, verification, recovery, documentation, and version history.
 use_when: The user is developing or maintaining an application or substantial project and wants a repeatable workflow for making and verifying changes.
 ---
 
 # Development State Machine Workflow
-## Reusable Workflow Prompt v1.7.0
+## Reusable Workflow Prompt v1.8.0
 
-- **Workflow version:** 1.7.0
+- **Workflow version:** 1.8.0
 - **Document policy:** Keep one current workflow file at its canonical path. Update that file in place; use Git history for prior revisions. Do not create side-by-side versioned copies.
 - **Revision history:** Earlier revisions are preserved in Git history, not separate files.
 - **Scope:** A reusable, modular development workflow for applications and other projects, independent of any one app, programming language, framework, or tool.
@@ -199,9 +199,9 @@ Use the complete path for substantial features and new subsystems. For small fix
 - **S1 — Initial design:** Describe the intended app or feature, including goals, expected behavior, relevant data, dependencies, and scope. For an app adopting this workflow, identify the workflow version and applicable modules.
 - **S2 — Design refinement:** Look for ambiguity, contradictions, failure cases, compatibility issues, persistence needs, and unintended consequences. Refine until the design is implementable.
 - **S3 — Ready to implement:** Confirm important choices are resolved, acceptance checks are defined, the working baseline is known, and any needed user approval has been obtained.
-- **S4 — Implementation:** Build a candidate from the agreed design, current maintenance knowledge, and last accepted code. Assign the candidate its own artifact version and preserve the baseline.
-- **S5 — Source inspection:** Review changed files and diffs. Check data flow, architecture, security, compatibility, syntax, and available static checks.
-- **S6 — Runtime and acceptance testing:** Run the candidate and perform acceptance and relevant regression tests in the actual runtime where possible. Record exact candidate version and results.
+- **S4 — Implementation:** Build a candidate from the agreed design, current maintenance knowledge, and last accepted code. Assign the candidate its own artifact version and preserve the baseline. Before executing generated code, scripts, dependencies, or agent-produced commands, apply [Sandboxing and Safe Execution](../modules/sandboxing-and-safe-execution.md) to classify trust, scope permissions, and choose proportionate isolation.
+- **S5 — Source inspection:** Review changed files and diffs using [Code Review and Change Assurance](../modules/code-review-and-change-assurance.md). Check data flow, architecture, security, compatibility, scope, failure behavior, permissions, and available static checks. Apply [Sandboxing and Safe Execution](../modules/sandboxing-and-safe-execution.md) to assess execution boundaries and side effects.
+- **S6 — Runtime and acceptance testing:** Run the candidate and perform acceptance and relevant regression tests in the actual runtime where possible, using the approved execution boundary and isolation level. Record exact candidate version, environment, controls actually used, and results.
 - **S7 — Acceptance gate:** Compare recorded results with the acceptance criteria. If a required check fails, move to S8. If required checks pass, proceed to S9.
 - **S8 — Repair and iteration:** Compare the requirements, last accepted code, failed candidate, and observed failure. Decide whether the issue is in the design, implementation, or test assumptions. Preserve the failed candidate and evidence. Create a new version for the repair. If the design is inadequate, return to S2. Otherwise repair the candidate and return to S5.
 - **S9 — Maintenance update:** Record the accepted code version, source reference, test evidence, differences from the design, and unresolved limitations. Update the single canonical maintenance document in place; Git history preserves earlier revisions.
@@ -235,8 +235,8 @@ S0 Request / idea
 - **S1 → S2:** a draft design exists to review.
 - **S2 → S3:** the design is specific enough to implement and has observable acceptance criteria.
 - **S3 → S4:** the user has authorized implementation when approval is needed.
-- **S4 → S5:** a candidate exists, has a clear version identity, and the prior accepted baseline remains recoverable.
-- **S5 → S6:** no known blocker prevents meaningful testing, or remaining risks are explicitly understood. The AI must consult the maintenance document and use its existing test/check list as the starting verification plan.
+- **S4 → S5:** a candidate exists, has a clear version identity, the prior accepted baseline remains recoverable, and any required execution boundary has been selected before running candidate code.
+- **S5 → S6:** the candidate has received a source review proportionate to its risk; blocking findings are resolved or explicitly dispositioned; no known blocker prevents meaningful testing; and remaining risks are understood. The AI must consult the maintenance document and use its existing test/check list as the starting verification plan.
 - **S6 → S7:** the AI has executed all required checks its available tools and environment permit, recorded actual results against the exact candidate version, and marked unavailable checks **BLOCKED / NOT RUN** with the reason and minimum human action needed. Writing tests or suggesting that a human run an executable check does not satisfy this transition.
 - **S7 → S8:** a required check fails, a regression is found, or a critical check remains unverified and is executable in the available environment.
 - **S8 → S5:** a corrected candidate with a new version is ready for inspection. Return to S2 first if the design needs correction.
@@ -278,7 +278,7 @@ These rules are written primarily for software. For non-software work, adapt the
 
 ## 7. AI-Owned Testing and Verification
 
-For software projects, use the reusable [Testing and Verification module](../modules/testing-and-verification.md) to design the test inventory, choose appropriate test layers, improve regression coverage, and establish meaningful automated checks. This workflow remains responsible for when verification gates apply and how evidence affects acceptance; the module supplies the deeper testing practice. Adapt test depth to project risk and available runtime/platform access.
+For software projects, use the reusable [Testing and Verification module](../modules/testing-and-verification.md) to design the test inventory, choose appropriate test layers, improve regression coverage, and establish meaningful automated checks. Use [Code Review and Change Assurance](../modules/code-review-and-change-assurance.md) for risk-based source review and review findings. Use [Sandboxing and Safe Execution](../modules/sandboxing-and-safe-execution.md) whenever code, commands, dependencies, or agent actions are executed and their permissions or isolation matter. This workflow remains responsible for when review and verification gates apply and how evidence affects acceptance; the modules supply the deeper practices. Adapt depth to project risk and available runtime/platform access.
 
 Testing is an active responsibility of the AI doing the implementation, not a handoff for the human by default. The AI must run available checks, inspect their results, repair failures, and rerun affected checks before claiming acceptance.
 
@@ -396,7 +396,8 @@ Before accepting a feature:
 - [ ] The code/build candidate has a distinct, valid SemVer version where applicable.
 - [ ] Living documents were updated at their existing canonical paths rather than duplicated into new versioned files.
 - [ ] Acceptance checks are defined.
-- [ ] The candidate was inspected.
+- [ ] The candidate received a risk-proportionate source review; review findings and their disposition are recorded where meaningful.
+- [ ] Execution permissions and isolation were selected before running code where relevant; actual controls and limitations are recorded.
 - [ ] The maintenance document's relevant test inventory was consulted.
 - [ ] Required checks and actual results are recorded as PASS, FAIL, BLOCKED, or NOT RUN; for any BLOCKED or NOT RUN check, automation was attempted where practical and the blocker and minimum human action are stated.
 - [ ] Failed checks were fixed in a new version and relevant regression tests rerun.
