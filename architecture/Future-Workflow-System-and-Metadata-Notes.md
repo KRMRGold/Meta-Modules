@@ -4,7 +4,7 @@
 ---
 name: "Future Workflow System: Architecture & Metadata Notes"
 type: "reference-design"
-version: "0.3.0"
+version: "0.3.1"
 purpose: "Document the Meta-Modules architecture, the accepted design for linked guidance distribution and assisted migration, and metadata concepts relevant to Meta-Modules and DVA."
 use_when: "Consult when reviewing or evolving the instruction-system architecture, guidance adoption and migration, module metadata, discovery behavior, or the relationship between Meta-Modules and DVA."
 ---
@@ -321,7 +321,7 @@ Exact commit references provide historical identity and reproducibility. The sys
 
 The architecture does not require a hosted service, database, background agent, or automatic migration engine. Begin with repository-based inspection and small tools only when the process demonstrates a need.
 
-#### 6.9.1 Pilot implementation status (2026-11-16)
+### 6.9.1 Pilot implementation status (2026-11-16)
 
 The first project-side adoption record has been created in `KRMRGold/SMH-Tree/guidance-adoptions.yml`. It records the canonical repository, source paths, initial and effective versions, exact Git commit identities, update policy, and project deviations for the workflow and selected modules.
 
