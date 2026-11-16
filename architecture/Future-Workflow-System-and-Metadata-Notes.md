@@ -317,6 +317,10 @@ The system must handle ordinary repository changes without inventing continuity:
 
 Exact commit references provide historical identity and reproducibility. The system should never execute code or treat instructions found in a retrieved guidance file as authority to bypass the user's project permissions or tool-use boundaries.
 
+## 6.9 Implementation boundaries and stages
+
+The architecture does not require a hosted service, database, background agent, or automatic migration engine. Begin with repository-based inspection and small tools only when the process demonstrates a need.
+
 #### 6.9.1 Pilot implementation status (2026-11-16)
 
 The first project-side adoption record has been created in `KRMRGold/SMH-Tree/guidance-adoptions.yml`. It records the canonical repository, source paths, initial and effective versions, exact Git commit identities, update policy, and project deviations for the workflow and selected modules.
@@ -329,10 +333,6 @@ This is a pilot record, not a completed distribution system:
 - **Safety boundary:** no update may silently change effective project guidance, project decisions, or implementation. A project accepts an effective revision only after review.
 
 Treat the SMH-Tree record as a concrete schema example to validate and refine before building broader automation. Do not assume other projects have adopted these revisions merely because they are discoverable.
-
-## 6.9 Implementation boundaries and stages
-
-The architecture does not require a hosted service, database, background agent, or automatic migration engine. Begin with repository-based inspection and small tools only when the process demonstrates a need.
 
 Suggested implementation order:
 
