@@ -1,16 +1,16 @@
 ---
 name: development-state-machine-workflow
 type: specialized-workflow
-version: "1.8.0"
-related: [testing-and-verification, code-review-and-change-assurance, sandboxing-and-safe-execution]
+version: "1.9.0"
+related: [testing-and-verification, code-review-and-change-assurance, sandboxing-and-safe-execution, cybersecurity-and-secure-engineering, context-continuity]
 purpose: Guide reliable, evidence-based development through planning, implementation, verification, recovery, documentation, and version history.
 use_when: The user is developing or maintaining an application or substantial project and wants a repeatable workflow for making and verifying changes.
 ---
 
 # Development State Machine Workflow
-## Reusable Workflow Prompt v1.8.0
+## Reusable Workflow Prompt v1.9.0
 
-- **Workflow version:** 1.8.0
+- **Workflow version:** 1.9.0
 - **Document policy:** Keep one current workflow file at its canonical path. Update that file in place; use Git history for prior revisions. Do not create side-by-side versioned copies.
 - **Revision history:** Earlier revisions are preserved in Git history, not separate files.
 - **Scope:** A reusable, modular development workflow for applications and other projects, independent of any one app, programming language, framework, or tool.
@@ -200,8 +200,8 @@ Use the complete path for substantial features and new subsystems. For small fix
 - **S1 — Initial design:** Describe the intended app or feature, including goals, expected behavior, relevant data, dependencies, and scope. For an app adopting this workflow, identify the workflow version and applicable modules.
 - **S2 — Design refinement:** Look for ambiguity, contradictions, failure cases, compatibility issues, persistence needs, and unintended consequences. Refine until the design is implementable.
 - **S3 — Ready to implement:** Confirm important choices are resolved, acceptance checks are defined, the working baseline is known, and any needed user approval has been obtained.
-- **S4 — Implementation:** Build a candidate from the agreed design, current maintenance knowledge, and last accepted code. Assign the candidate its own artifact version and preserve the baseline. Before executing generated code, scripts, dependencies, or agent-produced commands, apply [Sandboxing and Safe Execution](../modules/sandboxing-and-safe-execution.md) to classify trust, scope permissions, and choose proportionate isolation.
-- **S5 — Source inspection:** Review changed files and diffs using [Code Review and Change Assurance](../modules/code-review-and-change-assurance.md). Check data flow, architecture, security, compatibility, scope, failure behavior, permissions, and available static checks. Apply [Sandboxing and Safe Execution](../modules/sandboxing-and-safe-execution.md) to assess execution boundaries and side effects.
+- **S4 — Implementation:** Build a candidate from the agreed design, current maintenance knowledge, and last accepted code. Assign the candidate its own artifact version and preserve the baseline. Before executing generated code, scripts, dependencies, or agent-produced commands, apply [Sandboxing and Safe Execution](../modules/sandboxing-and-safe-execution.md) to classify trust, scope permissions, and choose proportionate isolation. Apply [Cybersecurity and Secure Engineering](../modules/cybersecurity-and-secure-engineering.md) to identify relevant assets, trust boundaries, threats, and security controls.
+- **S5 — Source inspection:** Review changed files and diffs using [Code Review and Change Assurance](../modules/code-review-and-change-assurance.md). Check data flow, architecture, security, compatibility, scope, failure behavior, permissions, and available static checks. Use Cybersecurity and Secure Engineering for explicit threat and control coverage proportionate to risk. Apply [Sandboxing and Safe Execution](../modules/sandboxing-and-safe-execution.md) to assess execution boundaries and side effects.
 - **S6 — Runtime and acceptance testing:** Run the candidate and perform acceptance and relevant regression tests in the actual runtime where possible, using the approved execution boundary and isolation level. Record exact candidate version, environment, controls actually used, and results.
 - **S7 — Acceptance gate:** Compare recorded results with the acceptance criteria. If a required check fails, move to S8. If required checks pass, proceed to S9.
 - **S8 — Repair and iteration:** Compare the requirements, last accepted code, failed candidate, and observed failure. Decide whether the issue is in the design, implementation, or test assumptions. Preserve the failed candidate and evidence. Create a new version for the repair. If the design is inadequate, return to S2. Otherwise repair the candidate and return to S5.
@@ -279,7 +279,7 @@ These rules are written primarily for software. For non-software work, adapt the
 
 ## 7. AI-Owned Testing and Verification
 
-For software projects, use the reusable [Testing and Verification module](../modules/testing-and-verification.md) to design the test inventory, choose appropriate test layers, improve regression coverage, and establish meaningful automated checks. Use [Code Review and Change Assurance](../modules/code-review-and-change-assurance.md) for risk-based source review and review findings. Use [Sandboxing and Safe Execution](../modules/sandboxing-and-safe-execution.md) whenever code, commands, dependencies, or agent actions are executed and their permissions or isolation matter. This workflow remains responsible for when review and verification gates apply and how evidence affects acceptance; the modules supply the deeper practices. Adapt depth to project risk and available runtime/platform access.
+For software projects, use the reusable [Cybersecurity and Secure Engineering module](../modules/cybersecurity-and-secure-engineering.md) for threat modelling and security controls, and the [Testing and Verification module](../modules/testing-and-verification.md) to design the test inventory, choose appropriate test layers, improve regression coverage, and establish meaningful automated checks. Use [Code Review and Change Assurance](../modules/code-review-and-change-assurance.md) for risk-based source review and review findings. Use [Sandboxing and Safe Execution](../modules/sandboxing-and-safe-execution.md) whenever code, commands, dependencies, or agent actions are executed and their permissions or isolation matter. This workflow remains responsible for when review and verification gates apply and how evidence affects acceptance; the modules supply the deeper practices. Adapt depth to project risk and available runtime/platform access.
 
 Testing is an active responsibility of the AI doing the implementation, not a handoff for the human by default. The AI must run available checks, inspect their results, repair failures, and rerun affected checks before claiming acceptance.
 
@@ -376,6 +376,93 @@ The reusable workflow guides this process; it is not an app-specific design sour
 
 A successful reproduction test provides evidence that the milestone communicates the design well. It cannot guarantee identical results across models, tools, or environments.
 
+## 9. Pause, Save, and Resume at Any Time
+
+This is a cross-cutting capability, not a new state in the development state machine. Work may be paused from S0 through S11, including during implementation, source review, testing, repair, or exploratory design. A pause is not a failure, acceptance, or permission to discard unfinished work.
+
+**Core rule: any meaningful stopping point must leave enough durable state to resume without relying on the current chat's hidden context.** Do not wait for a milestone, a clean build, a completed feature, or an impending message limit.
+
+### 9.1 Pause triggers
+
+Create or refresh a checkpoint when:
+
+- the user asks to stop, pause, save, or switch topics;
+- the conversation is approaching a context or message limit;
+- the work is changing direction or handing off to another model, agent, person, or chat;
+- a tool, environment, permission, or dependency blocks progress;
+- a meaningful decision, implementation change, or test result has occurred;
+- continuing would require assumptions that may be lost or become stale.
+
+For substantial work, offer a concise checkpoint at natural stopping points. If the user wants to stop immediately, prioritize preserving state over finishing polish.
+
+### 9.2 Two-layer checkpoint
+
+Use the existing project records; do not create a new session file for every pause.
+
+1. **Project checkpoint (durable source):** update the project's existing maintenance record, decision log, test record, or active design document as appropriate. Preserve accepted state, in-progress candidate state, decisions, evidence, known failures, and the next action. Do not overwrite accepted behavior with candidate assumptions.
+2. **Conversation handoff (portable summary):** produce a compact continuation packet for a fresh chat or another collaborator. Link to canonical project files and exact source revisions so the next session can recover detail.
+
+A conversation summary is not a substitute for saving files. A successful file write is not proof that local uncommitted work was saved. State which layer was updated and which remains outstanding.
+
+### 9.3 Required checkpoint contents
+
+Include only relevant detail, but preserve these fields for substantial work:
+
+- **Project and objective:** repository, goal, active task, and scope.
+- **Source identity:** branch, current commit, and relevant file paths/revisions when verified.
+- **Working-tree status:** clean, modified, untracked, or unknown. Identify unsaved/uncommitted work where visible. Never claim a clean tree when it was not inspected.
+- **Workflow state:** current S0–S11 stage and the last completed transition.
+- **Accepted baseline:** last accepted artifact version and exact commit or other recoverable source.
+- **Candidate state:** candidate version/commit, files changed, implemented versus merely planned behavior, and whether the candidate is incomplete.
+- **Decisions:** accepted user decisions and concise reasons; distinguish recommendations, assumptions, and unresolved proposals.
+- **Verification:** exact commands/checks, candidate identity, environment, and PASS/FAIL/BLOCKED/NOT RUN results. Preserve useful error output and CI links.
+- **Open issues and risks:** blockers, known defects, security concerns, compatibility risks, and unverified behavior.
+- **Next action:** one concrete, safe, immediately executable step; include prerequisites and the expected result.
+- **Source map:** canonical documents and relevant sections, with commit/blob references when available.
+- **Freshness:** whether repository state was checked and what could not be inspected.
+
+Do not record hidden chain-of-thought. Record decisions, concise rationale, evidence, and unresolved questions.
+
+### 9.4 Saving rules
+
+- Save changes to the correct canonical project documents in place. Do not create duplicate "session", "backup", "latest2", or timestamped copies.
+- Preserve the user's existing uncommitted changes. Never reset, clean, overwrite, or discard them to make a checkpoint look tidy.
+- A Git commit is useful when the current candidate is coherent and the repository workflow calls for it, but it is not required for every pause. Never commit incomplete or sensitive changes merely to create a checkpoint.
+- If the working tree is dirty, the checkpoint must describe the changed and untracked files and distinguish committed from uncommitted state. If available, preserve a diff or other recoverable representation using the project's established method; do not silently stage or commit user changes.
+- If local files cannot be accessed or saved, say so. A remote documentation update does not save a local working tree.
+- Prefer atomic writes for checkpoint files where the environment supports them. Verify the saved content after writing.
+- Record an explicit checkpoint timestamp only when reliable time is available; source commit and revision identity are more important than a timestamp.
+
+### 9.5 Resume procedure
+
+At the beginning of a new session or after a long interruption:
+
+1. Read the project's current maintenance record and latest test record, plus the initial design and decisions relevant to the task.
+2. Retrieve the current repository tree and inspect the current branch/commit and working-tree status when available.
+3. Read the latest checkpoint and verify its source revisions against the current repository.
+4. Reconcile the checkpoint with actual code, documents, tests, commits, and CI. A checkpoint is a map, not proof that its claims remain current.
+5. Identify changes made since the checkpoint, including other collaborators' work. Do not overwrite them.
+6. Re-establish the accepted baseline, candidate, workflow stage, unresolved issues, and next action.
+7. State any material context gap or conflict before proceeding. Ask the user only for facts that cannot be recovered and would change the next action.
+8. Continue from the verified state; do not restart completed work or assume an old next step is still correct.
+
+### 9.6 Fresh-chat handoff packet
+
+When a new chat is likely, provide a compact packet the user can paste or point the next chat toward. It should begin with the repository and exact task, then the canonical files to read, the verified state, the last test evidence, open blockers, and one next action. Tell the next session to verify current sources rather than treating the packet as unquestionable truth.
+
+The packet must be independently useful if the previous chat disappears. Do not depend on the previous assistant's memory or imply that the next chat automatically has access to this conversation.
+
+### 9.7 Pause/resume acceptance checks
+
+- [ ] A pause at any workflow stage leaves a usable checkpoint.
+- [ ] The checkpoint distinguishes accepted, candidate, failed, and unverified work.
+- [ ] Source identity and working-tree status are reported honestly.
+- [ ] Uncommitted and untracked work is not discarded or misrepresented as saved.
+- [ ] Test commands, results, errors, and CI references survive the handoff.
+- [ ] The next action is concrete and does not repeat completed work.
+- [ ] A fresh session can recover and verify the state using the packet and canonical project records.
+- [ ] Resuming after new commits or collaborator changes detects and reconciles drift rather than overwriting it.
+
 ## 10. Lightweight Use
 
 For a small fix, the process may be brief:
@@ -408,6 +495,7 @@ Before accepting a feature:
 - [ ] Code/build artifact versions are independent and their history is clear.
 - [ ] Exactly one current file exists for each living document; prior revisions are recoverable through Git history, not duplicate files.
 - [ ] The user decides whether to continue, defer work, or declare the app complete.
+- [ ] A durable pause checkpoint and portable handoff exist when work is paused or handed off.
 
 When revising the reusable workflow:
 
