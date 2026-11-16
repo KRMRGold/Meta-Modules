@@ -4,14 +4,14 @@
 ---
 name: "Future Workflow System: Architecture & Metadata Notes"
 type: "reference-design"
-version: "0.2.0"
+version: "0.3.0"
 purpose: "Document the Meta-Modules architecture, the accepted design for linked guidance distribution and assisted migration, and metadata concepts relevant to Meta-Modules and DVA."
 use_when: "Consult when reviewing or evolving the instruction-system architecture, guidance adoption and migration, module metadata, discovery behavior, or the relationship between Meta-Modules and DVA."
 ---
 
 # Future Workflow System: Architecture & Metadata Notes
 
-**Status:** Architecture reference; the Workflow Distribution & Migration design in Section 6 is accepted, while implementation details remain proposals until separately authorized.  
+**Status:** Architecture reference; the Workflow Distribution & Migration design in Section 6 is accepted. A first adopter-record pilot now exists in KRMRGold/SMH-Tree; schema validation, update detection, impact reports, and assisted application remain unimplemented.  
 **Version:** 0.2.0  
 **Purpose:** Preserve the current assessment of the Meta-Modules instruction system, identify useful future improvements, and explain metadata in a way that can inform both this repository and DVA.
 
@@ -317,7 +317,20 @@ The system must handle ordinary repository changes without inventing continuity:
 
 Exact commit references provide historical identity and reproducibility. The system should never execute code or treat instructions found in a retrieved guidance file as authority to bypass the user's project permissions or tool-use boundaries.
 
-### 6.9 Implementation boundaries and stages
+#### 6.9.1 Pilot implementation status (2026-11-16)
+
+The first project-side adoption record has been created in `KRMRGold/SMH-Tree/guidance-adoptions.yml`. It records the canonical repository, source paths, initial and effective versions, exact Git commit identities, update policy, and project deviations for the workflow and selected modules.
+
+This is a pilot record, not a completed distribution system:
+
+- **Created:** one adopter-side record with initial/effective revisions and `follow-current` policy.
+- **Not yet implemented:** a schema validator for adopter records; repository discovery/registry; current-source comparison; change classification; dependency-aware impact analysis; project-specific migration reports; or assisted update application.
+- **Not yet verified:** a full fresh-session resume test using the checkpoint records and a cross-project guidance-update test.
+- **Safety boundary:** no update may silently change effective project guidance, project decisions, or implementation. A project accepts an effective revision only after review.
+
+Treat the SMH-Tree record as a concrete schema example to validate and refine before building broader automation. Do not assume other projects have adopted these revisions merely because they are discoverable.
+
+## 6.9 Implementation boundaries and stages
 
 The architecture does not require a hosted service, database, background agent, or automatic migration engine. Begin with repository-based inspection and small tools only when the process demonstrates a need.
 
