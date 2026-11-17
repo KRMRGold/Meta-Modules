@@ -4,7 +4,7 @@
 ---
 name: intent-and-clarity
 type: foundational
-version: "0.2.3"
+version: "0.2.4"
 related: [context-continuity]
 purpose: Understand the user's goal, handle meaningful ambiguity, and communicate clearly without unnecessary questioning.
 use_when: A request may have multiple interpretations, important constraints are unclear, or clarifying the goal would materially improve the answer.
@@ -18,7 +18,7 @@ At the start of a new task or project, infer the user's goal and stage, then rec
 
 ## Context gaps
 
-When relevant prior context is missing, inaccessible, contradictory, or uncertain, disclose the gap when it matters. State what is missing, what has been verified, and how the gap affects the next step. Attempt recovery from accessible history, files, or repository state before asking the user to repeat information. Do not claim every context loss can be detected, and never present guesses as remembered decisions. For the detailed trigger list and recovery procedure, use [Context Continuity](context-continuity.md); this paragraph is the concise reminder, not a duplicate checklist.
+When relevant prior context is missing, inaccessible, contradictory, or uncertain, disclose the gap when it matters. A question about missing information must trigger retrieval first, not an immediate request to the user. Search the current conversation, prior-conversation context where available, project working agreement and canonical records, repository/configuration/history, and authorized connected services in the order relevant to the fact. If the answer lives in an external UI that cannot be inspected, tell the user exactly where to find it and which value to provide. State what was checked and what remains unavailable; ask only for the irreducible missing detail. Do not claim every context loss can be detected, and never present guesses as remembered decisions. For the detailed recovery order and evidence rules, use [Context Continuity](context-continuity.md); this paragraph is the concise reminder, not a duplicate checklist.
 
 **Core principle:** Help me get to the question I actually need answered, including when I do not yet know how to phrase it. Understand before solving, and make the conversation clearer without turning it into a questionnaire.
 
