@@ -190,6 +190,53 @@ A **milestone document** captures the latest deliberate, reconciled state of the
 
 A milestone is a reference point, not a claim that the app can never change again and not a substitute for version control.
 
+## 5.0 Observable Work and Evidence Receipts
+
+Use a compact **evidence receipt** for every software-development task in every chat, including future chats and small changes. The receipt makes the assistant's actual work observable; it is not a promise, a progress-performance ritual, or proof by itself. Scale it to the task:
+
+- **Lightweight task:** a few lines covering the source/baseline, intended change, and actual verification.
+- **Substantial or multi-stage task:** use the fuller start, transition, and completion record below.
+- **Read-only investigation:** record what sources were actually inspected, what was not accessible, and the evidence supporting conclusions; do not invent a change or test section.
+
+### Start receipt
+
+Before consequential changes, show the user a concise receipt that identifies:
+
+1. **Task and scope:** what is being attempted and what is explicitly out of scope.
+2. **Instructions and project sources:** which relevant instructions, agreements, design/maintenance files, and source files were actually retrieved and read; identify available-but-unread or unavailable sources when they matter.
+3. **Repository and baseline:** repository, branch, latest commit, and working-tree state when visible. Distinguish remote GitHub state from a local checkout. If local changes cannot be inspected, say **LOCAL WORKING TREE: UNVERIFIED**; do not imply the remote repository reveals them.
+4. **Tool/access boundary:** which relevant capabilities are available and being used, and what cannot be inspected or executed in this environment.
+5. **Acceptance and verification plan:** the observable outcome and the checks that can establish it.
+
+Do not delay useful read-only inspection merely because a nonessential detail is unavailable. Do not perform a consequential write when the target branch or preservation of existing work is materially uncertain. Ask only for the smallest missing authorization or fact that blocks safe progress.
+
+### During work
+
+Update the receipt when a meaningful state transition occurs, not after every tiny operation. Identify the exact files or resources affected, the commit or candidate identity when available, and any deviation from the agreed scope. If a tool fails, context is missing, an assumption changes, or the available capability differs from the plan, disclose that before continuing with an action whose safety or correctness depends on it.
+
+A proposed change is not an implemented change. A successful write response is not a source review. A source review is not a test. A passing test is not proof of runtime or deployment behavior. Keep these evidence levels separate.
+
+### Completion receipt
+
+Before calling a task complete, report:
+
+- **Outcome:** implemented, partially implemented, read-only, blocked, or not started.
+- **Source identity:** exact repository, branch, commit, and changed paths when available.
+- **Change evidence:** what was actually written and how the resulting source/diff was inspected.
+- **Verification:** exact commands or checks, candidate identity, and PASS / FAIL / BLOCKED / NOT RUN results.
+- **Runtime/deployment:** tested, user-confirmed, not tested, or inaccessible; never infer deployment success from a source commit or successful build.
+- **Remaining gaps:** unverified assumptions, unavailable local state, known issues, and the minimum next action.
+
+Use **PASS** only for checks actually executed or trustworthy results inspected for the exact candidate. Use **FAIL** for executed checks that did not meet expectations, **BLOCKED** when a concrete limitation prevented execution, and **NOT RUN** when no attempt was made. Do not hide failed, blocked, or unrun checks inside a general "done" claim.
+
+### Keep it useful, not bureaucratic
+
+- Keep the receipt inline in the conversation by default. Do not create a new file, issue, branch, pull request, patch download, or checkpoint for every task.
+- Put durable project facts in the project's existing canonical agreement, maintenance, design, decision, or test record when they materially affect future work.
+- Do not expose hidden chain-of-thought. Record actions, concise decisions and rationale, source references, evidence, and unresolved questions.
+- Do not make the user manually verify checks the assistant can execute with available authorized tools. If a check genuinely requires the user's device, local checkout, account UI, or subjective judgment, state exactly why and request only that minimum human step.
+- A receipt improves observability; it does not guarantee correctness. The evidence and independent checks remain authoritative.
+
 ## 5. Core Development State Machine
 
 Use the complete path for substantial features and new subsystems. For small fixes, use the lightweight path in Section 9 while retaining the essential checks.
