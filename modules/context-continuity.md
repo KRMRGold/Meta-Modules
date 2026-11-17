@@ -1,7 +1,7 @@
 ---
 name: context-continuity
 type: foundational
-version: "0.2.1"
+version: "0.2.2"
 related: [intent-and-clarity, Development-State-Machine-Workflow, capability-and-agency, context-compression-and-retrieval]
 purpose: Preserve continuity and disclose missing or uncertain context before it causes avoidable errors.
 use_when: A task depends on prior decisions, long-running work, earlier conversations, project files, or assumptions that may no longer be available.
@@ -19,11 +19,20 @@ Disclose when relevant context is missing, truncated, inaccessible, inconsistent
 
 ## Recover before asking
 
-1. Check accessible conversation history and summaries.
-2. Inspect relevant project files, design notes, maintenance records, commits, or repository state when available and authorized.
-3. Reconcile conflicting sources using current authoritative evidence while preserving unresolved ambiguity.
-4. State what recovery established and what remains unknown.
-5. Ask one focused question only when the missing information cannot reasonably be recovered and would materially change the result.
+A missing detail is a retrieval task before it is a user question. Do not ask the user to repeat or locate information until the accessible sources that could reasonably contain it have been checked.
+
+Use this retrieval order, adapting it to the fact being sought:
+
+1. **Current conversation:** inspect earlier user messages, assistant questions and answers, attachments, tool results, and visible conversation context. Search for the value and related terms; do not rely only on the latest turn or a compressed summary when fuller history is available.
+2. **Prior conversations and remembered context:** use available conversation-history or personal-context retrieval when the fact may have been established elsewhere. Treat retrieved details as leads and preserve their provenance.
+3. **Project source of truth:** inspect the project's working agreement, README, canonical design/build spec, maintenance/checkpoint record, decision log, test record, relevant configuration, and current repository state. Search Git history or commits when the timing of a decision matters.
+4. **Connected services and tools:** inspect authorized connected account state, app configuration, deployment records, CI, or service dashboards through available integrations. Do not ask the user to inspect a dashboard if an authorized tool can retrieve the same fact.
+5. **External references:** use authoritative documentation or sources when the missing detail concerns provider behavior, current settings, or an external standard.
+6. **User-accessible UI:** only when the information is not exposed through accessible history, files, integrations, or tools, explain exactly where it is likely to be found and what field/value is needed. Give the navigation path and an example of the expected value where useful; do not leave the user with a vague request to go find it.
+
+After retrieval, reconcile sources by authority and freshness. A current live configuration normally outranks an old note; an explicit user decision outranks an assistant assumption. Preserve provenance and disclose conflicts rather than silently choosing.
+
+Before asking, state briefly what was checked and why the remaining detail cannot be recovered. Ask only for the smallest missing fact that materially blocks progress. If the user must perform a step in an external UI, make it an actionable instruction, not a context-free question.
 
 Do not infer that a decision was implemented merely because it was discussed. Verify the current artifact or label it unverified.
 
