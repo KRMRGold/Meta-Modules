@@ -1,16 +1,16 @@
 ---
 name: development-state-machine-workflow
 type: specialized-workflow
-version: "1.9.3"
+version: "1.10.0"
 related: [testing-and-verification, code-review-and-change-assurance, sandboxing-and-safe-execution, cybersecurity-and-secure-engineering, context-continuity]
 purpose: Guide reliable, evidence-based development through planning, implementation, verification, recovery, documentation, and version history.
 use_when: The user is developing or maintaining an application or substantial project and wants a repeatable workflow for making and verifying changes.
 ---
 
 # Development State Machine Workflow
-## Reusable Workflow Prompt v1.9.3
+## Reusable Workflow Prompt v1.10.0
 
-- **Workflow version:** 1.9.3
+- **Workflow version:** 1.10.0
 - **Document policy:** Keep one current workflow file at its canonical path. Update that file in place; use Git history for prior revisions. Do not create side-by-side versioned copies.
 - **Revision history:** Earlier revisions are preserved in Git history, not separate files.
 - **Scope:** A reusable, modular development workflow for applications and other projects, independent of any one app, programming language, framework, or tool.
