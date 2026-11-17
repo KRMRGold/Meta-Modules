@@ -1,16 +1,16 @@
 ---
 name: development-state-machine-workflow
 type: specialized-workflow
-version: "1.9.2"
+version: "1.9.3"
 related: [testing-and-verification, code-review-and-change-assurance, sandboxing-and-safe-execution, cybersecurity-and-secure-engineering, context-continuity]
 purpose: Guide reliable, evidence-based development through planning, implementation, verification, recovery, documentation, and version history.
 use_when: The user is developing or maintaining an application or substantial project and wants a repeatable workflow for making and verifying changes.
 ---
 
 # Development State Machine Workflow
-## Reusable Workflow Prompt v1.9.2
+## Reusable Workflow Prompt v1.9.3
 
-- **Workflow version:** 1.9.2
+- **Workflow version:** 1.9.3
 - **Document policy:** Keep one current workflow file at its canonical path. Update that file in place; use Git history for prior revisions. Do not create side-by-side versioned copies.
 - **Revision history:** Earlier revisions are preserved in Git history, not separate files.
 - **Scope:** A reusable, modular development workflow for applications and other projects, independent of any one app, programming language, framework, or tool.
@@ -379,6 +379,26 @@ A successful reproduction test provides evidence that the milestone communicates
 ## 10. Pause, Save, and Resume at Any Time
 
 This is a cross-cutting capability, not a new state in the development state machine. Work may be paused from S0 through S11, including during implementation, source review, testing, repair, or exploratory design. A pause is not a failure, acceptance, or permission to discard unfinished work.
+
+### 10.0 Context-first retrieval: do not make the user manage assistant memory
+
+Before asking the user for a fact, decision, URL, setting, file location, prior preference, or project status, treat the missing detail as a retrieval task. The assistant owns the first pass at finding information already supplied or available.
+
+Check the likely sources, in order appropriate to the question:
+
+1. Earlier messages, attachments, and tool results in the current conversation; search beyond the most recent exchange.
+2. Available prior-conversation summaries or personal-context retrieval when the information may have been discussed in another chat.
+3. The project's chat working agreement and canonical README, design/build specification, maintenance/checkpoint record, decision log, test record, and relevant source/configuration files.
+4. Current repository state, commit history, CI/deployment evidence, and connected services or account integrations that can expose the needed setting.
+5. Authoritative provider documentation for the location or meaning of a setting.
+6. If the value exists only in a user-accessible dashboard or device that the assistant cannot inspect, provide the exact navigation path and identify the field/value to copy. Do not ask a vague question such as "what is your URL?" when the user needs help finding it.
+
+Use current authoritative state over stale notes, while retaining the older decision as history where relevant. Distinguish user-confirmed facts, source-backed facts, assistant assumptions, and unverified details. Never treat a prior plan as proof of a completed configuration.
+
+Only ask the user after the accessible sources have been reasonably exhausted and the missing detail still materially blocks the next action. Briefly say what was checked and ask for the smallest remaining input. If the user must perform a UI action, make the request executable with clear steps.
+
+This rule applies across all projects and future chats. It is not a new state or a reason to create more paperwork. Use the existing working agreement, maintenance record, and context-continuity module; record durable decisions and discovered configuration in the project's canonical record when relevant.
+
 
 **Core rule: any meaningful stopping point must leave enough durable state to resume without relying on the current chat's hidden context.** Do not wait for a milestone, a clean build, a completed feature, or an impending message limit.
 
