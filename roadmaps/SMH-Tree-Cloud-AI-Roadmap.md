@@ -1,6 +1,6 @@
 # SMH-Tree — Cloud AI Experimentation & Learning Roadmap
 
-Version: 0.1.0 | 25 November 2026 | Exploratory proposal
+Version: 0.2.0 | 25 November 2026 | Exploratory proposal
 
 ## Purpose
 Use SMH-Tree as the primary research environment for Google Cloud, applied AI engineering, model evaluation and MLOps. Build reusable experimentation infrastructure around genuine application problems rather than disconnected résumé tutorials. SMH-Tree is a branching AI conversation application with local model integration and ongoing memory, context and routing work. Spacefruit is not a dependency; independent collaboration remains possible.
@@ -51,6 +51,32 @@ Develop locally first. Verify current cloud pricing and eligibility before runni
 
 ## Career relevance
 Demonstrate applied AI, data engineering, cloud infrastructure, MLOps, automated evaluation, reproducible research and human-AI interface design. Each case study should explain the problem, architecture, personal contributions versus AI assistance, baseline, measured results, limitations and lessons learned.
+
+## Prior art — reading and experimentation catalog
+
+Study existing tools before building replacements. These are candidate references, not adopted dependencies or verified compatibility claims.
+
+| Project / source | What to investigate | Relevance to SMH-Tree |
+|---|---|---|
+| [MLflow](https://github.com/mlflow/mlflow) | Run tracking, parameters, metrics, artifacts and model lifecycle | Experiment history and reproducibility |
+| [Langfuse](https://github.com/langfuse/langfuse) | LLM traces, spans, prompt versions and evaluation | Inspectable model behavior and debugging |
+| [Promptfoo](https://github.com/promptfoo/promptfoo) | Declarative test cases, provider comparisons and assertions | Regression tests for context and instructions |
+| [Inspect AI](https://github.com/UKGovernmentBEIS/inspect_ai) | Tasks, datasets, solvers, scorers and evaluation logs | Structured evaluation runner |
+| [DSPy](https://github.com/stanfordnlp/dspy) | Signatures, modules and metric-driven optimization | Context and prompt optimization |
+| [Ray](https://github.com/ray-project/ray) | Distributed execution, training and tuning | Scaling experiments only when justified |
+| [LiteLLM](https://github.com/BerriAI/litellm) | Unified model interfaces and routing | Portable local/cloud provider adapters |
+| [OpenTelemetry](https://opentelemetry.io/) | Trace/span conventions and instrumentation | Standardized execution traces |
+
+Suggested reading order: Promptfoo and Inspect AI (evaluation), Langfuse and OpenTelemetry (inspection), MLflow (experiment tracking), LiteLLM (portability), DSPy (optimization), Ray (scaling). For each, read the README and architecture, try a minimal local example where feasible, note license, hardware needs, privacy, costs and integration boundaries, and record whether to reuse, adapt, learn from or defer. Compare overlapping tools rather than installing all of them. Links and descriptions are starting points from discussion; current implementations, licenses and pricing have not been audited.
+
+## Evaluation laboratory and AI inspection
+Treat SMH-Tree as both a creative collaboration environment and a research environment: application problems generate hypotheses, benchmarks test them, and evidence informs development. Consider an inspector for a selected response showing actual supplied context, retrieval provenance, instruction versions, observable routing rules, tool calls/results, latency, token usage, costs and editable configuration. Compare alternative runs through branches. Distinguish logged evidence from inferred explanations; do not claim access to private model reasoning. Connect this concept to the reusable inspector and precision-editing ideas without requiring a new dependency.
+
+## Cloud engineering learning map
+Learn Docker for reproducible execution; Terraform for infrastructure as code; IAM for least privilege; Cloud Storage for artifacts; Cloud Run for deployment; BigQuery for data engineering; Vertex AI for ML jobs and evaluation; GitHub Actions for CI/CD; OpenTelemetry for observability; Pub/Sub for event-driven processing. Introduce each only when a real requirement warrants it. Keep a provider-neutral experiment interface with local and cloud adapters, portable run manifests and exportable results. Google Cloud is the learning focus, not a mandatory runtime.
+
+## Independent competence and portfolio evidence
+Practice reading unfamiliar code, debugging deployments, writing and interpreting tests, explaining architectural trade-offs and diagnosing model failures without relying solely on AI-generated explanations. For each experiment, preserve the question, baseline, methodology, dataset and configuration versions, architecture, measured results, failed approaches, costs, limitations and individual contributions versus AI assistance. Publish selected case studies on the portfolio website. A potential specialization is human-AI interaction: intuitive ways to guide, inspect and modify complex systems, connecting branching conversations, reusable inspectors, visual annotations and nonlinear creative work.
 
 ## References
 - [SMH-Tree](https://github.com/KRMRGold/SMH-Tree)
