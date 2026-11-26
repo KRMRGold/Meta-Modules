@@ -1,7 +1,7 @@
 ---
 name: application-property-inspector
 type: specialized
-version: "0.1.0"
+version: "0.1.1"
 related: [pafc, existing-knowledge-and-emerging-technologies, intent-and-clarity, testing-and-verification]
 purpose: Guide an AI assistant in inspecting an existing application, identifying appropriate editable properties, designing a property schema, and implementing an integrated inspector suited to the application's architecture.
 use_when: The user wants to add an inspector, developer panel, live configuration editor, theme editor, or structured interface for inspecting and changing selected application properties.
@@ -263,6 +263,10 @@ A standalone, cross-application inspector library is a possible future direction
 If multiple applications eventually need the same capability, compare their actual implementations and identify stable shared contracts before extracting a library. Potential shared pieces include property descriptors, generated controls, validation, grouping, and adapter interfaces. Framework-specific rendering and application-specific access should remain replaceable.
 
 Do not build this reusable component merely because the first application needs an inspector. First validate the method against real applications and learn which parts are genuinely common.
+
+### Related application research: SMH-Tree
+
+[Interactive AI observability and intervention](https://github.com/KRMRGold/SMH-Tree/blob/main/Distributed-Cognitive-Architecture.md#713-interactive-ai-observability-and-intervention) is a candidate application of the inspector method to AI execution state. Explore read-only trace fields alongside deliberately editable run configuration, typed descriptors, validated adapters, scoped overrides and branch-safe changes. Historical execution records remain immutable; edits create new configurations or runs rather than rewriting provenance. The [learning roadmap](https://github.com/KRMRGold/Meta-Modules/blob/main/roadmaps/SMH-Tree-Cloud-AI-Roadmap.md) maintains the prior-art catalog. This cross-reference is not a requirement to implement a universal inspector or adopt AI-specific dependencies.
 
 ## Success Criteria
 
