@@ -1,6 +1,6 @@
 # SMH-Tree — Cloud AI Experimentation & Learning Roadmap
 
-Version: 0.2.0 | 25 November 2026 | Exploratory proposal
+Version: 0.3.0 | 25 November 2026 | Exploratory proposal
 
 ## Purpose
 Use SMH-Tree as the primary research environment for Google Cloud, applied AI engineering, model evaluation and MLOps. Build reusable experimentation infrastructure around genuine application problems rather than disconnected résumé tutorials. SMH-Tree is a branching AI conversation application with local model integration and ongoing memory, context and routing work. Spacefruit is not a dependency; independent collaboration remains possible.
@@ -68,6 +68,21 @@ Study existing tools before building replacements. These are candidate reference
 | [OpenTelemetry](https://opentelemetry.io/) | Trace/span conventions and instrumentation | Standardized execution traces |
 
 Suggested reading order: Promptfoo and Inspect AI (evaluation), Langfuse and OpenTelemetry (inspection), MLflow (experiment tracking), LiteLLM (portability), DSPy (optimization), Ray (scaling). For each, read the README and architecture, try a minimal local example where feasible, note license, hardware needs, privacy, costs and integration boundaries, and record whether to reuse, adapt, learn from or defer. Compare overlapping tools rather than installing all of them. Links and descriptions are starting points from discussion; current implementations, licenses and pricing have not been audited.
+
+### Priority study track: interactive AI observability and intervention
+
+This is the user's primary research interest. See the [canonical SMH-Tree architecture](https://github.com/KRMRGold/SMH-Tree/blob/main/Distributed-Cognitive-Architecture.md#713-interactive-ai-observability-and-intervention) for product design. Prioritize Langfuse and OpenTelemetry from the catalog above, then compare:
+
+| Prior art | Study focus |
+|---|---|
+| [Arize Phoenix](https://github.com/Arize-ai/phoenix) | Trace exploration, retrieval diagnostics and evaluation |
+| [LangGraph Studio](https://github.com/langchain-ai/langgraph) | Agent state, interactive debugging and replay; consult Studio documentation |
+| [TensorBoard](https://github.com/tensorflow/tensorboard) | Visual comparison of experiment metrics |
+| [Node-RED](https://github.com/node-red/node-red) | Visual execution flows and debugging |
+| [Godot Inspector](https://docs.godotengine.org/en/stable/tutorials/editor/inspector_dock.html) | Typed property controls and direct manipulation |
+| [Cursor Design Mode](https://cursor.com/blog/design-mode) | Shared visual attention and targeted intervention |
+
+Compare trace fidelity, state inspection, editable parameters, branching/replay, evaluation, privacy, local operation and integration effort. Distinguish passive observability from active intervention. These are unverified research candidates, not dependencies.
 
 ## Evaluation laboratory and AI inspection
 Treat SMH-Tree as both a creative collaboration environment and a research environment: application problems generate hypotheses, benchmarks test them, and evidence informs development. Consider an inspector for a selected response showing actual supplied context, retrieval provenance, instruction versions, observable routing rules, tool calls/results, latency, token usage, costs and editable configuration. Compare alternative runs through branches. Distinguish logged evidence from inferred explanations; do not claim access to private model reasoning. Connect this concept to the reusable inspector and precision-editing ideas without requiring a new dependency.
