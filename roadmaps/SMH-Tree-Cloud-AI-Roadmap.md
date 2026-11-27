@@ -1,6 +1,6 @@
 # SMH-Tree — Cloud AI Experimentation & Learning Roadmap
 
-Version: 0.3.0 | 25 November 2026 | Exploratory proposal
+Version: 0.4.0 | 27 November 2026 | Exploratory proposal
 
 ## Purpose
 Use SMH-Tree as the primary research environment for Google Cloud, applied AI engineering, model evaluation and MLOps. Build reusable experimentation infrastructure around genuine application problems rather than disconnected résumé tutorials. SMH-Tree is a branching AI conversation application with local model integration and ongoing memory, context and routing work. Spacefruit is not a dependency; independent collaboration remains possible.
@@ -92,6 +92,14 @@ Learn Docker for reproducible execution; Terraform for infrastructure as code; I
 
 ## Independent competence and portfolio evidence
 Practice reading unfamiliar code, debugging deployments, writing and interpreting tests, explaining architectural trade-offs and diagnosing model failures without relying solely on AI-generated explanations. For each experiment, preserve the question, baseline, methodology, dataset and configuration versions, architecture, measured results, failed approaches, costs, limitations and individual contributions versus AI assistance. Publish selected case studies on the portfolio website. A potential specialization is human-AI interaction: intuitive ways to guide, inspect and modify complex systems, connecting branching conversations, reusable inspectors, visual annotations and nonlinear creative work.
+
+### Architectural literacy and granular system control
+
+The professional objective is to understand and command a system at the architectural level, rather than merely generate working code with AI. Develop an accurate mental model of component responsibilities, interfaces, dependencies, state transitions, data flow, runtime behavior and configurable properties. Code literacy remains necessary for tracing and verifying implementation details, but memorizing syntax is not the primary objective.
+
+Practice translating a requested experience or behavior into a bounded technical change: identify the responsible components, inspect relevant state and properties, predict affected dependencies, modify only what is necessary, and verify intended behavior and regression boundaries. Use architectural diagrams, runtime traces, inspectors and linked representations to move between intent, experience, architecture, behavior, properties and implementation.
+
+For portfolio evidence, include a case study in which an existing SMH-Tree capability receives a precise change after its initial implementation. Document the requirement, relevant system map, diagnosis, alternatives, targeted modification, regression checks and remaining limitations. Demonstrate that AI assistance increases the engineer's ability to understand and control the system instead of substituting for that understanding.
 
 ## References
 - [SMH-Tree](https://github.com/KRMRGold/SMH-Tree)
